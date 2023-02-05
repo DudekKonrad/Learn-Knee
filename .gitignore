@@ -1,0 +1,15 @@
+Library/*
+Logs/*
+Temp/*
+*.sln
+.idea/
+obj/
+UserSettings/*
+*.csproj
+Assets/AmplifyShaderEditor/*
+Assets/AmplifyShaderEditor.meta
+SwitchIL2CPPCache/*
+SwitchIL2CPPStats/*
+*.blob
+*.DS_Store
+ProjectSettings/RiderScriptEditorPersistedState.asset
