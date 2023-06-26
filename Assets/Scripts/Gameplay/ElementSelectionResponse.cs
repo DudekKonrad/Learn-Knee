@@ -11,7 +11,7 @@ namespace Gameplay
 
         private void Start()
         {
-            _startingPosition = transform.position;
+            _startingPosition = transform.localPosition;
         }
 
 
@@ -21,9 +21,8 @@ namespace Gameplay
             var outline = gameObject.GetComponent<Outline>();
             if (outline != null)
             {
-                DOTween.To(() => outline.OutlineWidth, x => outline.OutlineWidth = x, 20, 1);
+                DOTween.To(() => outline.OutlineWidth, x => outline.OutlineWidth = x, 10, 0.5f);
             }
-
             IsSelected = true;
         }
 
@@ -32,7 +31,7 @@ namespace Gameplay
             var outline = gameObject.GetComponent<Outline>();
             if (outline != null)
             {
-                DOTween.To(() => outline.OutlineWidth, x => outline.OutlineWidth = x, 0, 1);
+                DOTween.To(() => outline.OutlineWidth, x => outline.OutlineWidth = x, 0, 0.5f);
             }
 
             IsSelected = false;
@@ -42,12 +41,17 @@ namespace Gameplay
         {
             if (!IsViewed)
             {
-                transform.DOMove(Camera.main.transform.position, 0.7f);
+                var toCameraPosition = Vector3.MoveTowards(transform.localPosition, Camera.main.transform.position, 10);
+                Debug.Log($"Cliked: {name} going to: {toCameraPosition}");
+                DOTween.To(()=> transform.localPosition, x=> transform.localPosition = x, new Vector3(0.01f, 1, 1), 1);
+                //transform.localPosition = toCameraPosition;//DOMove(toCameraPosition, 0.7f);
                 IsViewed = true;
             }
             else
             {
-                transform.DOMove(_startingPosition, 1);
+                Debug.Log($"Clicked: {name} going back to: {_startingPosition}");
+                DOTween.To(()=> transform.localPosition, x=> transform.localPosition = x, _startingPosition, 1);
+                //transform.localPosition = _startingPosition;//DOMove(_startingPosition, 0.7f);
                 IsViewed = false;
             }
         }
