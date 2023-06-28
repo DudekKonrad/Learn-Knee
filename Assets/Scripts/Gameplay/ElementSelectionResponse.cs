@@ -5,6 +5,7 @@ namespace Gameplay
 {
     public class ElementSelectionResponse : MonoBehaviour, ISelectionResponse
     {
+        [SerializeField] private GameObject _description;
         public bool IsSelected { get; set; }
         public bool IsViewed { set; get; }
         private Vector3 _startingPosition;
@@ -43,15 +44,17 @@ namespace Gameplay
             {
                 var toCameraPosition = Vector3.MoveTowards(transform.localPosition, Camera.main.transform.position, 10);
                 Debug.Log($"Cliked: {name} going to: {toCameraPosition}");
-                DOTween.To(()=> transform.localPosition, x=> transform.localPosition = x, new Vector3(0.01f, 1, 1), 1);
+                DOTween.To(()=> transform.localPosition, x=> transform.localPosition = x, new Vector3(0.01f, 0.5f, 1), 1);
                 //transform.localPosition = toCameraPosition;//DOMove(toCameraPosition, 0.7f);
                 IsViewed = true;
+                _description.SetActive(true);
             }
             else
             {
                 Debug.Log($"Clicked: {name} going back to: {_startingPosition}");
                 DOTween.To(()=> transform.localPosition, x=> transform.localPosition = x, _startingPosition, 1);
                 //transform.localPosition = _startingPosition;//DOMove(_startingPosition, 0.7f);
+                _description.SetActive(false);
                 IsViewed = false;
             }
         }

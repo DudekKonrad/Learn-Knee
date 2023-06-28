@@ -1,15 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuMediator : MonoBehaviour
+namespace MainMenu
 {
-    public void OnPlayButtonClick()
+    public class MainMenuMediator : MonoBehaviour
     {
-        SceneManager.LoadScene("Gameplay");
+        public void OnPlayButtonClick()
+        {
+            SceneManager.LoadScene("Gameplay");
         
-    }
-    public void OnExitButtonClick()
-    {
-        Application.Quit();
+        }
+
+        public void OnQuizButtonClick()
+        {
+            SceneManager.LoadScene("Quiz");
+        }
+        public void OnExitButtonClick()
+        {
+            Application.Quit();
+        }
     }
 }

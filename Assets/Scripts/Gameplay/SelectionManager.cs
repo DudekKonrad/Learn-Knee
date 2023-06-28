@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Gameplay
 {
     public class SelectionManager : MonoBehaviour
     {
+        [SerializeField] private InputActionReference _mouse;
+        [SerializeField] private InputActionReference _click;
         private Transform _selection;
         private ISelectionResponse _selectionResponse;
     
@@ -15,7 +18,7 @@ namespace Gameplay
                 _selectionResponse?.OnDeselect();
             }
 
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var ray = Camera.main.ScreenPointToRay(_mouse.action.ReadValue<Vector2>());
             _selection = null;
             if (Physics.Raycast(ray, out var hit))
             {
@@ -37,7 +40,7 @@ namespace Gameplay
 
         private void MouseClick()
         {
-            if (Input.GetMouseButtonDown(0) && _selection != null)
+            if (_click.action.WasPressedThisFrame() && _selection != null)
             {
                 _selection.GetComponent<ISelectionResponse>().OnClick();
             }
