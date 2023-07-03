@@ -1,13 +1,17 @@
+using Application.GameplayContext.Models;
 using Application.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 namespace Application.GameplayContext
 {
     public class SelectionManager : MonoBehaviour
     {
-        [SerializeField] private InputActionReference _mouse;
-        [SerializeField] private InputActionReference _click;
+        [Inject] private readonly PlayerInputModel _playerInput;
+        
+        [SerializeField] private InputActionReference _leftClick;
+        
         private Transform _selection;
         private ISelectionResponse _selectionResponse;
     
@@ -19,7 +23,7 @@ namespace Application.GameplayContext
                 _selectionResponse?.OnDeselect();
             }
 
-            var ray = Camera.main.ScreenPointToRay(_mouse.action.ReadValue<Vector2>());
+            var ray = Camera.main.ScreenPointToRay(_playerInput.Mouse);
             _selection = null;
             if (Physics.Raycast(ray, out var hit))
             {
@@ -41,7 +45,7 @@ namespace Application.GameplayContext
 
         private void MouseClick()
         {
-            if (_click.action.WasPressedThisFrame() && _selection != null)
+            if (_leftClick.action.WasPressedThisFrame() && _selection != null)
             {
                 _selection.GetComponent<ISelectionResponse>().OnClick();
             }
