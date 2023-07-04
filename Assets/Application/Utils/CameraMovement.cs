@@ -10,8 +10,6 @@ namespace Application.Utils
     {
         [Inject] private readonly LearnGameConfig _gameConfig;
         [Inject] private readonly PlayerInputModel _playerInputModel;
-
-        [SerializeField] private float _distance;
         
         private void Update()
         {
@@ -22,7 +20,6 @@ namespace Application.Utils
 
                 desiredPosition = Physics.Raycast(ray , out var hit) ? hit.point : transform.position;
                 var distance = Vector3.Distance(desiredPosition , transform.position);
-                _distance = distance;
                 var direction = Vector3.Normalize( desiredPosition - transform.position) * (distance * _playerInputModel.Scroll);
                 transform.DOMove(transform.position + direction*_gameConfig.ZoomSensitivity,_gameConfig.ZoomDuration);
             }

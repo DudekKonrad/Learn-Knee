@@ -23,7 +23,7 @@ namespace Application.GameplayContext
                 _selectionResponse?.OnDeselect();
             }
 
-            var ray = Camera.main.ScreenPointToRay(_playerInput.Mouse);
+            var ray = Camera.main.ScreenPointToRay(_playerInput.Point);
             _selection = null;
             if (Physics.Raycast(ray, out var hit))
             {
