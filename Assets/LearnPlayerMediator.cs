@@ -2,7 +2,6 @@ using Application.GameplayContext.Models;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 using Zenject;
 
 [RequireComponent(typeof(PlayerInput))]
@@ -10,6 +9,13 @@ public class LearnPlayerMediator : MonoBehaviour
 {
     [Inject] private PlayerInputModel _playerInputModel;
 
+    [UsedImplicitly]
+    private void OnPoint(InputValue value)
+    {
+        var inputValue = value.Get<Vector2>();
+        _playerInputModel.Point = inputValue;
+    }
+    
     [UsedImplicitly]
     private void OnMouse(InputValue value)
     {
@@ -21,6 +27,12 @@ public class LearnPlayerMediator : MonoBehaviour
     private void OnRightClick(InputValue value)
     {
         _playerInputModel.RightClick = value.isPressed;
+    }
+    
+    [UsedImplicitly]
+    private void OnMiddleClick(InputValue value)
+    {
+        _playerInputModel.MiddleClick = value.isPressed;
     }
     
     [UsedImplicitly]

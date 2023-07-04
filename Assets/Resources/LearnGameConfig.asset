@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outlineColor: {r: 0, g: 1, b: 0.9708953, a: 0}
   _outlineWidth: 10
-  _rotationSpeed: 0.7
+  _rotationSpeed: 0.4
+  _moveSpeed: 0.02
+  _zoomSensitivity: 0.003
+  _zoomDuration: 0.5
+  _minZoom: 0
+  _maxZoom: 1
