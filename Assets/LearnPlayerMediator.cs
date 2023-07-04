@@ -11,7 +11,7 @@ public class LearnPlayerMediator : MonoBehaviour
     [Inject] private PlayerInputModel _playerInputModel;
 
     [UsedImplicitly]
-    private void OnPoint(InputValue value)
+    private void OnMouse(InputValue value)
     {
         var inputValue = value.Get<Vector2>();
         _playerInputModel.Mouse = inputValue;
