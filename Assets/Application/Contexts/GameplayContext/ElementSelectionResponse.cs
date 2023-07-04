@@ -6,20 +6,25 @@ using Zenject;
 
 namespace Application.GameplayContext
 {
-    [RequireComponent(typeof(Outline))]
+    [RequireComponent(typeof(Outline)), RequireComponent(typeof(Renderer))]
     public class ElementSelectionResponse : MonoBehaviour, ISelectionResponse
     {
         [Inject] private readonly LearnGameConfig _gameConfig;
+        
+        [SerializeField] private Renderer _renderer;
         public bool IsSelected { get; set; }
         public bool IsViewed { set; get; }
         private Vector3 _startingPosition;
         private Outline _outline;
+        private Color _staringColor;
 
         private void Start()
         {
             _startingPosition = transform.localPosition;
             _outline = GetComponent<Outline>();
             _outline.OutlineColor = _gameConfig.OutlineColor;
+            _renderer = GetComponent<Renderer>();
+            _staringColor = _renderer.material.color;
         }
 
         public void OnSelect()
@@ -46,13 +51,15 @@ namespace Application.GameplayContext
         {
             if (!IsViewed)
             {
-                DOTween.To(()=> transform.localPosition, x=> transform.localPosition = x, new Vector3(0.01f, 0.5f, 1), 1);
+                _renderer.material.DOColor(_gameConfig.ChooseColor, _gameConfig.ChooseColorDuration);
+                //DOTween.To(()=> _renderer.material.color, x=> transform.localPosition = x, new Vector3(0.01f, 0.5f, 1), 1);
                 IsViewed = true;
                 //_description.SetActive(true);
             }
             else
             {
-                DOTween.To(()=> transform.localPosition, x=> transform.localPosition = x, _startingPosition, 1);
+                _renderer.material.DOColor(_staringColor, _gameConfig.ChooseColorDuration);
+                //DOTween.To(()=> transform.localPosition, x=> transform.localPosition = x, _startingPosition, 1);
                 //_description.SetActive(false);
                 IsViewed = false;
             }
