@@ -12,9 +12,11 @@ namespace Utils
         }
 
         [MenuItem("Tools/Scenes/Open MainMenu")]
-        public static void OpenSplashScene() => OpenSceneByPath("Assets/Scenes/MainMenu.unity");
+        public static void OpenMainMenuScene() => OpenSceneByPath("Assets/Scenes/MainMenu.unity");
 
         [MenuItem("Tools/Scenes/Open Gameplay")]
-        public static void OpenMainMenuScene() => OpenSceneByPath("Assets/Scenes/Gameplay.unity");
+        public static void OpenGameplayScene() => OpenSceneByPath("Assets/Scenes/Gameplay.unity");
+        [MenuItem("Tools/Scenes/Open Quiz")]
+        public static void OpenQuizSceneScene() => OpenSceneByPath("Assets/Scenes/Quiz.unity");
     }
 }

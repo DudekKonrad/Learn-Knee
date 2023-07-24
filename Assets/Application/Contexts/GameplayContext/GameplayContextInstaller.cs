@@ -1,4 +1,5 @@
 using Application.GameplayContext.Models;
+using Application.ProjectContext;
 using Zenject;
 
 namespace Application.GameplayContext
@@ -7,7 +8,8 @@ namespace Application.GameplayContext
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<PlayerInputModel>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerInputModel>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<SelectedElementService>().AsSingle().NonLazy();
         }
     }
 }

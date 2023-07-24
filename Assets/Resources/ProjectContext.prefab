@@ -75,3 +75,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameConfig: {fileID: 11400000, guid: 3acb8d02e5abfd54b9a3b8afefcb327d, type: 2}
+  _learnModel: {fileID: 8812858501047081307, guid: 4a304e47e7dd273419ed6970c91e1041, type: 3}

@@ -1,3 +1,4 @@
+using System;
 using Application.ProjectContext.Configs;
 using DG.Tweening;
 using UnityEngine;
@@ -15,18 +16,19 @@ public class SearchElementsMediator : MonoBehaviour
 
     private void Start()
     {
-        _elementsContainerStartingY = _elementsContainer.transform.position.y;
+        _inputField.onValueChanged.AddListener(OnValueChanged);
+        foreach (Transform element in _elementsContainer.transform)
+        {
+            Debug.Log($"Element: {element.name}");
+        }
     }
 
-    private void Update()
+    private void OnValueChanged(string value)
     {
-        if (_inputField.isFocused)
+        Debug.Log($"Value changed to: {value}");
+        foreach (Transform element in _elementsContainer.transform)
         {
-            _elementsContainer.transform.DOMoveY(_test, _gameConfig.UiElementsDuration);
-        }
-        else
-        {
-            _elementsContainer.transform.DOMoveY(_elementsContainerStartingY, _gameConfig.UiElementsDuration);
+            element.gameObject.SetActive(element.name.Contains(value));
         }
     }
 }

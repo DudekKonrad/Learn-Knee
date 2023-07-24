@@ -11,8 +11,11 @@ GameObject:
   - component: {fileID: 6492029756764847099}
   - component: {fileID: 7153395240057833198}
   - component: {fileID: 3626698156847430119}
+  - component: {fileID: 7204702327341423456}
+  - component: {fileID: 7204702327341423454}
+  - component: {fileID: 7204702327341423455}
   m_Layer: 0
-  m_Name: Strzalkowa_stawowa.001
+  m_Name: "Staw strza\u0142kowy"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,6 +86,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7204702327341423456
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616219727035604120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6267850890647731473, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &7204702327341423454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616219727035604120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7204702327341423455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616219727035604120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &756343542701839387
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,8 +141,11 @@ GameObject:
   - component: {fileID: 8305995906778861358}
   - component: {fileID: 2149676640697639118}
   - component: {fileID: 6731273161793399598}
+  - component: {fileID: 6617954078839191204}
+  - component: {fileID: 6617954078839191202}
+  - component: {fileID: 6617954078839191203}
   m_Layer: 0
-  m_Name: LakotkaBoczna
+  m_Name: "\u0141\u0119kotka Boczna"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +194,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,6 +216,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6617954078839191204
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756343542701839387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8970095254001187325, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &6617954078839191202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756343542701839387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &6617954078839191203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756343542701839387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1536084034842536852
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,8 +271,11 @@ GameObject:
   - component: {fileID: 1964132359917605285}
   - component: {fileID: 1134730223196420857}
   - component: {fileID: 3143332028766274715}
+  - component: {fileID: 8806784164294632996}
+  - component: {fileID: 8806784164294632994}
+  - component: {fileID: 8806784164294632995}
   m_Layer: 0
-  m_Name: WiezadloRzepki
+  m_Name: "Wi\u0119zad\u0142o rzepki"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +324,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -249,6 +346,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8806784164294632996
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536084034842536852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8601622507538719270, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &8806784164294632994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536084034842536852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &8806784164294632995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536084034842536852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1833542528228143194
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,8 +401,11 @@ GameObject:
   - component: {fileID: 6718659576504470434}
   - component: {fileID: 5045893542197930914}
   - component: {fileID: 4800946893773904923}
+  - component: {fileID: 5249698999391605475}
+  - component: {fileID: 5249698999391605473}
+  - component: {fileID: 5249698999391605474}
   m_Layer: 0
-  m_Name: KoscUdowa
+  m_Name: "Ko\u015B\u0107 Udowa"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,7 +454,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9018103975132440164, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: c2a088f199b800648883e5108e2c3155, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -332,6 +476,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5249698999391605475
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833542528228143194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -847040653130247223, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &5249698999391605473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833542528228143194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &5249698999391605474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833542528228143194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2665317379066961954
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,8 +531,11 @@ GameObject:
   - component: {fileID: 6750333560220392175}
   - component: {fileID: 5635861679866666872}
   - component: {fileID: 2142222960979182582}
+  - component: {fileID: 8454870939843150491}
+  - component: {fileID: 8454870939843150489}
+  - component: {fileID: 8454870939843150490}
   m_Layer: 0
-  m_Name: WiezadloKrzyzowePrzednie
+  m_Name: "Wi\u0119zad\u0142o krzy\u017Cowe przednie"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,7 +584,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -415,6 +606,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8454870939843150491
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665317379066961954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2005187779980766273, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &8454870939843150489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665317379066961954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &8454870939843150490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665317379066961954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2701781359170801188
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,8 +661,11 @@ GameObject:
   - component: {fileID: 220794044954461703}
   - component: {fileID: 1978750722065919802}
   - component: {fileID: 5126371357328332912}
+  - component: {fileID: 8418924863536508065}
+  - component: {fileID: 8418924863536508063}
+  - component: {fileID: 8418924863536508064}
   m_Layer: 0
-  m_Name: KoscPiszczelowa
+  m_Name: "Ko\u015B\u0107 Piszczelowa"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,7 +714,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9018103975132440164, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: c2a088f199b800648883e5108e2c3155, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -498,6 +736,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8418924863536508065
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2701781359170801188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5174253764899704914, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &8418924863536508063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2701781359170801188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &8418924863536508064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2701781359170801188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3958980426881757397
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,8 +791,11 @@ GameObject:
   - component: {fileID: 6926967200712939532}
   - component: {fileID: 1875241938050662463}
   - component: {fileID: 7797649577234957056}
+  - component: {fileID: 7447194440628376178}
+  - component: {fileID: 7447194440628376176}
+  - component: {fileID: 7447194440628376177}
   m_Layer: 0
-  m_Name: object_1.003
+  m_Name: "Wi\u0119zad\u0142o 1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,7 +844,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -581,6 +866,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7447194440628376178
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958980426881757397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5776001378036059237, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &7447194440628376176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958980426881757397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7447194440628376177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958980426881757397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4004990419728024667
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,8 +921,11 @@ GameObject:
   - component: {fileID: 4310559750896333568}
   - component: {fileID: 1658796770255148173}
   - component: {fileID: 7631692224776336363}
+  - component: {fileID: 7672602262525202877}
+  - component: {fileID: 7672602262525202875}
+  - component: {fileID: 7672602262525202876}
   m_Layer: 0
-  m_Name: KoscStrzalkowa
+  m_Name: "Ko\u015B\u0107 Strza\u0142kowa"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +974,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9018103975132440164, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: c2a088f199b800648883e5108e2c3155, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -664,6 +996,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7672602262525202877
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004990419728024667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -210509101976848339, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &7672602262525202875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004990419728024667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7672602262525202876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004990419728024667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4042290352393681499
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,8 +1051,11 @@ GameObject:
   - component: {fileID: 7465448374305705792}
   - component: {fileID: 8370859184073452}
   - component: {fileID: 4622953511207921955}
+  - component: {fileID: 7616072896351312100}
+  - component: {fileID: 7616072896351312098}
+  - component: {fileID: 7616072896351312099}
   m_Layer: 0
-  m_Name: LakotkaPrzysrodkowa
+  m_Name: "\u0141\u0119kotka Przy\u015Brodkowa"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,7 +1104,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -747,6 +1126,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7616072896351312100
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042290352393681499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4232317513626345747, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &7616072896351312098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042290352393681499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7616072896351312099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042290352393681499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4656749317058439503
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,6 +1179,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5470686591334740981}
+  - component: {fileID: 4558978978871357307}
+  - component: {fileID: 8812858501047081307}
   m_Layer: 0
   m_Name: Knee_Center_Model
   m_TagString: Untagged
@@ -795,6 +1220,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4558978978871357307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656749317058439503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fce2e968d396547a3dc201fc6452cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8812858501047081307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656749317058439503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e959a0b051cce40aa49cfa2b6d775e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5068763266479566101
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,8 +1255,11 @@ GameObject:
   - component: {fileID: 1096485322995531995}
   - component: {fileID: 5100400945565944439}
   - component: {fileID: 1333001005369430638}
+  - component: {fileID: 6818414434663129700}
+  - component: {fileID: 6818414434663129698}
+  - component: {fileID: 6818414434663129699}
   m_Layer: 0
-  m_Name: WiezadloPoboczneStrzalkowe
+  m_Name: "Wi\u0119zad\u0142o poboczne strza\u0142kowe"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,7 +1308,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -878,6 +1330,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6818414434663129700
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068763266479566101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1062812029900681086, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &6818414434663129698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068763266479566101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &6818414434663129699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068763266479566101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6211555429726479001
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +1385,9 @@ GameObject:
   - component: {fileID: 1837716608704832426}
   - component: {fileID: 8816235479642156800}
   - component: {fileID: 6859714300616484478}
+  - component: {fileID: 5199478195233358099}
+  - component: {fileID: 5199478195233358097}
+  - component: {fileID: 5199478195233358098}
   m_Layer: 0
   m_Name: Rzepka
   m_TagString: Untagged
@@ -961,6 +1460,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5199478195233358099
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211555429726479001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7677994726181050252, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &5199478195233358097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211555429726479001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &5199478195233358098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211555429726479001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6375462113169046368
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,8 +1515,11 @@ GameObject:
   - component: {fileID: 5595091977956930582}
   - component: {fileID: 7574828186575812947}
   - component: {fileID: 3104225853579001162}
+  - component: {fileID: 8844168814045241331}
+  - component: {fileID: 8844168814045241329}
+  - component: {fileID: 8844168814045241330}
   m_Layer: 0
-  m_Name: object_1.007
+  m_Name: "Wi\u0119zad\u0142o 3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1022,7 +1568,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1044,6 +1590,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8844168814045241331
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6375462113169046368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1503413358824272398, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &8844168814045241329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6375462113169046368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &8844168814045241330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6375462113169046368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6422796675087576829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,8 +1645,11 @@ GameObject:
   - component: {fileID: 49524612690856231}
   - component: {fileID: 4257437330741936}
   - component: {fileID: 28550184080082843}
+  - component: {fileID: 5894594432223962404}
+  - component: {fileID: 5894594432223962402}
+  - component: {fileID: 5894594432223962403}
   m_Layer: 0
-  m_Name: Piszczel_stawowy
+  m_Name: Staw piszczelowy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1105,7 +1698,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1127,6 +1720,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5894594432223962404
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422796675087576829}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 655323077711126386, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &5894594432223962402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422796675087576829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &5894594432223962403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422796675087576829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8059994933191994594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,8 +1775,11 @@ GameObject:
   - component: {fileID: 1835066638026470940}
   - component: {fileID: 5901675997751037635}
   - component: {fileID: 4092990496361340297}
+  - component: {fileID: 7594645060382310198}
+  - component: {fileID: 7594645060382310196}
+  - component: {fileID: 7594645060382310197}
   m_Layer: 0
-  m_Name: object_1.004
+  m_Name: "Wi\u0119zad\u0142o 2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1188,7 +1828,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1210,6 +1850,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7594645060382310198
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059994933191994594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6582673242143622660, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &7594645060382310196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059994933191994594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7594645060382310197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059994933191994594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8340560928995408782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,8 +1905,11 @@ GameObject:
   - component: {fileID: 4183907126966380507}
   - component: {fileID: 726345021369458911}
   - component: {fileID: 4161075280309892435}
+  - component: {fileID: 7762122214658770276}
+  - component: {fileID: 7762122214658770274}
+  - component: {fileID: 7762122214658770275}
   m_Layer: 0
-  m_Name: "K\u0142ykie\u0107Przy\u015Brodkowy"
+  m_Name: "K\u0142ykie\u0107 Przy\u015Brodkowy"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1271,7 +1958,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1293,6 +1980,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7762122214658770276
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8340560928995408782}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1500400613320019292, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &7762122214658770274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8340560928995408782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7762122214658770275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8340560928995408782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8459960536308167698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,8 +2035,11 @@ GameObject:
   - component: {fileID: 6876257056334092609}
   - component: {fileID: 6702690563086584444}
   - component: {fileID: 9202318412683934081}
+  - component: {fileID: 3322974334504803134}
+  - component: {fileID: 3322974334504803132}
+  - component: {fileID: 3322974334504803133}
   m_Layer: 0
-  m_Name: WiezadloPoboczneStrzalkowe.001
+  m_Name: "Wi\u0119zad\u0142o poboczne strza\u0142kowe 2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1354,7 +2088,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1129696623207493675, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+  - {fileID: 2100000, guid: 0a4b7c6faec7abe4e9cc99da94cf9bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1376,6 +2110,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3322974334504803134
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459960536308167698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2603252386125011975, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &3322974334504803132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459960536308167698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &3322974334504803133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459960536308167698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8985891216222124526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,8 +2165,11 @@ GameObject:
   - component: {fileID: 2755342495647544153}
   - component: {fileID: 7802345686068135797}
   - component: {fileID: 180473040258868984}
+  - component: {fileID: 8616601308301218278}
+  - component: {fileID: 8616601308301218276}
+  - component: {fileID: 8616601308301218277}
   m_Layer: 0
-  m_Name: Rzepka_stawowa
+  m_Name: Staw rzepkowy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1459,3 +2240,47 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8616601308301218278
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985891216222124526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1338773146748970289, guid: 7e2363a0603a91e4dbab56affe2d596d, type: 3}
+--- !u!114 &8616601308301218276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985891216222124526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0.9300573, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &8616601308301218277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985891216222124526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef17f735120480e99b7c66f10f9dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

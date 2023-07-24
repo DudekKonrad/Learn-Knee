@@ -6,6 +6,8 @@
         public bool IsViewed { get; set; }
         public void OnSelect();
         public void OnDeselect();
-        public void OnClick();
+        public void OnChosen();
+        public void Disappear();
+        public void Appear();
     }
 }
