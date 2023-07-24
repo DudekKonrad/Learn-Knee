@@ -13,6 +13,6 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Quiz.unity
-    guid: 568611bb785283540adf4b6222e5160d
+    guid: 6fcad79a28fddff439e8983e14a63375
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0aaf345bf5ad37141b9fb4793b198017, type: 2}
