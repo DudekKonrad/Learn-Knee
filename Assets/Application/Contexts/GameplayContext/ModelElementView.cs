@@ -55,6 +55,8 @@ namespace Application.GameplayContext
             _renderer.material.DOColor(new Color(_renderer.material.color.r, _renderer.material.color.g, _renderer.material.color.b, 1f), 0.3f);
         }
 
+        public GameObject GameObject => gameObject;
+
         public void OnSelect()
         {
             IsSelected = true;
@@ -71,7 +73,7 @@ namespace Application.GameplayContext
             {
                 _renderer.material.DOColor(_gameConfig.ChooseColor, _gameConfig.ChooseColorDuration);
                 IsViewed = true;
-                Debug.Log($"Will fire element chosen signal");
+                Debug.Log($"Will fire element chosen signal: {name}");
                 _signalBus.Fire(new LearnProjectSignals.ElementChosenSignal(this));
             }
             else

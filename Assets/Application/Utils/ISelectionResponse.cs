@@ -1,4 +1,6 @@
-﻿namespace Application.Utils
+﻿using UnityEngine;
+
+namespace Application.Utils
 {
     public interface ISelectionResponse
     {
@@ -9,5 +11,6 @@
         public void OnChosen();
         public void Disappear();
         public void Appear();
+        public GameObject GameObject { get; }
     }
 }

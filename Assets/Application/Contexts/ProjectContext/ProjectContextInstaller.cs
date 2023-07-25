@@ -14,6 +14,9 @@ namespace Application.ProjectContext
             SignalBusInstaller.Install(Container);
             Container.DeclareSignal<LearnProjectSignals.ElementChosenSignal>();
             Container.DeclareSignal<LearnProjectSignals.UINavigationSignal>();
+            Container.DeclareSignal<LearnProjectSignals.AnswerGivenSignal>();
+            Container.DeclareSignal<LearnProjectSignals.TimeIsUpSignal>();
+            Container.DeclareSignal<LearnProjectSignals.GameFinished>();
         }
     }
 }
