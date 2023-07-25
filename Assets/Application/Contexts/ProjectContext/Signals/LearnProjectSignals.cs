@@ -13,5 +13,15 @@ namespace Application.ProjectContext.Signals
 
             public readonly ModelElementView Element;
         }
+        
+        public class UINavigationSignal
+        {
+            public UINavigationSignal(string trigger)
+            {
+                Trigger = trigger;
+            }
+
+            public string Trigger { get; }
+        }
     }
 }

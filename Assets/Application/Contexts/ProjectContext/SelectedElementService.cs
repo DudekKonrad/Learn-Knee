@@ -1,7 +1,6 @@
 ﻿using Application.GameplayContext;
 using Application.ProjectContext.Signals;
 using JetBrains.Annotations;
-using UnityEngine;
 using Zenject;
 
 namespace Application.ProjectContext
@@ -22,7 +21,6 @@ namespace Application.ProjectContext
         private void OnElementChosenSignal(LearnProjectSignals.ElementChosenSignal signal)
         {
             _currentChosenModelElementView = signal.Element;
-            Debug.Log($"Current chosen element: {_currentChosenModelElementView.gameObject.name}");
         }
     }
 }

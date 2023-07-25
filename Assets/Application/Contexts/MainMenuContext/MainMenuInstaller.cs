@@ -1,3 +1,4 @@
+using Application.GameplayContext.Models;
 using Zenject;
 
 namespace Application.MainMenuContext
@@ -6,7 +7,7 @@ namespace Application.MainMenuContext
     {
         public override void InstallBindings()
         {
-        
+            Container.BindInterfacesAndSelfTo<PlayerInputModel>().AsSingle();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Application.ProjectContext
             Container.BindInstance(_gameConfig);
             SignalBusInstaller.Install(Container);
             Container.DeclareSignal<LearnProjectSignals.ElementChosenSignal>();
+            Container.DeclareSignal<LearnProjectSignals.UINavigationSignal>();
         }
     }
 }
