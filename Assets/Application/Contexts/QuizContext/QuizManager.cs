@@ -47,14 +47,14 @@ namespace Application.QuizContext
             {
                 signal.Button.SetTextColor(Color.green);
                 _correctAnswers++;
-                DOVirtual.DelayedCall(0.4f, NextQuestion);
+                DOVirtual.DelayedCall(2f, NextQuestion);
                 _timeProgressMediator.CanTime = false;
             }
             else
             {
                 signal.Button.SetTextColor(Color.red);
                 _incorrectAnswers++;
-                DOVirtual.DelayedCall(0.4f, NextQuestion);
+                DOVirtual.DelayedCall(2f, NextQuestion);
                 _timeProgressMediator.CanTime = false;
             }
         }
