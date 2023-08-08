@@ -9,7 +9,7 @@ namespace Application.QuizContext.Mediators
     public class AnswerButtonMediator : MonoBehaviour
     {
         [Inject] private readonly SignalBus _signalBus;
-        [SerializeField] private Text _text;
+        private Text _text;
         public Button Button;
         private Color _startingColor;
 
@@ -19,6 +19,7 @@ namespace Application.QuizContext.Mediators
         {
             Button = GetComponent<Button>();
             Button.onClick.AddListener(OnClick);
+            _text = GetComponentInChildren<Text>();
             _startingColor = _text.color;
         }
 

@@ -73,7 +73,6 @@ namespace Application.GameplayContext
             {
                 _renderer.material.DOColor(_gameConfig.ChooseColor, _gameConfig.ChooseColorDuration);
                 IsViewed = true;
-                Debug.Log($"Will fire element chosen signal: {name}");
                 _signalBus.Fire(new LearnProjectSignals.ElementChosenSignal(this));
             }
             else
