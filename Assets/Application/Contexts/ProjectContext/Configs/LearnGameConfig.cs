@@ -2,7 +2,7 @@
 
 namespace Application.ProjectContext.Configs
 {
-    [CreateAssetMenu(fileName = "LearnGameConfig", menuName = "ScriptableObjects/Configs/LearnGameConfig", order = 1)]
+    [CreateAssetMenu(fileName = "LearnGameConfig", menuName = "Configs/LearnGameConfig", order = 1)]
     public class LearnGameConfig : ScriptableObject
     {
         [Header("Element Selection")]

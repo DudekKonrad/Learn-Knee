@@ -1,5 +1,7 @@
 ﻿using Application.GameplayContext;
 using Application.QuizContext.Mediators;
+using Application.Utils.SoundService;
+using JetBrains.Annotations;
 using UnityEngine.UI;
 
 namespace Application.ProjectContext.Signals
@@ -55,6 +57,28 @@ namespace Application.ProjectContext.Signals
 
             public int CorrectAnswers => _correctAnswers;
             public int IncorrectAnswers => _incorrectAnswers;
+        }
+        
+        public class PlaySoundSignal
+        {
+            public PlaySoundSignal(AudioClipModel.UISounds uiSoundsToPass, bool isOneShot = true)
+            {
+                UISoundsToPass = uiSoundsToPass;
+                IsOneShot = isOneShot;
+            }
+
+            public readonly AudioClipModel.UISounds UISoundsToPass;
+            public readonly bool IsOneShot;
+        }
+        
+        public class StopSoundSignal
+        {
+            public StopSoundSignal(AudioClipModel.UISounds uiSoundsToPass)
+            {
+                UISoundsToPass = uiSoundsToPass;
+            }
+
+            public readonly AudioClipModel.UISounds UISoundsToPass;
         }
     }
 }

@@ -1,12 +1,17 @@
+﻿using Application.ProjectContext.Signals;
+using Application.Utils.SoundService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Application.ProjectContext.Mediators
 {
     [RequireComponent(typeof(Button))]
     public class OpenSceneButtonMediator : MonoBehaviour
     {
+        [Inject] private readonly SignalBus _signalBus;
+        
         [SerializeField] private string _sceneName;
     
         private Button _button;
@@ -20,6 +25,7 @@ namespace Application.ProjectContext.Mediators
         private void OnClick()
         {
             SceneManager.LoadScene(_sceneName);
+            _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnChoose));
         }
     }
 }
