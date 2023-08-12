@@ -1473,7 +1473,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 19952488687962379, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
   m_PrefabInstance: {fileID: 1252167447}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1252167454
+--- !u!114 &1252167460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 484364521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf1589567904b141b53becf9b397f8b, type: 3}
+  m_Script: {fileID: 11500000, guid: d0765bda38854b3299d4632977145752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneName: Quiz
@@ -1884,7 +1884,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 19952488687962379, guid: 18f06da54e2f2be4a8fb4e059d112cd0, type: 3}
   m_PrefabInstance: {fileID: 1584694701}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1584694708
+--- !u!114 &1584694714
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1893,7 +1893,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1146024032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf1589567904b141b53becf9b397f8b, type: 3}
+  m_Script: {fileID: 11500000, guid: d0765bda38854b3299d4632977145752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneName: Gameplay

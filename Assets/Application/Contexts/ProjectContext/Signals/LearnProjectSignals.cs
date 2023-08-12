@@ -18,6 +18,16 @@ namespace Application.ProjectContext.Signals
             public readonly ModelElementView Element;
         }
         
+        public class ElementUnChosenSignal
+        {
+            public ElementUnChosenSignal(ModelElementView element)
+            {
+                Element = element;
+            }
+
+            public readonly ModelElementView Element;
+        }
+        
         public class UINavigationSignal
         {
             public UINavigationSignal(string trigger)

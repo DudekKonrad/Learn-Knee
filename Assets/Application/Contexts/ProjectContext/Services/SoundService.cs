@@ -9,14 +9,6 @@ using Object = UnityEngine.Object;
 
 namespace Application.ProjectContext.Services
 {
-    public interface ISoundService
-    {
-        void Play(AudioClip sfxAudioClip, bool isOneShot = true, AudioSource audioSource = null, string id = "",
-            bool loop = true);
-        void Stop();
-        void Mute(bool mute);
-    }
-
     [UsedImplicitly]
     public class SoundService : ISoundService
     {
@@ -44,8 +36,7 @@ namespace Application.ProjectContext.Services
             }
         }
 
-        public void Play(AudioClip sfxAudioClip, bool isOneShot = true, AudioSource targetAudioSource = null,
-            string id = "", bool loop = true)
+        public void Play(AudioClip sfxAudioClip, bool isOneShot = true)
         {
             if (isOneShot) _audioSourceSfx.PlayOneShot(sfxAudioClip);
             else
@@ -87,7 +78,7 @@ namespace Application.ProjectContext.Services
         {
             if (_audioClipsDictionary.TryGetValue(signal.UISoundsToPass, out var audioClip))
             {
-                Debug.Log($"Will play clip for: {signal.UISoundsToPass}");
+                Play(audioClip, signal.IsOneShot);
             }
             else
             {

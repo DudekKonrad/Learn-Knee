@@ -263,7 +263,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 823546b1532154d42ab492694c61e9e0, type: 3}
+    m_Font: {fileID: 12800000, guid: 9fdd0d9dd7a514bed838747f4e303108, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 1
@@ -275,7 +275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Element Name
+  m_Text: 
 --- !u!222 &138218420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2086,13 +2086,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackButton
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8501465319744653670, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
 --- !u!224 &1986014326 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4370665175930721976, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
   m_PrefabInstance: {fileID: 1986014325}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1986014327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4370665175930721977, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
+  m_PrefabInstance: {fileID: 1986014325}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1986014328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986014327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0765bda38854b3299d4632977145752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: MainMenu
 --- !u!1 &2040124234
 GameObject:
   m_ObjectHideFlags: 0

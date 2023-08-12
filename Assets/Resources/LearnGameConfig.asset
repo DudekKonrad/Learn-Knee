@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06c7485e09348dbae48dfed5a76169e, type: 3}
   m_Name: LearnGameConfig
   m_EditorClassIdentifier: 
-  _outlineColor: {r: 0.08627451, g: 1, b: 0, a: 1}
-  _outlineWidth: 10
   _chooseColor: {r: 0.084855914, g: 1, b: 0, a: 0}
   _chooseColorDuration: 0.7
   _rotationSpeed: 0.4
@@ -22,4 +20,4 @@ MonoBehaviour:
   _zoomDuration: 0.5
   _minZoom: 0
   _maxZoom: 1
-  _uiElementsDuration: 1
+  _textFadeDuration: 0.3

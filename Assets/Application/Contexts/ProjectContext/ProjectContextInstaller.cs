@@ -15,8 +15,9 @@ namespace Application.ProjectContext
             Container.BindInstance(_gameConfig);
             BindConfigs();
             SignalBusInstaller.Install(Container);
-            //Container.BindInterfacesAndSelfTo<SoundService>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<SoundService>().AsSingle().NonLazy();
             Container.DeclareSignal<LearnProjectSignals.ElementChosenSignal>();
+            Container.DeclareSignal<LearnProjectSignals.ElementUnChosenSignal>();
             Container.DeclareSignal<LearnProjectSignals.UINavigationSignal>();
             Container.DeclareSignal<LearnProjectSignals.AnswerGivenSignal>();
             Container.DeclareSignal<LearnProjectSignals.TimeIsUpSignal>();

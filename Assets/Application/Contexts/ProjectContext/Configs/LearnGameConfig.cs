@@ -6,8 +6,6 @@ namespace Application.ProjectContext.Configs
     public class LearnGameConfig : ScriptableObject
     {
         [Header("Element Selection")]
-        [SerializeField] private Color _outlineColor;
-        [SerializeField] private float _outlineWidth;
         [SerializeField] private Color _chooseColor;
         [SerializeField] private float _chooseColorDuration;
         [Header("Free Mode")] [SerializeField] private float _rotationSpeed;
@@ -16,9 +14,7 @@ namespace Application.ProjectContext.Configs
         [SerializeField] private float _zoomDuration;
         [SerializeField] private float _minZoom;
         [SerializeField] private float _maxZoom;
-        [SerializeField] private float _uiElementsDuration;
-        public Color OutlineColor => _outlineColor;
-        public float OutlineWidth => _outlineWidth;
+        [SerializeField] private float _textFadeDuration;
         public Color ChooseColor => _chooseColor;
         public float ChooseColorDuration => _chooseColorDuration;
         public float MoveSpeed => _moveSpeed;
@@ -27,7 +23,7 @@ namespace Application.ProjectContext.Configs
         public float ZoomDuration => _zoomDuration;
         public float MinZoom => _minZoom;
         public float MaxZoom => _maxZoom;
-        public float UiElementsDuration => _uiElementsDuration;
+        public float TextFadeDuration => _textFadeDuration;
 
     }
 }
