@@ -78,7 +78,6 @@ namespace Application.QuizContext
             _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();
             _currentElement.OnChosen();
             _questionsCounter.text = $"{_currentElementIndex}/{_totalCount}";
-            _timeProgressMediator.Time = _timeProgressMediator._startingTime;
             _timeProgressMediator.CanTime = true;
             foreach (var button in _answerButtons)
             {

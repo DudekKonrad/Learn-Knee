@@ -24,6 +24,11 @@ namespace Application.ProjectContext.Configs
         public float MinZoom => _minZoom;
         public float MaxZoom => _maxZoom;
         public float TextFadeDuration => _textFadeDuration;
+        
+        [Header("Quiz Mode")] [SerializeField] QuizModeConfig _quizModeConfig;
+
+        public QuizModeConfig QuizModeConfig => _quizModeConfig;
+
 
     }
 }

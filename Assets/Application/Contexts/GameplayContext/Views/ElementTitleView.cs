@@ -1,3 +1,4 @@
+using System;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
 using DG.Tweening;
@@ -20,6 +21,11 @@ namespace Application.GameplayContext.Views
             _signalBus.Subscribe<LearnProjectSignals.ElementChosenSignal>(OnElementChosenSignal);
             _signalBus.Subscribe<LearnProjectSignals.ElementUnChosenSignal>(OnElementUnChosenSignal);
             _text = GetComponent<Text>();
+        }
+
+        private void Start()
+        {
+            _text.text = $"";
         }
 
         private void OnElementUnChosenSignal(LearnProjectSignals.ElementUnChosenSignal signal)

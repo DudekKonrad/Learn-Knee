@@ -13,9 +13,10 @@ namespace Application.GameplayContext.Mediator
         {
             _toggle = GetComponent<Toggle>();
             _selection = GameObject.Find($"{gameObject.name}").GetComponent<ISelectionResponse>();
+            _toggle.onValueChanged.AddListener(ChooseElement);
         }
 
-        public void ChooseElement(bool value)
+        private void ChooseElement(bool value)
         {
             if (!_toggle.isOn) _selection.Appear();
             else _selection.Disappear();
