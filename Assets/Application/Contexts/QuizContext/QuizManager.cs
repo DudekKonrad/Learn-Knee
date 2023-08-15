@@ -18,7 +18,7 @@ namespace Application.QuizContext
         [SerializeField] private SelectionManager _selectionManager;
         [SerializeField] private List<AnswerButtonMediator> _answerButtons;
         [SerializeField] private Text _questionsCounter;
-        [SerializeField] private TimeProgressMediator _timeProgressMediator;
+
         private List<Transform> _list;
         private ISelectionResponse _currentElement;
         private int _currentElementIndex = -1;
@@ -45,17 +45,17 @@ namespace Application.QuizContext
             }
             if (_currentElement.GameObject.name == signal.Answer)
             {
-                signal.Button.SetTextColor(Color.green);
+                Debug.Log($"Setting green");
+                signal.Button.GoodAnswer();
                 _correctAnswers++;
                 DOVirtual.DelayedCall(2f, NextQuestion);
-                _timeProgressMediator.CanTime = false;
             }
             else
             {
-                signal.Button.SetTextColor(Color.red);
+                Debug.Log($"Setting red");
+                signal.Button.BadAnswer();
                 _incorrectAnswers++;
                 DOVirtual.DelayedCall(2f, NextQuestion);
-                _timeProgressMediator.CanTime = false;
             }
         }
 
@@ -78,13 +78,12 @@ namespace Application.QuizContext
             _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();
             _currentElement.OnChosen();
             _questionsCounter.text = $"{_currentElementIndex}/{_totalCount}";
-            _timeProgressMediator.CanTime = true;
             foreach (var button in _answerButtons)
             {
                 button.Button.enabled = true;
             }
         
-            var randomButtonIndex = Random.Range(0, 4);
+            var randomButtonIndex = Random.Range(0, _answerButtons.Count);
             for (var i = 0; i < _answerButtons.Count; i++)
             {
                 if (i == randomButtonIndex)
@@ -94,8 +93,8 @@ namespace Application.QuizContext
                 }
                 else
                 {
-                    var col = _list.Where(_ => _.name != _currentElement.GameObject.name).ToList();
-                    _answerButtons[i].SetText(col.GetRandomElement().name);
+                    var otherElements = _list.Where(_ => _.name != _currentElement.GameObject.name).ToList();
+                    _answerButtons[i].SetText(otherElements.GetRandomElement().name);
                     _answerButtons[i].SetTextDefaultColor();
                 }
             }

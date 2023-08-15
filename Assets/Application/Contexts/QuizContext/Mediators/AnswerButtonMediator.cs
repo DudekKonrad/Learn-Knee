@@ -9,17 +9,15 @@ namespace Application.QuizContext.Mediators
     public class AnswerButtonMediator : MonoBehaviour
     {
         [Inject] private readonly SignalBus _signalBus;
-        private Text _text;
+        [SerializeField] private Text _text;
         public Button Button;
         private Color _startingColor;
-
-        public Text Text => _text;
-
+        private Animator _animator;
+        
         private void Start()
         {
-            Button = GetComponent<Button>();
+            _animator = GetComponent<Animator>();
             Button.onClick.AddListener(OnClick);
-            _text = GetComponentInChildren<Text>();
             _startingColor = _text.color;
         }
 
@@ -32,9 +30,14 @@ namespace Application.QuizContext.Mediators
         {
             _text.text = $"{text}";
         }
-        public void SetTextColor(Color color)
+        public void GoodAnswer()
         {
-            _text.color = color;
+            _animator.SetTrigger("GoodAnswer");
+        }
+
+        public void BadAnswer()
+        {
+            _animator.SetTrigger("BadAnswer");
         }
         public void SetTextDefaultColor()
         {

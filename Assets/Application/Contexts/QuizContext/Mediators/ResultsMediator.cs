@@ -46,11 +46,6 @@ namespace Application.QuizContext.Mediators
             _signalBus.Subscribe<LearnProjectSignals.GameFinished>(OnGameFinishedSignal);
         }
 
-        private void Start()
-        {
-            throw new NotImplementedException();
-        }
-
         private void OnGameFinishedSignal(LearnProjectSignals.GameFinished signal)
         {
             transform.DOLocalMoveY(0, 0.2f).OnComplete(() =>
