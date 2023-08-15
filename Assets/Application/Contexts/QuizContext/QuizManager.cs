@@ -45,14 +45,12 @@ namespace Application.QuizContext
             }
             if (_currentElement.GameObject.name == signal.Answer)
             {
-                Debug.Log($"Setting green");
                 signal.Button.GoodAnswer();
                 _correctAnswers++;
                 DOVirtual.DelayedCall(2f, NextQuestion);
             }
             else
             {
-                Debug.Log($"Setting red");
                 signal.Button.BadAnswer();
                 _incorrectAnswers++;
                 DOVirtual.DelayedCall(2f, NextQuestion);

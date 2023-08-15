@@ -1,4 +1,6 @@
-﻿using Application.ProjectContext.Configs;
+﻿using Application.ProjectContext.Achievements;
+using Application.ProjectContext.Achievements.Services;
+using Application.ProjectContext.Configs;
 using Application.ProjectContext.Configs.Models;
 using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
@@ -16,14 +18,8 @@ namespace Application.ProjectContext
             BindConfigs();
             SignalBusInstaller.Install(Container);
             Container.BindInterfacesAndSelfTo<SoundService>().AsSingle().NonLazy();
-            Container.DeclareSignal<LearnProjectSignals.ElementChosenSignal>();
-            Container.DeclareSignal<LearnProjectSignals.ElementUnChosenSignal>();
-            Container.DeclareSignal<LearnProjectSignals.UINavigationSignal>();
-            Container.DeclareSignal<LearnProjectSignals.AnswerGivenSignal>();
-            Container.DeclareSignal<LearnProjectSignals.TimeIsUpSignal>();
-            Container.DeclareSignal<LearnProjectSignals.GameFinished>();
-            Container.DeclareSignal<LearnProjectSignals.PlaySoundSignal>();
-            Container.DeclareSignal<LearnProjectSignals.StopSoundSignal>();
+            Container.BindInterfacesAndSelfTo<AchievementsService>().AsSingle().NonLazy();
+            DeclareSignals();
         }
         
         private void BindConfigs()
@@ -34,6 +30,18 @@ namespace Application.ProjectContext
             {
                 Container.BindInterfacesAndSelfTo(config.GetType()).FromInstance(config).AsSingle().NonLazy();
             }
+        }
+
+        private void DeclareSignals()
+        {
+            Container.DeclareSignal<LearnProjectSignals.ElementChosenSignal>();
+            Container.DeclareSignal<LearnProjectSignals.ElementUnChosenSignal>();
+            Container.DeclareSignal<LearnProjectSignals.UINavigationSignal>();
+            Container.DeclareSignal<LearnProjectSignals.AnswerGivenSignal>();
+            Container.DeclareSignal<LearnProjectSignals.TimeIsUpSignal>();
+            Container.DeclareSignal<LearnProjectSignals.GameFinished>();
+            Container.DeclareSignal<LearnProjectSignals.PlaySoundSignal>();
+            Container.DeclareSignal<LearnProjectSignals.StopSoundSignal>();
         }
     }
 }

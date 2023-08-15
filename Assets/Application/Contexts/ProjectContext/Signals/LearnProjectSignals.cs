@@ -1,4 +1,6 @@
-﻿using Application.GameplayContext;
+﻿using System;
+using Application.GameplayContext;
+using Application.ProjectContext.Achievements;
 using Application.QuizContext.Mediators;
 using Application.Utils.SoundService;
 using JetBrains.Annotations;
@@ -57,8 +59,8 @@ namespace Application.ProjectContext.Signals
 
         public class GameFinished
         {
-            private int _correctAnswers;
-            private int _incorrectAnswers;
+            private readonly int _correctAnswers;
+            private readonly int _incorrectAnswers;
             public GameFinished(int correctAnswers, int incorrectAnswers)
             {
                 _correctAnswers = correctAnswers;
@@ -89,6 +91,17 @@ namespace Application.ProjectContext.Signals
             }
 
             public readonly AudioClipModel.UISounds UISoundsToPass;
+        }
+        public class AchievementUnlockedSignal
+        {
+            public readonly Enum AchievementType;
+            public readonly int AchievementTypeId;
+
+            public AchievementUnlockedSignal(Enum achievementType)
+            {
+                AchievementType = achievementType;
+                AchievementTypeId = Convert.ToInt32(achievementType);
+            }
         }
     }
 }

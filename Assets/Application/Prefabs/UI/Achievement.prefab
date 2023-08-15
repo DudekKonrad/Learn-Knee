@@ -30,9 +30,8 @@ RectTransform:
   m_Children:
   - {fileID: 4611693026827415411}
   - {fileID: 5511284487347370445}
-  - {fileID: 4528193592535476480}
   m_Father: {fileID: 3119868980939728124}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -110,15 +109,15 @@ MonoBehaviour:
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 0
+    m_MinSize: 20
     m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Osi\u0105gni\u0119cie"
+  m_Text: Title
 --- !u!1 &1900810696117629007
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,12 +337,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8890072231954500891}
+  m_Father: {fileID: 3119868980939728124}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3065861431634748877
@@ -398,6 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2555562997413943860}
   - component: {fileID: 2555562997413943866}
+  - component: {fileID: 7078016544835507707}
   m_Layer: 5
   m_Name: Achievement
   m_TagString: Untagged
@@ -434,6 +434,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2555562997413943861}
   m_CullTransparentMesh: 1
+--- !u!114 &7078016544835507707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555562997413943861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a19a2d37104187b843177ce49ab8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _achievementIcon: {fileID: 4157416868329422846}
+  _progress: {fileID: 5141037124039220418}
+  _progressLabel: {fileID: 9149904306076259658}
+  _fillView: {fileID: 616870140427127753}
+  _title: {fileID: 3189095206739172387}
 --- !u!1 &7266711223559765823
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 101, y: 0}
+  m_AnchoredPosition: {x: 20, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &2035090124366689616
@@ -543,6 +560,7 @@ RectTransform:
   m_Children:
   - {fileID: 447667410101387572}
   - {fileID: 7728866873643398113}
+  - {fileID: 4528193592535476480}
   - {fileID: 8890072231954500891}
   m_Father: {fileID: 2555562997413943860}
   m_RootOrder: 0
