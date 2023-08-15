@@ -1,4 +1,5 @@
 using Application.ProjectContext.Signals;
+using Application.Utils.SoundService;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -23,6 +24,7 @@ namespace Application.QuizContext.Mediators
 
         private void OnClick()
         {
+            _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnChoose));
             _signalBus.Fire(new LearnProjectSignals.AnswerGivenSignal(_text.text, this));
         }
 
