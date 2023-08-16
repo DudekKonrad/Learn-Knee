@@ -1,5 +1,4 @@
-﻿using Application.ProjectContext.Achievements;
-using Application.ProjectContext.Achievements.Services;
+﻿using Application.ProjectContext.Achievements.Services;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Configs.Models;
 using Application.ProjectContext.Services;
@@ -12,6 +11,7 @@ namespace Application.ProjectContext
     public class ProjectContextInstaller : MonoInstaller<ProjectContextInstaller>
     {
         [SerializeField] private LearnGameConfig _gameConfig;
+
         public override void InstallBindings()
         {
             Container.BindInstance(_gameConfig);
@@ -42,6 +42,8 @@ namespace Application.ProjectContext
             Container.DeclareSignal<LearnProjectSignals.GameFinished>();
             Container.DeclareSignal<LearnProjectSignals.PlaySoundSignal>();
             Container.DeclareSignal<LearnProjectSignals.StopSoundSignal>();
+            Container.DeclareSignal<LearnProjectSignals.ShowLoadingScreenSignal>();
+            Container.DeclareSignal<LearnProjectSignals.HideLoadingScreenSignal>();
         }
     }
 }

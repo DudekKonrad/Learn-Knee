@@ -103,5 +103,12 @@ namespace Application.ProjectContext.Signals
                 AchievementTypeId = Convert.ToInt32(achievementType);
             }
         }
+        
+        public readonly struct ShowLoadingScreenSignal
+        {
+        }
+        public readonly struct HideLoadingScreenSignal
+        {
+        }
     }
 }
