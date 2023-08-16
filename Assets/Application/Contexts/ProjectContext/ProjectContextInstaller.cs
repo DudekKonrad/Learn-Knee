@@ -1,6 +1,7 @@
 ﻿using Application.ProjectContext.Achievements.Services;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Configs.Models;
+using Application.ProjectContext.Models;
 using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace Application.ProjectContext
             SignalBusInstaller.Install(Container);
             Container.BindInterfacesAndSelfTo<SoundService>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<AchievementsService>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<DescriptionsModel>().AsSingle().NonLazy();
             DeclareSignals();
         }
         

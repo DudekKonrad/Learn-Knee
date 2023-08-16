@@ -31,6 +31,11 @@ namespace Application.ProjectContext.Configs
         public QuizModeConfig QuizModeConfig => _quizModeConfig;
         public int NumberOfClosestElementsToShow => _numberOfClosestElementsToShow;
 
+        [Header("Localization")] [SerializeField]
+        private TextAsset _translations;
+
+        public TextAsset Translations => _translations;
+
 
     }
 }

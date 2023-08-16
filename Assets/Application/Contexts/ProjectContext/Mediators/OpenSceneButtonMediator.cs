@@ -1,9 +1,6 @@
 ﻿using Application.ProjectContext.Signals;
 using Application.Utils.SoundService;
-using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
@@ -26,17 +23,11 @@ namespace Application.ProjectContext.Mediators
             _button.onClick.AddListener(OnClick);
         }
 
-        private async void OnClick()
+        private void OnClick()
         {
             _signalBus.Fire(new LearnProjectSignals.ShowLoadingScreenSignal());
-            var asyncOp = _sceneLoader.LoadSceneAsync(_sceneName, LoadSceneMode.Single);
-            asyncOp.allowSceneActivation = false;
-            await UniTask.WhenAll(
-                UniTask.WaitUntil(() => asyncOp.progress > 0.8f), UniTask.Delay(600));
-            asyncOp.allowSceneActivation = true;
-            await UniTask.WaitUntil(() => asyncOp.isDone);
+            _sceneLoader.LoadScene(_sceneName);
             _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnChoose));
-            DOVirtual.DelayedCall(2f, () => SceneManager.LoadScene(_sceneName));
         }
     }
 }

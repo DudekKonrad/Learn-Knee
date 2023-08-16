@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 7447194440628376178}
   - component: {fileID: 7447194440628376177}
   m_Layer: 0
-  m_Name: "Wi\u0119zad\u0142o 1"
+  m_Name: "Wi\u0119zad\u0142o \u0142\u0105kotkowo-udowe tylne"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1296,7 +1296,7 @@ GameObject:
   - component: {fileID: 8844168814045241331}
   - component: {fileID: 8844168814045241330}
   m_Layer: 0
-  m_Name: "Wi\u0119zad\u0142o 3"
+  m_Name: "Wi\u0119zad\u0142o krzy\u017Cowe przednie"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
