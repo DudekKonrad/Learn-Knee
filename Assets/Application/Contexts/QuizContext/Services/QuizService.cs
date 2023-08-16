@@ -4,6 +4,7 @@ using Application.GameplayContext;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Mediators;
+using Application.QuizContext.Models;
 using Application.Utils;
 using DG.Tweening;
 using UnityEngine;
@@ -11,12 +12,13 @@ using UnityEngine.UI;
 using Zenject;
 using Random = UnityEngine.Random;
 
-namespace Application.QuizContext
+namespace Application.QuizContext.Services
 {
-    public class QuizManager : MonoBehaviour
+    public class QuizService : MonoBehaviour
     {
         [Inject] private readonly SignalBus _signalBus;
         [Inject] private readonly LearnGameConfig _gameConfig;
+        [Inject] private readonly QuizPlayerModel _player;
         
         [SerializeField] private SelectionManager _selectionManager;
         [SerializeField] private List<AnswerButtonMediator> _answerButtons;
@@ -26,18 +28,11 @@ namespace Application.QuizContext
         private ISelectionResponse _currentElement;
         private int _currentElementIndex = -1;
         private int _totalCount = 1;
-        private int _correctAnswers, _incorrectAnswers;
 
         [Inject]
         private void Construct()
         {
             _signalBus.Subscribe<LearnProjectSignals.AnswerGivenSignal>(OnAnswerGivenSignal);
-            _signalBus.Subscribe<LearnProjectSignals.TimeIsUpSignal>(OnTimeIsUpSignal);
-        }
-
-        private void OnTimeIsUpSignal(LearnProjectSignals.TimeIsUpSignal signal)
-        {
-            NextQuestion();
         }
 
         private void OnAnswerGivenSignal(LearnProjectSignals.AnswerGivenSignal signal)
@@ -49,14 +44,14 @@ namespace Application.QuizContext
             if (_currentElement.GameObject.name == signal.Answer)
             {
                 signal.Button.GoodAnswer();
-                _correctAnswers++;
-                DOVirtual.DelayedCall(2f, NextQuestion);
+                _player.CorrectAnswersCount++;
+                DOVirtual.DelayedCall(_gameConfig.PauseTime, NextQuestion);
             }
             else
             {
                 signal.Button.BadAnswer();
-                _incorrectAnswers++;
-                DOVirtual.DelayedCall(2f, NextQuestion);
+                _player.IncorrectAnswersCount++;
+                DOVirtual.DelayedCall(_gameConfig.PauseTime, NextQuestion);
             }
         }
 
@@ -73,7 +68,8 @@ namespace Application.QuizContext
             _currentElementIndex++;
             if (_currentElementIndex == _selectionManager.LearnModelElements.Count)
             {
-                _signalBus.Fire(new LearnProjectSignals.GameFinished(_correctAnswers, _incorrectAnswers));
+                _player.SetGameFinished(true);
+                _signalBus.Fire(new LearnProjectSignals.GameFinished());
                 return;
             }
             _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();

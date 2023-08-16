@@ -27,9 +27,11 @@ namespace Application.ProjectContext.Configs
         
         [Header("Quiz Mode")] [SerializeField] QuizModeConfig _quizModeConfig;
         [SerializeField] private int _numberOfClosestElementsToShow;
+        [SerializeField] private float _pauseTime;
 
         public QuizModeConfig QuizModeConfig => _quizModeConfig;
         public int NumberOfClosestElementsToShow => _numberOfClosestElementsToShow;
+        public float PauseTime => _pauseTime;
 
         [Header("Localization")] [SerializeField]
         private TextAsset _translations;

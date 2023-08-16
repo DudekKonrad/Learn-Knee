@@ -40,7 +40,6 @@ namespace Application.ProjectContext
             Container.DeclareSignal<LearnProjectSignals.ElementUnChosenSignal>();
             Container.DeclareSignal<LearnProjectSignals.UINavigationSignal>();
             Container.DeclareSignal<LearnProjectSignals.AnswerGivenSignal>();
-            Container.DeclareSignal<LearnProjectSignals.TimeIsUpSignal>();
             Container.DeclareSignal<LearnProjectSignals.GameFinished>();
             Container.DeclareSignal<LearnProjectSignals.PlaySoundSignal>();
             Container.DeclareSignal<LearnProjectSignals.StopSoundSignal>();

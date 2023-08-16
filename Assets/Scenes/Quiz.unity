@@ -184,7 +184,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _correctAnswersText: {fileID: 321276957}
   _incorrectAnswersText: {fileID: 721147874}
-  _remainingTimeText: {fileID: 0}
+  _remainingTimeText: {fileID: 240651518}
+--- !u!1 &171952890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4370665175930721977, guid: d0329f7d2e9d3ff4c8a0abd462dd43da, type: 3}
+  m_PrefabInstance: {fileID: 763263886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &176980103
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +201,7 @@ GameObject:
   - component: {fileID: 176980105}
   - component: {fileID: 176980104}
   - component: {fileID: 176980106}
+  - component: {fileID: 176980107}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -218,6 +224,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 176980106}
+  - {fileID: 176980107}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -260,6 +267,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df019d0bc4de53459545a3ee741aae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &176980107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176980103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e41904da017514c9e75d516027c3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &219228287
@@ -374,8 +393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: 0}
-  m_SizeDelta: {x: 209.67993, y: 100}
+  m_AnchoredPosition: {x: -220, y: 0}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &240651518
 MonoBehaviour:
@@ -410,7 +429,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 00:00
 --- !u!222 &240651519
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1221,7 +1240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370665175930721977, guid: d0329f7d2e9d3ff4c8a0abd462dd43da, type: 3}
       propertyPath: m_Name
-      value: TemplateButton
+      value: PlayAgainButton
       objectReference: {fileID: 0}
     - target: {fileID: 4370665176441653998, guid: d0329f7d2e9d3ff4c8a0abd462dd43da, type: 3}
       propertyPath: m_Text
@@ -1307,6 +1326,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &763263892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171952890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0765bda38854b3299d4632977145752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: Quiz
 --- !u!1 &817647596
 GameObject:
   m_ObjectHideFlags: 0

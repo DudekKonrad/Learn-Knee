@@ -39,11 +39,6 @@ namespace Application.ProjectContext.Signals
 
             public string Trigger { get; }
         }
-
-        public class TimeIsUpSignal
-        {
-            
-        }
         public class AnswerGivenSignal
         {
             private string _answer;
@@ -59,16 +54,7 @@ namespace Application.ProjectContext.Signals
 
         public class GameFinished
         {
-            private readonly int _correctAnswers;
-            private readonly int _incorrectAnswers;
-            public GameFinished(int correctAnswers, int incorrectAnswers)
-            {
-                _correctAnswers = correctAnswers;
-                _incorrectAnswers = incorrectAnswers;
-            }
-
-            public int CorrectAnswers => _correctAnswers;
-            public int IncorrectAnswers => _incorrectAnswers;
+            
         }
         
         public class PlaySoundSignal

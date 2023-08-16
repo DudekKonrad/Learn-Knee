@@ -1,4 +1,4 @@
-using Application.GameplayContext.Models;
+using Application.QuizContext.Models;
 using Zenject;
 
 namespace Application.QuizContext
@@ -7,7 +7,7 @@ namespace Application.QuizContext
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<PlayerInputModel>().AsSingle();
+            Container.Bind<QuizPlayerModel>().AsSingle();
         }
     }
 }
