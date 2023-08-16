@@ -1,5 +1,6 @@
 ﻿using Application.ProjectContext.Signals;
 using Application.Utils.SoundService;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,7 +25,7 @@ namespace Application.ProjectContext.Mediators
 
         private void OnClick()
         {
-            SceneManager.LoadScene(_sceneName);
+            DOVirtual.DelayedCall(2f, () => SceneManager.LoadScene(_sceneName));
             _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnChoose));
         }
     }

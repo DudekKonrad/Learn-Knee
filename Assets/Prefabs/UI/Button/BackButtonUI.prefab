@@ -45,11 +45,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370665175930721976, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4370665175930721976, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4370665175930721976, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -101,8 +101,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370665175930721977, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
       propertyPath: m_Name
-      value: BackButton
+      value: BackButtonUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4370665175930721978, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a11d716ada219fe4683e6147d610043e, type: 3}
     - target: {fileID: 4370665176441653996, guid: 742e4b14231b8a346bd9f2bca11ac03e, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Application.GameplayContext;
+using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Mediators;
 using Application.Utils;
@@ -15,6 +16,8 @@ namespace Application.QuizContext
     public class QuizManager : MonoBehaviour
     {
         [Inject] private readonly SignalBus _signalBus;
+        [Inject] private readonly LearnGameConfig _gameConfig;
+        
         [SerializeField] private SelectionManager _selectionManager;
         [SerializeField] private List<AnswerButtonMediator> _answerButtons;
         [SerializeField] private Text _questionsCounter;
@@ -59,7 +62,7 @@ namespace Application.QuizContext
 
         private void Start()
         {
-            _list = _selectionManager.LearnModelElements;
+            _list = new List<Transform>(_selectionManager.LearnModelElements);
             _totalCount = _selectionManager.LearnModelElements.Count;
             ListExtensionMethods.Shuffle(_list);
             NextQuestion();
@@ -74,13 +77,15 @@ namespace Application.QuizContext
                 return;
             }
             _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();
+            SetClosestElements(_gameConfig.NumberOfClosestElementsToShow);
             _currentElement.OnChosen();
             _questionsCounter.text = $"{_currentElementIndex}/{_totalCount}";
             foreach (var button in _answerButtons)
             {
                 button.Button.enabled = true;
             }
-        
+
+            var randomElements = new List<Transform>();
             var randomButtonIndex = Random.Range(0, _answerButtons.Count);
             for (var i = 0; i < _answerButtons.Count; i++)
             {
@@ -91,10 +96,31 @@ namespace Application.QuizContext
                 }
                 else
                 {
-                    var otherElements = _list.Where(_ => _.name != _currentElement.GameObject.name).ToList();
+                    var otherElements = _list.Except(randomElements).ToList();
+                    var element = otherElements.GetRandomElement();
+                    randomElements.Add(element);
                     _answerButtons[i].SetText(otherElements.GetRandomElement().name);
                     _answerButtons[i].SetTextDefaultColor();
                 }
+            }
+        }
+
+        private void SetClosestElements(int count)
+        {
+            var closestObjects = _list
+                .OrderBy(obj => Vector3.Distance(obj.transform.position, _currentElement.GameObject.transform.position))
+                .Take(count)
+                .ToArray();
+        
+            foreach (var element in closestObjects)
+            {
+                element.gameObject.SetActive(true);
+            }
+        
+            var remainingObjects = _list.Except(closestObjects).ToArray();
+            foreach (var element in remainingObjects)
+            {
+                element.gameObject.SetActive(false);
             }
         }
     }

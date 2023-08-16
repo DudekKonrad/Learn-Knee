@@ -26,8 +26,10 @@ namespace Application.ProjectContext.Configs
         public float TextFadeDuration => _textFadeDuration;
         
         [Header("Quiz Mode")] [SerializeField] QuizModeConfig _quizModeConfig;
+        [SerializeField] private int _numberOfClosestElementsToShow;
 
         public QuizModeConfig QuizModeConfig => _quizModeConfig;
+        public int NumberOfClosestElementsToShow => _numberOfClosestElementsToShow;
 
 
     }

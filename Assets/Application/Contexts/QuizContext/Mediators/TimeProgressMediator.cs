@@ -15,7 +15,7 @@ namespace Application.QuizContext.Mediators
         [SerializeField] private Image _image;
         [SerializeField] private Text _timeLeftText;
         public float _startingTime, _actualTime;
-        private float _remainingTimePercent => _gameConfig.QuizModeConfig.Duration / _actualTime;
+        private float _remainingTimePercent => _actualTime / _startingTime;
     
         private void Start()
         {
@@ -28,7 +28,7 @@ namespace Application.QuizContext.Mediators
             if (_actualTime > 0)
             {
                 _actualTime -= Time.deltaTime;
-                _image.fillAmount = 1f - _remainingTimePercent;
+                _image.fillAmount = _remainingTimePercent;
                 var timeSpan = TimeSpan.FromSeconds(_actualTime);
                 var timeFormatted = timeSpan.ToString(@"mm\:ss");
                 _timeLeftText.text = timeFormatted;

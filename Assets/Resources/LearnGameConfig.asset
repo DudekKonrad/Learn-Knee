@@ -22,4 +22,5 @@ MonoBehaviour:
   _maxZoom: 1
   _textFadeDuration: 0.3
   _quizModeConfig:
-    _duration: 20
+    _duration: 120
+  _numberOfClosestElementsToShow: 6
