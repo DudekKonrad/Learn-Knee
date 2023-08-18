@@ -17,7 +17,6 @@ namespace Application.ProjectContext.Models
         private void Construct()
         {
             LoadDescriptions();
-            PrintDictionary();
         }
         
         private void LoadDescriptions()
@@ -32,14 +31,6 @@ namespace Application.ProjectContext.Models
                 {
                     _descriptions.Add(data[i], data[i + 1]);
                 }
-            }
-        }
-
-        public void PrintDictionary()
-        {
-            foreach (var des in _descriptions)
-            {
-                Debug.Log($"{des.Key} -> {des.Value}");
             }
         }
     }

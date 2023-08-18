@@ -1,11 +1,13 @@
-﻿using System;
-
-namespace Application.ProjectContext.Achievements
+﻿namespace Application.ProjectContext.Achievements
 {
     public interface IAchievement
     {
         LearnAchievementType Type { get; }
-        string Title { get; }
-        IAchievementProcessor Processor { get; }
+        string TranslationKey { get; }
+        bool IsCompleted { get; }
+        int Threshold { get; }
+        int Progress { get; }
+        float ProgressNormalized { get; }
+        void SetProgress(int progress);
     }
 }

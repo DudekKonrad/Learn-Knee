@@ -95,7 +95,7 @@ namespace Application.QuizContext.Services
                     var otherElements = _list.Except(randomElements).ToList();
                     var element = otherElements.GetRandomElement();
                     randomElements.Add(element);
-                    _answerButtons[i].SetText(otherElements.GetRandomElement().name);
+                    _answerButtons[i].SetText(element.name);
                     _answerButtons[i].SetTextDefaultColor();
                 }
             }

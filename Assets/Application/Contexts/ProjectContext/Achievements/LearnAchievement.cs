@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Application.ProjectContext.Achievements
 {
@@ -13,16 +12,20 @@ namespace Application.ProjectContext.Achievements
     public class LearnAchievement : IAchievement
     {
         [SerializeField] private LearnAchievementType _type;
-        [SerializeField] private string _title;
-        private IAchievementProcessor _achievementProcessor;
-
-        public void SetAchievementProcessor(IAchievementProcessor processor)
-        {
-            _achievementProcessor = processor;
-        }
-
+        [SerializeField] private string _translationKey;
+        [SerializeField] private int _threshold;
+        [SerializeField] private int _progress;
+        
         public LearnAchievementType Type => _type;
-        public string Title => _title;
-        public IAchievementProcessor Processor => _achievementProcessor;
+        public string TranslationKey => _translationKey;
+        public bool IsCompleted => Progress >= Threshold;
+        public int Threshold => _threshold;
+        public int Progress => _progress;
+        public float ProgressNormalized => Mathf.Clamp01((float)Progress/Threshold);
+
+        public void SetProgress(int progress)
+        {
+            _progress = progress;
+        }
     }
 }

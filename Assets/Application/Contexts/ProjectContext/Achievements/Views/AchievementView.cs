@@ -5,33 +5,18 @@ namespace Application.ProjectContext.Achievements.Views
 {
     public class AchievementView : MonoBehaviour
     {
-        [SerializeField] private Image _achievementIcon;
-        //[SerializeField] private Image _achievementPadlock;
         [SerializeField] private Image _progress;
         [SerializeField] private Text _progressLabel;
-        [SerializeField] private GameObject _fillView;
-        [SerializeField] private Text _title;
+        [SerializeField] private LocalizedText _localizedText;
+        [SerializeField] private Image _fillIcon;
 
-        public Image AchievementIcon => _achievementIcon;
-        //public Image AchievementPadlock => _achievementPadlock;
+        public LocalizedText LocalizedText => _localizedText;
 
-        public void SetTitle(string title)
+        public virtual void SetProgress(int progress, int threshold, float progressNormalized, bool isCompleted)
         {
-            _title.text = title;
-        }
-
-        public bool ProgressVisible
-        {
-            set
-            {
-                if (_fillView != null) _fillView.SetActive(value);
-            }
-        }
-
-        public virtual void SetProgress(string label, float progressNormalized)
-        {
-            if (_progressLabel != null) _progressLabel.text = label;
-            if (_progress != null) _progress.fillAmount = progressNormalized;
+            if (_progressLabel != null) _progressLabel.text = $"{progress}/{threshold}";
+            if (_progress != null){ _progress.fillAmount = progressNormalized;}
+            _fillIcon.gameObject.SetActive(isCompleted);
         }
     }
 }

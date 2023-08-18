@@ -19,20 +19,22 @@ public class LocalizedText : MonoBehaviour
     private void Construct()
     {
         _signalBus.Subscribe<LearnProjectSignals.LanguageChangedSignal>(OnLanguageChanged);
-    }
-    
-
-    private void OnLanguageChanged(LearnProjectSignals.LanguageChangedSignal signal)
-    {
-        Debug.Log($"Localized text for {_translationKey}");
-        Debug.Log($"Language changed to: {_translationsService.SelectedLanguage.ToString()} new value = " +
-                  $"{_translationsService.LanguagesDictionary[_translationsService.SelectedLanguage.ToString()][_translationKey]}");
-        UpdateLanguage();
+        _text = GetComponent<Text>();
     }
 
     private void Start()
     {
-        _text = GetComponent<Text>();
+        UpdateLanguage();
+    }
+
+    public void SetTranslationKey(string key)
+    {
+        _translationKey = key;
+        UpdateLanguage();
+    }
+
+    private void OnLanguageChanged(LearnProjectSignals.LanguageChangedSignal signal)
+    {
         UpdateLanguage();
     }
 

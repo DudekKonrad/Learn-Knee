@@ -74,7 +74,6 @@ namespace Application.ProjectContext.Models
                     if (i == 0 && j > 0) LanguagesDictionary.Add(_data[i][j], new Dictionary<string, string>());
                     else if (j > 0)
                     {
-                        Debug.Log($"For language: {_data[0][j]} adding: {_data[i][0]} --> {_data[i][j]}");
                         LanguagesDictionary[_data[0][j]].Add(_data[i][0], _data[i][j]);
                     }
                 }

@@ -7,7 +7,6 @@ namespace Application.ProjectContext.Configs.Models
     public class LearnAchievementsConfig : AppConfigModel, IAchievementsConfig
     {
         [SerializeField] private LearnAchievement[] _achievementsArray = { };
-        public LearnAchievement[] AchievementsArray => _achievementsArray;
         public IAchievement[] Achievements => _achievementsArray;
     }
 }

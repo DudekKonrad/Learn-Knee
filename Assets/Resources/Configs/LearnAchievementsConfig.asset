@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementsArray:
   - _type: 0
-    _title: "Odpowiedz na 100 pyta\u0144"
+    _translationKey: ANSWER100QUESTIONS
+    _isCompleted: 0
+    _threshold: 100
+    _progress: 100

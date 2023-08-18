@@ -28,13 +28,12 @@ namespace Application.ProjectContext.Achievements.Mediators
             foreach (var achievement in _achievementsConfig.Achievements)
             {
                 var achievementPrefab = _diContainer.InstantiatePrefab(_achievementPrefab, _content.transform);
-                var achievementProcessor = _achievementService.GetProgress(achievement);
+                var progress = _achievementService.GetProgress(achievement);
                 var achievementView = achievementPrefab.GetComponent<AchievementView>();
-                achievementView.SetTitle(achievement.Title);
-                achievementView.ProgressVisible = achievementProcessor.Item4;
-                achievementView.SetProgress(achievementProcessor.Item2, achievementProcessor.Item3);
+                achievementView.LocalizedText.SetTranslationKey(achievement.TranslationKey);
+                achievementView.SetProgress(progress.Progress, 
+                    progress.Threshold, progress.ProgressNormalized, progress.IsCompleted);
                 _achievementsPrefabs.Add(achievement, achievementPrefab);
-                Debug.Log($"Created Achievement: {achievement.Type}");
             }
         }
 
@@ -44,10 +43,10 @@ namespace Application.ProjectContext.Achievements.Mediators
             {
                 foreach (var achievement in _achievementsPrefabs)
                 {
-                    var achievementProcessor = _achievementService.GetProgress(achievement.Key);
+                    var progress = _achievementService.GetProgress(achievement.Key);
                     var achievementView = achievement.Value.GetComponent<AchievementView>();
-                    achievementView.ProgressVisible = achievementProcessor.Item4;
-                    achievementView.SetProgress(achievementProcessor.Item2, achievementProcessor.Item3);
+                    achievementView.SetProgress(progress.Progress, progress.Threshold, 
+                        progress.ProgressNormalized,progress.IsCompleted);
                 }
             }
         }
