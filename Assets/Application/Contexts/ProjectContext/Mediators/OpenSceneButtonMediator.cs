@@ -26,7 +26,7 @@ namespace Application.ProjectContext.Mediators
         private void OnClick()
         {
             _signalBus.Fire(new LearnProjectSignals.ShowLoadingScreenSignal());
-            _sceneLoader.LoadScene(_sceneName);
+            var asyncOp = _sceneLoader.LoadSceneAsync(_sceneName);
             _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnChoose));
         }
     }

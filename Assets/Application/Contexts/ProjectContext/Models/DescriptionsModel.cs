@@ -22,7 +22,7 @@ namespace Application.ProjectContext.Models
         
         private void LoadDescriptions()
         {
-            var dataLines = _gameConfig.Translations.text.Split('\n');
+            var dataLines = _gameConfig.Descriptions.text.Split('\n');
 
             for (var j = 1; j < dataLines.Length; j++)
             {

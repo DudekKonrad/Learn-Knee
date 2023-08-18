@@ -1,6 +1,7 @@
 ﻿using System;
 using Application.GameplayContext;
 using Application.ProjectContext.Achievements;
+using Application.ProjectContext.Models;
 using Application.QuizContext.Mediators;
 using Application.Utils.SoundService;
 using JetBrains.Annotations;
@@ -95,6 +96,18 @@ namespace Application.ProjectContext.Signals
         }
         public readonly struct HideLoadingScreenSignal
         {
+        }
+        
+        public class LanguageChangedSignal
+        {
+            private readonly Language _language;
+
+            public LanguageChangedSignal(Language language)
+            {
+                _language = language;
+            }
+
+            public Language Language => _language;
         }
     }
 }

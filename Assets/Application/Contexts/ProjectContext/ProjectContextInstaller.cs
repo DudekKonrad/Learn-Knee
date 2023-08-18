@@ -21,6 +21,7 @@ namespace Application.ProjectContext
             Container.BindInterfacesAndSelfTo<SoundService>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<AchievementsService>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<DescriptionsModel>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<TranslationsService>().AsSingle().NonLazy();
             DeclareSignals();
         }
         
@@ -45,6 +46,7 @@ namespace Application.ProjectContext
             Container.DeclareSignal<LearnProjectSignals.StopSoundSignal>();
             Container.DeclareSignal<LearnProjectSignals.ShowLoadingScreenSignal>();
             Container.DeclareSignal<LearnProjectSignals.HideLoadingScreenSignal>();
+            Container.DeclareSignal<LearnProjectSignals.LanguageChangedSignal>();
         }
     }
 }

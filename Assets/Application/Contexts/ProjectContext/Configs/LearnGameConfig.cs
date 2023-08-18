@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Application.ProjectContext.Models;
+using UnityEngine;
 
 namespace Application.ProjectContext.Configs
 {
@@ -33,10 +35,13 @@ namespace Application.ProjectContext.Configs
         public int NumberOfClosestElementsToShow => _numberOfClosestElementsToShow;
         public float PauseTime => _pauseTime;
 
-        [Header("Localization")] [SerializeField]
-        private TextAsset _translations;
+        [Header("Localization")] [SerializeField] private TextAsset _descriptions;
+        [SerializeField] private TextAsset _translations;
+        [SerializeField] private List<Language> _supportedSupportedLanguages;
 
+        public TextAsset Descriptions => _descriptions;
         public TextAsset Translations => _translations;
+        public List<Language> SupportedLanguages => _supportedSupportedLanguages;
 
 
     }
