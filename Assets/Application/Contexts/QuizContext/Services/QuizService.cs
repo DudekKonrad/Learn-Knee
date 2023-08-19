@@ -81,20 +81,21 @@ namespace Application.QuizContext.Services
                 button.Button.enabled = true;
             }
 
-            var randomElements = new List<Transform>();
+            var randomElements = new List<Transform>(_list);
             var randomButtonIndex = Random.Range(0, _answerButtons.Count);
             for (var i = 0; i < _answerButtons.Count; i++)
             {
                 if (i == randomButtonIndex)
                 {
+                    randomElements.Remove(_currentElement.GameObject.transform);
                     _answerButtons[i].SetText(_currentElement.GameObject.name);
                     _answerButtons[i].SetTextDefaultColor();
                 }
                 else
                 {
-                    var otherElements = _list.Except(randomElements).ToList();
-                    var element = otherElements.GetRandomElement();
-                    randomElements.Add(element);
+                    randomElements.Remove(_currentElement.GameObject.transform);
+                    var element = randomElements.GetRandomElement();
+                    randomElements.Remove(element);
                     _answerButtons[i].SetText(element.name);
                     _answerButtons[i].SetTextDefaultColor();
                 }
