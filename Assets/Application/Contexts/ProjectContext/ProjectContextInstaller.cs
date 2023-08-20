@@ -12,7 +12,6 @@ namespace Application.ProjectContext
     public class ProjectContextInstaller : MonoInstaller<ProjectContextInstaller>
     {
         [SerializeField] private LearnGameConfig _gameConfig;
-
         public override void InstallBindings()
         {
             Container.BindInstance(_gameConfig);
@@ -48,7 +47,6 @@ namespace Application.ProjectContext
             Container.DeclareSignal<LearnProjectSignals.ShowLoadingScreenSignal>();
             Container.DeclareSignal<LearnProjectSignals.HideLoadingScreenSignal>();
             Container.DeclareSignal<LearnProjectSignals.LanguageChangedSignal>();
-            Container.DeclareSignal<LearnProjectSignals.ActualizeLeaderboardSignal>();
         }
     }
 }

@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7153395240057833198
 MeshFilter:
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 6617954078839191204}
   - component: {fileID: 6617954078839191203}
   m_Layer: 0
-  m_Name: "\u0141\u0119kotka Boczna"
+  m_Name: "\u0141\u0105kotka boczna"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2149676640697639118
 MeshFilter:
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 5249698999391605475}
   - component: {fileID: 5249698999391605474}
   m_Layer: 0
-  m_Name: "Ko\u015B\u0107 Udowa"
+  m_Name: "Ko\u015B\u0107 udowa"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 8454870939843150491}
   - component: {fileID: 8454870939843150490}
   m_Layer: 0
-  m_Name: "Wi\u0119zad\u0142o krzy\u017Cowe przednie"
+  m_Name: "Wi\u0119zad\u0142o krzy\u017Cowe tylne"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,7 +477,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5635861679866666872
 MeshFilter:
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 8418924863536508065}
   - component: {fileID: 8418924863536508064}
   m_Layer: 0
-  m_Name: "Ko\u015B\u0107 Piszczelowa"
+  m_Name: "Ko\u015B\u0107 piszczelowa"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -699,7 +699,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 6
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1875241938050662463
 MeshFilter:
@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 7672602262525202877}
   - component: {fileID: 7672602262525202876}
   m_Layer: 0
-  m_Name: "Ko\u015B\u0107 Strza\u0142kowa"
+  m_Name: "Ko\u015B\u0107 strza\u0142kowa"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 7616072896351312100}
   - component: {fileID: 7616072896351312099}
   m_Layer: 0
-  m_Name: "\u0141\u0119kotka Przy\u015Brodkowa"
+  m_Name: "\u0141\u0105kotka przy\u015Brodkowa"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -921,7 +921,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8370859184073452
 MeshFilter:
@@ -1031,17 +1031,17 @@ Transform:
   - {fileID: 220794044954461703}
   - {fileID: 4310559750896333568}
   - {fileID: 6718659576504470434}
+  - {fileID: 1837716608704832426}
   - {fileID: 4183907126966380507}
   - {fileID: 8305995906778861358}
   - {fileID: 7465448374305705792}
-  - {fileID: 6926967200712939532}
-  - {fileID: 1835066638026470940}
-  - {fileID: 5595091977956930582}
   - {fileID: 49524612690856231}
-  - {fileID: 1837716608704832426}
   - {fileID: 2755342495647544153}
   - {fileID: 6492029756764847099}
+  - {fileID: 1835066638026470940}
+  - {fileID: 5595091977956930582}
   - {fileID: 6750333560220392175}
+  - {fileID: 6926967200712939532}
   - {fileID: 1096485322995531995}
   - {fileID: 6876257056334092609}
   - {fileID: 1964132359917605285}
@@ -1074,7 +1074,7 @@ GameObject:
   - component: {fileID: 6818414434663129700}
   - component: {fileID: 6818414434663129699}
   m_Layer: 0
-  m_Name: "Wi\u0119zad\u0142o poboczne strza\u0142kowe"
+  m_Name: "Wi\u0119zad\u0142o poboczne piszczelowe"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 5199478195233358099}
   - component: {fileID: 5199478195233358098}
   m_Layer: 0
-  m_Name: Rzepka
+  m_Name: Rzepka kolanowa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1204,7 +1204,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 10
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8816235479642156800
 MeshFilter:
@@ -1315,7 +1315,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7574828186575812947
 MeshFilter:
@@ -1426,7 +1426,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4257437330741936
 MeshFilter:
@@ -1518,7 +1518,7 @@ GameObject:
   - component: {fileID: 7594645060382310198}
   - component: {fileID: 7594645060382310197}
   m_Layer: 0
-  m_Name: "Wi\u0119zad\u0142o 2"
+  m_Name: "Wi\u0119zad\u0142o poprzeczne"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1537,7 +1537,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5901675997751037635
 MeshFilter:
@@ -1629,7 +1629,7 @@ GameObject:
   - component: {fileID: 7762122214658770276}
   - component: {fileID: 7762122214658770275}
   m_Layer: 0
-  m_Name: "K\u0142ykie\u0107 Przy\u015Brodkowy"
+  m_Name: "K\u0142ykie\u0107 przy\u015Brodkowy"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1648,7 +1648,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &726345021369458911
 MeshFilter:
@@ -1740,7 +1740,7 @@ GameObject:
   - component: {fileID: 3322974334504803134}
   - component: {fileID: 3322974334504803133}
   m_Layer: 0
-  m_Name: "Wi\u0119zad\u0142o poboczne strza\u0142kowe 2"
+  m_Name: "Wi\u0119zad\u0142o poboczne strza\u0142kowe"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1870,7 +1870,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5470686591334740981}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7802345686068135797
 MeshFilter:

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Application.GameplayContext;
 using Application.ProjectContext.Configs;
+using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Mediators;
 using Application.QuizContext.Models;
@@ -19,6 +20,7 @@ namespace Application.QuizContext.Services
         [Inject] private readonly SignalBus _signalBus;
         [Inject] private readonly LearnGameConfig _gameConfig;
         [Inject] private readonly QuizPlayerModel _player;
+        [Inject] private readonly LeaderboardService _leaderboardService;
         
         [SerializeField] private SelectionManager _selectionManager;
         [SerializeField] private List<AnswerButtonMediator> _answerButtons;

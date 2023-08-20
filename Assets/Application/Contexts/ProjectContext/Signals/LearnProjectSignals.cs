@@ -106,11 +106,6 @@ namespace Application.ProjectContext.Signals
         public readonly struct HideLoadingScreenSignal
         {
         }
-        
-        public readonly struct ActualizeLeaderboardSignal
-        {
-        }
-        
         public class LanguageChangedSignal
         {
             private readonly Language _language;
