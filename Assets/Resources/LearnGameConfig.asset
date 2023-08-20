@@ -24,7 +24,7 @@ MonoBehaviour:
   _quizModeConfig:
     _duration: 180
   _numberOfClosestElementsToShow: 6
-  _pauseTime: 1
+  _pauseTime: 0.5
   _descriptions: {fileID: 4900000, guid: 53f6ada28623f7944a071311d0973329, type: 3}
   _translations: {fileID: 4900000, guid: d5ee508ff1aac414ab63f7d2ef14d711, type: 3}
   _supportedSupportedLanguages: 0000000001000000

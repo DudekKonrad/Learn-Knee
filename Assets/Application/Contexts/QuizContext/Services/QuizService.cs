@@ -69,7 +69,7 @@ namespace Application.QuizContext.Services
             if (_currentElementIndex == _selectionManager.LearnModelElements.Count)
             {
                 _player.SetGameFinished(true);
-                _signalBus.Fire(new LearnProjectSignals.GameFinished());
+                _signalBus.Fire(new LearnProjectSignals.GameFinished(new GameResult(_player.CorrectAnswersCount, _player.RemainingTime)));
                 return;
             }
             _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();

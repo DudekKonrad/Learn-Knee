@@ -2,7 +2,9 @@
 using Application.GameplayContext;
 using Application.ProjectContext.Achievements;
 using Application.ProjectContext.Models;
+using Application.ProjectContext.Services;
 using Application.QuizContext.Mediators;
+using Application.QuizContext.Services;
 using Application.Utils.SoundService;
 using JetBrains.Annotations;
 using UnityEngine.UI;
@@ -55,7 +57,14 @@ namespace Application.ProjectContext.Signals
 
         public class GameFinished
         {
-            
+            private GameResult _gameResult;
+
+            public GameFinished(GameResult gameResult)
+            {
+                _gameResult = gameResult;
+            }
+
+            public GameResult GameResult => _gameResult;
         }
         
         public class PlaySoundSignal
@@ -95,6 +104,10 @@ namespace Application.ProjectContext.Signals
         {
         }
         public readonly struct HideLoadingScreenSignal
+        {
+        }
+        
+        public readonly struct ActualizeLeaderboardSignal
         {
         }
         
