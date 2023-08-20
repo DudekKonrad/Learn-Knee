@@ -28,3 +28,6 @@ MonoBehaviour:
   _descriptions: {fileID: 4900000, guid: 53f6ada28623f7944a071311d0973329, type: 3}
   _translations: {fileID: 4900000, guid: d5ee508ff1aac414ab63f7d2ef14d711, type: 3}
   _supportedSupportedLanguages: 0000000001000000
+  _goldenColor: {r: 0.7882353, g: 0.6901961, b: 0.20784314, a: 1}
+  _silverColor: {r: 0.84313726, g: 0.84313726, b: 0.84313726, a: 1}
+  _bronzeColor: {r: 0.6784314, g: 0.5411765, b: 0.3372549, a: 1}

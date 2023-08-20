@@ -43,7 +43,5 @@ namespace Application.ProjectContext.Configs
         public TextAsset Descriptions => _descriptions;
         public TextAsset Translations => _translations;
         public List<Language> SupportedLanguages => _supportedSupportedLanguages;
-
-
     }
 }
