@@ -67,7 +67,9 @@ namespace Application.QuizContext.Services
             if (_elementToSelectIndex == _selectionManager.LearnModelElements.Count)
             {
                 _player.SetGameFinished(true);
-                _signalBus.Fire(new LearnProjectSignals.GameFinished(new GameResult(_player.CorrectAnswersCount, _player.RemainingTime)));
+                _signalBus.Fire(new LearnProjectSignals.GameFinished(
+                    new GameResult(_player.CorrectAnswersCount, _player.IncorrectAnswersCount,
+                        _player.RemainingTime, QuizType.Medium)));
                 return;
             }
 

@@ -5,9 +5,27 @@ namespace Application.ProjectContext.Achievements
 {
     public enum LearnAchievementType
     {
-        Answer100Questions = 0,
-        Lose1Time = 1,
+        Answer200Questions,
+        Answer100Questions,
+        Answer50Questions,
+        SolveEasyQuizWithoutMistake,
+        SolveEasyQuizWith75PercentCorrectAnswers, 
+        SolveEasyQuizWith50PercentCorrectAnswers,
+        SolveMediumQuizWithoutMistake,
+        SolveMediumQuizWith75PercentCorrectAnswers, 
+        SolveMediumQuizWith50PercentCorrectAnswers,
+        SolveHardQuizWithoutMistake,
+        SolveHardQuizWith75PercentCorrectAnswers, 
+        SolveHardQuizWith50PercentCorrectAnswers,
+        SolveAnyQuizUnder2Minutes,
+        SolveAnyQuizUnder1Minute,
+        SolveAnyQuizUnder30Seconds,
+        SolveQuizInLast5Seconds,
+        ReachFirstPlaceInLeaderBoard,
+        ReachPlaceOnPodiumInLeaderBoard,
+        SolveQuizOnEachDifficultyLevel,
     }
+    
     [Serializable]
     public class LearnAchievement : IAchievement
     {
