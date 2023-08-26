@@ -15,7 +15,7 @@ namespace Application.Utils
 
         [SerializeField] private string _translationKey;
     
-        private Text _text;
+        [SerializeField] private Text _text;
 
         [Inject]
         private void Construct()

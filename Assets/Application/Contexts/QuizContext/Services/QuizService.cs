@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Application.GameplayContext;
 using Application.ProjectContext.Configs;
-using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Mediators;
 using Application.QuizContext.Models;
@@ -69,10 +68,12 @@ namespace Application.QuizContext.Services
             _currentElementIndex++;
             if (_currentElementIndex == _selectionManager.LearnModelElements.Count)
             {
+                Debug.Log($"Finish");
                 _player.SetGameFinished(true);
                 _signalBus.Fire(new LearnProjectSignals.GameFinished(
                     new GameResult(_player.CorrectAnswersCount, _player.IncorrectAnswersCount,
                         _player.RemainingTime, QuizType.Easy)));
+                Debug.Log($"After fire");
                 return;
             }
 

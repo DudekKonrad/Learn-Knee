@@ -64,8 +64,10 @@ namespace Application.QuizContext.Mediators
 
         private void OnGameFinishedSignal(LearnProjectSignals.GameFinished signal)
         {
+            Debug.Log($"Results game finished");
             transform.DOLocalMoveY(0, 0.2f).OnComplete(() =>
             {
+                Debug.Log($"Complete do local move y");
                 _sequence.Append(DOTween.To(() => CorrectAnswersCount, _ => CorrectAnswersCount = _,_player.CorrectAnswersCount,
                     0.4f).SetLink(gameObject));
                 _sequence.Append(DOTween.To(() => IncorrectAnswersCount, _ => IncorrectAnswersCount = _,_player.IncorrectAnswersCount,
