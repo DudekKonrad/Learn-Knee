@@ -45,12 +45,28 @@ namespace Application.ProjectContext.Signals
         public class AnswerGivenSignal
         {
             private string _answer;
-            public AnswerButtonMediator Button;
-            public AnswerGivenSignal(string answer, AnswerButtonMediator button)
+            public AnswerButtonMediator AnswerButton;
+            public ConfirmButtonMediator ConfirmButton;
+            public AnswerGivenSignal(string answer, AnswerButtonMediator answerButton)
             {
                 _answer = answer;
-                Button = button;
+                AnswerButton = answerButton;
             }
+            public AnswerGivenSignal(string answer, ConfirmButtonMediator confirmButton)
+            {
+                _answer = answer;
+                ConfirmButton = confirmButton;
+            }
+            
+            public AnswerGivenSignal(string answer)
+            {
+                _answer = answer;
+            }
+            
+            public AnswerGivenSignal()
+            {
+            }
+
 
             public string Answer => _answer;
         }
@@ -100,12 +116,6 @@ namespace Application.ProjectContext.Signals
             }
         }
         
-        public readonly struct ShowLoadingScreenSignal
-        {
-        }
-        public readonly struct HideLoadingScreenSignal
-        {
-        }
         public class LanguageChangedSignal
         {
             private readonly Language _language;
@@ -116,6 +126,17 @@ namespace Application.ProjectContext.Signals
             }
 
             public Language Language => _language;
+        }
+        public class LoadSceneSignal
+        {
+            private readonly string _sceneName;
+
+            public LoadSceneSignal(string sceneName)
+            {
+                _sceneName = sceneName;
+            }
+
+            public string SceneName => _sceneName;
         }
     }
 }

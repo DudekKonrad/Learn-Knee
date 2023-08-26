@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Application.MainMenuContext.Views;
+using Application.ProjectContext.Configs;
 using Application.QuizContext.Services;
 using Application.Utils;
 using DG.Tweening;
@@ -14,6 +15,8 @@ namespace Application.ProjectContext.Services
     public class LeaderboardManager : MonoBehaviour
     {
         [Inject] private readonly LeaderboardService _leaderboardService;
+        [Inject] private readonly LearnGameConfig _gameConfig;
+        
         [SerializeField] private RankingRecordView _playerRecordPrefab;
         [SerializeField] private Transform _playersRecordContainer;
         [SerializeField] private InputField _emailInputField;
@@ -22,10 +25,20 @@ namespace Application.ProjectContext.Services
         [SerializeField] private GameObject _loginWindow;
         [SerializeField] private Toggle _rememberToggle;
 
+        [SerializeField] private Text _errorMessage;
+
         private void Start()
         {
             if (_leaderboardService.HighScore > 0) SendLeaderboard(_leaderboardService.HighScore);
-            //_loginWindow.SetActive(PlayFabClientAPI.IsClientLoggedIn());
+            if (PlayFabClientAPI.IsClientLoggedIn())
+            {
+                _loginWindow.SetActive(false);
+                GetLeaderboard();
+            }
+            else
+            {
+                _loginWindow.SetActive(true);
+            }
             if (PlayerPrefs.GetInt("RememberLogin") == 1)
             {
                 _emailInputField.text = PlayerPrefs.GetString("Email");
@@ -34,23 +47,22 @@ namespace Application.ProjectContext.Services
             }
         }
 
-        private void Login()
+        public void LoginButton()
         {
-            var request = new LoginWithCustomIDRequest
+            var request = new LoginWithEmailAddressRequest()
             {
-                CustomId = SystemInfo.deviceUniqueIdentifier,
-                CreateAccount = true,
+                Email = _emailInputField.text,
+                Password = _passwordInputField.text,
                 InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
                 {
                     GetPlayerProfile = true
                 }
             };
-            PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnError);
+            PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
         }
 
         private void OnLoginSuccess(LoginResult result)
         {
-            Debug.Log($"Login success!");
             PlayerPrefs.SetString("Email", $"{_emailInputField.text}");
             PlayerPrefs.SetString("Password", $"{_passwordInputField.text}");
             PlayerPrefs.SetInt("RememberLogin", _rememberToggle.isOn ? 1 : 0);
@@ -80,7 +92,29 @@ namespace Application.ProjectContext.Services
             _loginWindow.SetActive(false);
         }
 
-        private void OnError(PlayFabError error) => Debug.Log($"{error.GenerateErrorReport()}");
+        private void OnError(PlayFabError error)
+        {
+            Debug.Log($"{error.GenerateErrorReport()}");
+            Debug.Log($"Error: {error.Error}");
+            switch (error.Error)
+            {
+               case PlayFabErrorCode.ConnectionError:
+                   Debug.Log($"Connection error");
+                   break;
+               case PlayFabErrorCode.InvalidEmailOrPassword:
+                   _errorMessage.gameObject.GetComponent<LocalizedText>().SetTranslationKey("INVALIDEMAILORPASSWORD");
+                   _errorMessage.DOColor(
+                       new Color(_errorMessage.color.r, _errorMessage.color.g, _errorMessage.color.b,1),
+                       _gameConfig.TextFadeDuration);
+                   break;
+               case PlayFabErrorCode.EmailAddressNotAvailable:
+                   _errorMessage.gameObject.GetComponent<LocalizedText>().SetTranslationKey("EMAILADDRESSNOTAVAILABLE");
+                   _errorMessage.DOColor(
+                       new Color(_errorMessage.color.r, _errorMessage.color.g, _errorMessage.color.b,1),
+                       _gameConfig.TextFadeDuration);
+                   break;
+            }
+        }
 
         private void SendLeaderboard(int score)
         {
@@ -148,7 +182,7 @@ namespace Application.ProjectContext.Services
             }
         }
 
-        public void RegisterButton()
+        public void Register()
         {
             var request = new RegisterPlayFabUserRequest
             {
@@ -157,20 +191,6 @@ namespace Application.ProjectContext.Services
                 RequireBothUsernameAndEmail = false
             };
             PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
-        }
-
-        public void LoginButton()
-        {
-            var request = new LoginWithEmailAddressRequest()
-            {
-                Email = _emailInputField.text,
-                Password = _passwordInputField.text,
-                InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
-                {
-                    GetPlayerProfile = true
-                }
-            };
-            PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
         }
 
         private void OnRegisterSuccess(RegisterPlayFabUserResult result)

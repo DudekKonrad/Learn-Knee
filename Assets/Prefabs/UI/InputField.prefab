@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4319410870667947079}
   - component: {fileID: 4319410870667947065}
   - component: {fileID: 4319410870667947064}
+  - component: {fileID: 8818928102438808598}
   m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
@@ -79,7 +80,20 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wpisz nazwe...
+  m_Text: Szukaj...
+--- !u!114 &8818928102438808598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4319410870667947078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2cbdbe81066ae408f795df5c24748e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _translationKey: SEARCH
 --- !u!1 &4319410870884886578
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +253,7 @@ GameObject:
   - component: {fileID: 4319410871772431054}
   - component: {fileID: 4319410871772431053}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

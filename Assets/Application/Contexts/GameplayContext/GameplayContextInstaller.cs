@@ -1,5 +1,6 @@
 using Application.GameplayContext.Models;
 using Application.ProjectContext;
+using Application.ProjectContext.Signals;
 using Zenject;
 
 namespace Application.GameplayContext
@@ -10,6 +11,7 @@ namespace Application.GameplayContext
         {
             Container.BindInterfacesAndSelfTo<PlayerInputModel>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SelectedElementService>().AsSingle().NonLazy();
+            Container.DeclareSignal<LearnProjectSignals.LoadSceneSignal>();
         }
     }
 }

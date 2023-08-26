@@ -15,14 +15,14 @@ using Random = UnityEngine.Random;
 
 namespace Application.QuizContext.Services
 {
-    public class QuizService : MonoBehaviour
+    public class InputQuizService : MonoBehaviour
     {
         [Inject] private readonly SignalBus _signalBus;
         [Inject] private readonly LearnGameConfig _gameConfig;
         [Inject] private readonly QuizPlayerModel _player;
         
         [SerializeField] private SelectionManager _selectionManager;
-        [SerializeField] private List<AnswerButtonMediator> _answerButtons;
+        [SerializeField] private InputField _answerInputField;
         [SerializeField] private Text _questionsCounter;
 
         private List<Transform> _list;
@@ -37,20 +37,15 @@ namespace Application.QuizContext.Services
         }
 
         private void OnAnswerGivenSignal(LearnProjectSignals.AnswerGivenSignal signal)
-        {
-            foreach (var button in _answerButtons)
-            {
-                button.Button.enabled = false;
-            }
+        { 
+            _answerInputField.enabled = false;
             if (_currentElement.GameObject.name == signal.Answer)
             {
-                signal.AnswerButton.GoodAnswer();
                 _player.CorrectAnswersCount++;
                 DOVirtual.DelayedCall(_gameConfig.PauseTime, NextQuestion);
             }
             else
             {
-                signal.AnswerButton.BadAnswer();
                 _player.IncorrectAnswersCount++;
                 DOVirtual.DelayedCall(_gameConfig.PauseTime, NextQuestion);
             }
@@ -78,30 +73,7 @@ namespace Application.QuizContext.Services
             SetClosestElements(_gameConfig.NumberOfClosestElementsToShow);
             _currentElement.OnChosen();
             _questionsCounter.text = $"{_currentElementIndex+1}/{_totalCount}";
-            foreach (var button in _answerButtons)
-            {
-                button.Button.enabled = true;
-            }
-
-            var randomElements = new List<Transform>(_list);
-            var randomButtonIndex = Random.Range(0, _answerButtons.Count);
-            for (var i = 0; i < _answerButtons.Count; i++)
-            {
-                if (i == randomButtonIndex)
-                {
-                    randomElements.Remove(_currentElement.GameObject.transform);
-                    _answerButtons[i].SetText(_currentElement.GameObject.name);
-                    _answerButtons[i].SetTextDefaultColor();
-                }
-                else
-                {
-                    randomElements.Remove(_currentElement.GameObject.transform);
-                    var element = randomElements.GetRandomElement();
-                    randomElements.Remove(element);
-                    _answerButtons[i].SetText(element.name);
-                    _answerButtons[i].SetTextDefaultColor();
-                }
-            }
+            _answerInputField.enabled = true;
         }
 
         private void SetClosestElements(int count)

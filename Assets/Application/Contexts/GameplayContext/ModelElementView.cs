@@ -19,6 +19,7 @@ namespace Application.GameplayContext
         public bool IsViewed { set; get; }
         private Vector3 _startingPosition;
         private Color _staringColor;
+        public string Name => GameObject.name;
 
         [Inject]
         private void Construct()

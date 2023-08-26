@@ -44,9 +44,8 @@ namespace Application.ProjectContext
             Container.DeclareSignal<LearnProjectSignals.GameFinished>();
             Container.DeclareSignal<LearnProjectSignals.PlaySoundSignal>();
             Container.DeclareSignal<LearnProjectSignals.StopSoundSignal>();
-            Container.DeclareSignal<LearnProjectSignals.ShowLoadingScreenSignal>();
-            Container.DeclareSignal<LearnProjectSignals.HideLoadingScreenSignal>();
             Container.DeclareSignal<LearnProjectSignals.LanguageChangedSignal>();
+            Container.DeclareSignal<LearnProjectSignals.LoadSceneSignal>();
         }
     }
 }

@@ -18,5 +18,9 @@ namespace Application.Utils
         public static void OpenGameplayScene() => OpenSceneByPath("Assets/Scenes/Gameplay.unity");
         [MenuItem("Tools/Scenes/Open Quiz")]
         public static void OpenQuizSceneScene() => OpenSceneByPath("Assets/Scenes/Quiz.unity");
+        [MenuItem("Tools/Scenes/Open InputQuiz")]
+        public static void OpenQuizInputSceneScene() => OpenSceneByPath("Assets/Scenes/QuizInput.unity");
+        [MenuItem("Tools/Scenes/Open SelectQuiz")]
+        public static void OpenQuizSelectSceneScene() => OpenSceneByPath("Assets/Scenes/QuizSelect.unity");
     }
 }
