@@ -61,15 +61,22 @@ namespace Application.QuizContext.Services
             NextQuestion();
         }
 
+        private void FinishGame(QuizResult result)
+        {
+            _player.SetGameFinished(true);
+            _signalBus.Fire(new LearnProjectSignals.GameFinished(
+                new GameResult(_player.CorrectAnswersCount, _player.IncorrectAnswersCount,
+                    _player.RemainingTime, QuizType.Easy, result)));
+        }
+        
         private void NextQuestion()
         {
             _elementToSelectIndex++;
             if (_elementToSelectIndex == _selectionManager.LearnModelElements.Count)
             {
-                _player.SetGameFinished(true);
-                _signalBus.Fire(new LearnProjectSignals.GameFinished(
-                    new GameResult(_player.CorrectAnswersCount, _player.IncorrectAnswersCount,
-                        _player.RemainingTime, QuizType.Medium)));
+                FinishGame(_player.CorrectAnswersCount > _selectionManager.LearnModelElements.Count / 2
+                    ? QuizResult.Win
+                    : QuizResult.Lose);
                 return;
             }
 

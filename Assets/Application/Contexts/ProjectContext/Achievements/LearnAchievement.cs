@@ -33,12 +33,14 @@ namespace Application.ProjectContext.Achievements
         [SerializeField] private string _translationKey;
         [SerializeField] private int _threshold;
         [SerializeField] private int _progress;
+        [SerializeField] private bool _isProgressVisible;
         
         public LearnAchievementType Type => _type;
         public string TranslationKey => _translationKey;
         public bool IsCompleted => Progress >= Threshold;
         public int Threshold => _threshold;
         public int Progress => _progress;
+        public bool IsProgressVisible => _isProgressVisible;
         public float ProgressNormalized => Mathf.Clamp01((float)Progress/Threshold);
 
         public void SetProgress(int progress)

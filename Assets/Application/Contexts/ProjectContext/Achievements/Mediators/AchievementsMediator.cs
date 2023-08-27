@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using Application.ProjectContext.Achievements.Services;
 using Application.ProjectContext.Achievements.Views;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Application.ProjectContext.Achievements.Mediators
@@ -11,8 +13,11 @@ namespace Application.ProjectContext.Achievements.Mediators
         [Inject] private readonly DiContainer _diContainer;
         [Inject] private readonly IAchievementService _achievementService;
         [Inject] private readonly IAchievementsConfig _achievementsConfig;
+        
         [SerializeField] private GameObject _content;
         [SerializeField] private GameObject _achievementPrefab;
+        [SerializeField] private Text _counter;
+        
         private Dictionary<IAchievement, GameObject> _achievementsPrefabs = new Dictionary<IAchievement, GameObject>();
 
         private void Start()
@@ -32,7 +37,7 @@ namespace Application.ProjectContext.Achievements.Mediators
                 var achievementView = achievementPrefab.GetComponent<AchievementView>();
                 achievementView.LocalizedText.SetTranslationKey(achievement.TranslationKey);
                 achievementView.SetProgress(progress.Progress, 
-                    progress.Threshold, progress.ProgressNormalized, progress.IsCompleted);
+                    progress.Threshold, progress.ProgressNormalized, progress.IsCompleted, progress.IsProgressVisible);
                 _achievementsPrefabs.Add(achievement, achievementPrefab);
             }
         }
@@ -46,9 +51,10 @@ namespace Application.ProjectContext.Achievements.Mediators
                     var progress = _achievementService.GetProgress(achievement.Key);
                     var achievementView = achievement.Value.GetComponent<AchievementView>();
                     achievementView.SetProgress(progress.Progress, progress.Threshold, 
-                        progress.ProgressNormalized,progress.IsCompleted);
+                        progress.ProgressNormalized,progress.IsCompleted, progress.IsProgressVisible);
                 }
             }
+            _counter.text = $"{_achievementsConfig.Achievements.Count(_ => _.IsCompleted)}/{_achievementsConfig.Achievements.Length}";
         }
         
         private void OnEnable()

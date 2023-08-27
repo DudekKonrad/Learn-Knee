@@ -3,6 +3,8 @@ using System.Globalization;
 using Application.GameplayContext.Models;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Models;
+using Application.QuizContext.Services;
+using Application.Utils.SoundService;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +20,7 @@ namespace Application.QuizContext.Mediators
         [SerializeField] private Text _correctAnswersText;
         [SerializeField] private Text _incorrectAnswersText;
         [SerializeField] private Text _remainingTimeText;
+        [SerializeField] private GameObject _confetti;
         
         private Sequence _sequence;
 
@@ -64,8 +67,20 @@ namespace Application.QuizContext.Mediators
 
         private void OnGameFinishedSignal(LearnProjectSignals.GameFinished signal)
         {
+            switch (signal.GameResult.QuizResult)
+            {
+                case QuizResult.Lose:
+                    _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnLose));
+                    break;
+                case QuizResult.Win:
+                    _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnWin));
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
             transform.DOLocalMoveY(0, 0.2f).OnComplete(() =>
             {
+                _confetti.SetActive(true);
                 _sequence.Append(DOTween.To(() => CorrectAnswersCount, _ => CorrectAnswersCount = _,_player.CorrectAnswersCount,
                     0.4f).SetLink(gameObject));
                 _sequence.Append(DOTween.To(() => IncorrectAnswersCount, _ => IncorrectAnswersCount = _,_player.IncorrectAnswersCount,

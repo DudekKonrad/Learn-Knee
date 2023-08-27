@@ -31,6 +31,7 @@ REMAININGTIME;Pozostały czas;Remaining time;
 SELECT;Wskaż;Select;
 CONFIRM;Potwierdź;Confirm;
 REFRESH;Odśwież;Refresh;
+COMPLETED;Zdobyte:;Completed:;
 ANSWER50QUESTIONS;Odpowiedz na 50 pytań;Answer 50 questions;
 ANSWER100QUESTIONS;Odpowiedz na 100 pytań;Answer 100 questions;
 ANSWER200QUESTIONS;Odpowiedz na 200 pytań;Answer 200 questions;

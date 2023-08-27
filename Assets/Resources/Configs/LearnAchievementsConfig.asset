@@ -17,39 +17,49 @@ MonoBehaviour:
     _translationKey: ANSWER50QUESTIONS
     _threshold: 50
     _progress: 17
+    _isProgressVisible: 1
   - _type: 1
     _translationKey: ANSWER100QUESTIONS
     _threshold: 100
     _progress: 17
+    _isProgressVisible: 1
   - _type: 0
     _translationKey: ANSWER200QUESTIONS
     _threshold: 200
     _progress: 17
+    _isProgressVisible: 1
   - _type: 5
     _translationKey: SOLVEEASYQUIZ50
-    _threshold: 1
+    _threshold: 50
     _progress: 0
+    _isProgressVisible: 0
   - _type: 4
     _translationKey: SOLVEEASYQUIZ75
-    _threshold: 1
+    _threshold: 75
     _progress: 0
+    _isProgressVisible: 0
   - _type: 3
     _translationKey: SOLVEEASYQUIZ100
-    _threshold: 1
+    _threshold: 100
     _progress: 0
+    _isProgressVisible: 0
   - _type: 12
     _translationKey: SOLVEQUIZUNDER120
     _threshold: 120
     _progress: 1
+    _isProgressVisible: 0
   - _type: 13
     _translationKey: SOLVEQUIZUNDER60
     _threshold: 60
     _progress: 1
+    _isProgressVisible: 0
   - _type: 14
     _translationKey: SOLVEQUIZUNDER30
     _threshold: 120
     _progress: 1
+    _isProgressVisible: 0
   - _type: 15
     _translationKey: SOLVEQUIZUNDERLAST5
     _threshold: 5
     _progress: 1
+    _isProgressVisible: 0

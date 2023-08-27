@@ -89,7 +89,7 @@ namespace Application.ProjectContext.Achievements.Services
         {
             var achievementProgress = _achievements[achievement.Type];
             return new IAchievementService.AchievementProgress(achievementProgress.IsCompleted, achievementProgress.Progress,
-                achievementProgress.ProgressNormalized, achievementProgress.Threshold);
+                achievementProgress.ProgressNormalized, achievementProgress.Threshold, achievementProgress.IsProgressVisible);
         }
     }
 }

@@ -83,7 +83,7 @@ namespace Application.ProjectContext.Services
             }
             else
             {
-                Debug.Log($"$Audio clip not found for: {signal.UISoundsToPass}");
+                Debug.Log($"Audio clip not found for: {signal.UISoundsToPass}");
             }
         }
 
