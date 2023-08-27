@@ -1,3 +1,4 @@
+using Application.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +19,9 @@ namespace Application.GameplayContext.Mediator
         {
             foreach (Transform element in _elementsContainer.transform)
             {
-                element.gameObject.SetActive(element.name.Contains(value));
+                var nameNormalized = StringExtensionMethods.NormalizeString(element.name.ToLower());
+                var valueNormalized = StringExtensionMethods.NormalizeString(value.ToLower());
+                element.gameObject.SetActive(nameNormalized.Contains(valueNormalized));
             }
         }
     }

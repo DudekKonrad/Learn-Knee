@@ -39,7 +39,7 @@ namespace Application.QuizContext.Services
         private void OnAnswerGivenSignal(LearnProjectSignals.AnswerGivenSignal signal)
         { 
             _answerInputField.enabled = false;
-            if (_currentElement.GameObject.name == signal.Answer)
+            if (StringExtensionMethods.CompareNormalizedStrings(_currentElement.GameObject.name, signal.Answer))
             {
                 _player.CorrectAnswersCount++;
                 DOVirtual.DelayedCall(_gameConfig.PauseTime, NextQuestion);

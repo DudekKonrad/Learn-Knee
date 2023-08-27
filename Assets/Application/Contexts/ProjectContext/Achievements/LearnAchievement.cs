@@ -43,6 +43,7 @@ namespace Application.ProjectContext.Achievements
 
         public void SetProgress(int progress)
         {
+            PlayerPrefs.SetInt(_type.ToString(), progress);
             _progress = progress;
         }
     }

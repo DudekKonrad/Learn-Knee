@@ -134,7 +134,7 @@ namespace Application.ProjectContext.Services
 
         private void OnLeaderBoardUpdate(UpdatePlayerStatisticsResult result) => Debug.Log($"Successful leaderboard send");
 
-        private void GetLeaderboard()
+        public void GetLeaderboard()
         {
             var request = new GetLeaderboardRequest
             {
