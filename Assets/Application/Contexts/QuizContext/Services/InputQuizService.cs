@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using System.Linq;
 using Application.GameplayContext;
 using Application.ProjectContext;
 using Application.ProjectContext.Configs;
-using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Mediators;
 using Application.QuizContext.Models;
@@ -12,7 +10,6 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
-using Random = UnityEngine.Random;
 
 namespace Application.QuizContext.Services
 {
@@ -29,7 +26,7 @@ namespace Application.QuizContext.Services
         [SerializeField] private Text _questionsCounter;
 
         private List<Transform> _list;
-        private ISelectionResponse _currentElement;
+        private ModelElementView _currentElementView;
         private int _currentElementIndex = -1;
         private int _totalCount = 1;
         
@@ -50,7 +47,7 @@ namespace Application.QuizContext.Services
         private void OnAnswerGivenSignal(LearnProjectSignals.AnswerGivenSignal signal)
         { 
             _answerInputMediator.enabled = false;
-            if (StringExtensionMethods.CompareNormalizedStrings(_currentElement.GameObject.name, signal.AnswerString))
+            if (StringExtensionMethods.CompareNormalizedStrings(_currentElementView.GameObject.name, signal.AnswerString))
             {
                 _player.CorrectAnswersCount++;
                 _answerInputMediator.GoodAnswer();
@@ -84,8 +81,8 @@ namespace Application.QuizContext.Services
                 return;
             }
 
-            _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();
-            _currentElement.OnChosen();
+            _currentElementView = _list[_currentElementIndex].GetComponent<ModelElementView>();
+            _currentElementView.OnChosen();
             SetNeighbours(_selectedElementService.CurrentChosenModelElementView);
             _selectedElementService.CurrentChosenModelElementView.Expose();
             _questionsCounter.text = $"{_currentElementIndex+1}/{_totalCount}";

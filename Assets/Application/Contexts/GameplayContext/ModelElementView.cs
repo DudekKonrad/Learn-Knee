@@ -1,5 +1,4 @@
 ﻿using Application.ProjectContext.Configs;
-using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
 using Application.Utils;
 using Application.Utils.SoundService;
@@ -44,7 +43,7 @@ namespace Application.GameplayContext
         private Renderer _renderer;
         public bool IsSelected { get; set; }
         public bool IsViewed { set; get; }
-        private Vector3 _startingPosition;
+
         private Color _staringColor;
         public string Name => GameObject.name;
         public ElementType ElementType => _elementType;
@@ -70,7 +69,6 @@ namespace Application.GameplayContext
 
         private void Start()
         {
-            _startingPosition = transform.localPosition;
             _renderer = GetComponent<Renderer>();
             _staringColor = _renderer.material.color;
         }

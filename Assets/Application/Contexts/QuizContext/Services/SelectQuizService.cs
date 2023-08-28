@@ -23,11 +23,11 @@ namespace Application.QuizContext.Services
         [SerializeField] private SelectionManager _selectionManager;
         [SerializeField] private Button _answerButton;
         [SerializeField] private Text _questionsCounter;
-        [SerializeField] private Text _elementToSelectText;
+        [SerializeField] private LocalizedText _elementToSelectText;
         [SerializeField] private ConfirmButtonMediator _confirmButtonMediator;
 
         private List<Transform> _list;
-        private string _elementToSelectName;
+        private ModelElementView _elementToSelectView;
         private int _elementToSelectIndex = -1;
         private int _totalCount = 1;
 
@@ -40,7 +40,7 @@ namespace Application.QuizContext.Services
         private void OnAnswerGivenSignal(LearnProjectSignals.AnswerGivenSignal signal)
         { 
             _answerButton.enabled = false;
-            if (_selectedElementService.CurrentChosenModelElementView.Name == _elementToSelectName)
+            if (_selectedElementService.CurrentChosenModelElementView.ElementType == _elementToSelectView.ElementType)
             {
                 signal.ConfirmButton.GoodAnswer();
                 _player.CorrectAnswersCount++;
@@ -82,38 +82,11 @@ namespace Application.QuizContext.Services
                 return;
             }
 
-            _elementToSelectName = _list[_elementToSelectIndex].gameObject.name;
-            _elementToSelectText.text = _elementToSelectName;
-            SetNeighbours(_selectedElementService.CurrentChosenModelElementView);
+            _elementToSelectView = _list[_elementToSelectIndex].GetComponent<ModelElementView>();
+            _elementToSelectText.SetTranslationKey(_elementToSelectView.TranslationKey);
             _selectedElementService.CurrentChosenModelElementView.Expose();
             _questionsCounter.text = $"{_elementToSelectIndex+1}/{_totalCount}";
             _answerButton.enabled = true;
-        }
-
-        private void SetNeighbours(ModelElementView element)
-        {
-            if (element.AllNeighbour)
-            {
-                foreach (var e in _selectionManager.LearnModelElements)
-                {
-                    e.gameObject.SetActive(true);
-                }
-            }
-            else
-            {
-                foreach (var e in _selectionManager.LearnModelElements)
-                {
-                    e.gameObject.SetActive(false);
-                    if (e.name == _elementToSelectName)
-                    {
-                        e.gameObject.SetActive(true);
-                    }
-                }
-                foreach (var neighbour in element.Neighbours)
-                {
-                    neighbour.gameObject.SetActive(true);
-                }
-            }
         }
     }
 }

@@ -27,7 +27,6 @@ namespace Application.QuizContext.Services
         [SerializeField] private Text _questionsCounter;
 
         private List<Transform> _list;
-        private ISelectionResponse _currentElement;
         private ModelElementView _currentElementView;
         private int _currentElementIndex = -1;
         private int _totalCount = 1;
@@ -84,9 +83,8 @@ namespace Application.QuizContext.Services
                 return;
             }
 
-            _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();
-            _currentElementView = _currentElement.GameObject.GetComponent<ModelElementView>();
-            _currentElement.OnChosen();
+            _currentElementView = _list[_currentElementIndex].GetComponent<ModelElementView>();
+            _currentElementView.OnChosen();
             SetNeighbours(_selectedElementService.CurrentChosenModelElementView);
             _selectedElementService.CurrentChosenModelElementView.Expose();
             _questionsCounter.text = $"{_currentElementIndex+1}/{_totalCount}";
@@ -101,14 +99,14 @@ namespace Application.QuizContext.Services
             {
                 if (i == randomButtonIndex)
                 {
-                    randomElements.Remove(_currentElement.GameObject.transform);
+                    randomElements.Remove(_currentElementView.GameObject.transform);
                     _answerButtons[i].LocalizedText.SetTranslationKey(_currentElementView.TranslationKey);
                     _answerButtons[i].ButtonElementType = _currentElementView.ElementType;
                     _answerButtons[i].SetTextDefaultColor();
                 }
                 else
                 {
-                    randomElements.Remove(_currentElement.GameObject.transform);
+                    randomElements.Remove(_currentElementView.GameObject.transform);
                     var element = randomElements.GetRandomElement();
                     randomElements.Remove(element);
                     var elementView = element.GetComponent<ModelElementView>();

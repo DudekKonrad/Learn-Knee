@@ -1492,7 +1492,7 @@ MonoBehaviour:
   _selectionManager: {fileID: 586389493}
   _answerButton: {fileID: 1708487091}
   _questionsCounter: {fileID: 7269208597638844721}
-  _elementToSelectText: {fileID: 1427319056}
+  _elementToSelectText: {fileID: 1427319058}
   _confirmButtonMediator: {fileID: 1708487094}
 --- !u!1 &963194225
 GameObject:
@@ -2219,6 +2219,7 @@ GameObject:
   - component: {fileID: 1427319057}
   - component: {fileID: 1427319056}
   - component: {fileID: 1427319055}
+  - component: {fileID: 1427319058}
   m_Layer: 5
   m_Name: SelectElementText
   m_TagString: Untagged
@@ -2302,6 +2303,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427319053}
   m_CullTransparentMesh: 1
+--- !u!114 &1427319058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427319053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2cbdbe81066ae408f795df5c24748e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _translationKey: 
+  _text: {fileID: 1427319056}
 --- !u!1 &1528890295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,6 +2795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1708487092}
+  ButtonElementType: 0
   Button: {fileID: 1708487091}
 --- !u!1 &1882903023
 GameObject:
