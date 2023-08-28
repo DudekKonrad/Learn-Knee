@@ -1,4 +1,5 @@
 ﻿using Application.ProjectContext.Configs;
+using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
 using Application.Utils;
 using Application.Utils.SoundService;
@@ -9,23 +10,23 @@ using Zenject;
 namespace Application.GameplayContext
 {
     public enum ElementType{
-        Element1,
-        Element2,
-        Element3,
-        Element4,
-        Element5,
-        Element6,
-        Element7,
-        Element8,
-        Element9,
-        Element10,
-        Element11,
-        Element12,
-        Element13,
-        Element14,
-        Element15,
-        Element16,
-        Element17
+        Tibia,
+        Fibula,
+        Femur,
+        Patella,
+        MedialCondyle,
+        LateralMeniscus,
+        MedialMeniscus,
+        TibialJoint,
+        PatellaJoint,
+        SagittalJoint,
+        TransverseLigament,
+        AnteriorCruciateLigament,
+        PosteriorCruciateLigament,
+        PosteriorMeniscusFemoralLigament,
+        MedialCollateralLigament,
+        LateralCollatteralLigament,
+        PattelarLigament
     }
     
     [RequireComponent(typeof(Renderer))]
@@ -38,6 +39,7 @@ namespace Application.GameplayContext
         [SerializeField] private ModelElementView[] _neighbours;
         [SerializeField] private bool _allNeighbours;
         [SerializeField] private Vector3 _exposeRotation;
+        [SerializeField] private string _translationKey;
         
         private Renderer _renderer;
         public bool IsSelected { get; set; }
@@ -49,6 +51,7 @@ namespace Application.GameplayContext
         public ModelElementView[] Neighbours => _neighbours;
         public bool AllNeighbour => _allNeighbours;
         public Vector3 ExposeRotation => _exposeRotation;
+        public string TranslationKey => _translationKey;
 
         [Inject]
         private void Construct()

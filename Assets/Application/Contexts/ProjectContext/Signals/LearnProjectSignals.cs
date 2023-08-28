@@ -44,23 +44,24 @@ namespace Application.ProjectContext.Signals
         }
         public class AnswerGivenSignal
         {
-            private string _answer;
+            private ElementType _answerType;
+            private String _answerString;
             public AnswerButtonMediator AnswerButton;
             public ConfirmButtonMediator ConfirmButton;
-            public AnswerGivenSignal(string answer, AnswerButtonMediator answerButton)
+            public AnswerGivenSignal(ElementType elementType, AnswerButtonMediator answerButton)
             {
-                _answer = answer;
+                _answerType = elementType;
                 AnswerButton = answerButton;
             }
-            public AnswerGivenSignal(string answer, ConfirmButtonMediator confirmButton)
+            public AnswerGivenSignal(ElementType elementType, ConfirmButtonMediator confirmButton)
             {
-                _answer = answer;
+                _answerType = elementType;
                 ConfirmButton = confirmButton;
             }
             
             public AnswerGivenSignal(string answer)
             {
-                _answer = answer;
+                _answerString = answer;
             }
             
             public AnswerGivenSignal()
@@ -68,7 +69,8 @@ namespace Application.ProjectContext.Signals
             }
 
 
-            public string Answer => _answer;
+            public ElementType AnswerType => _answerType;
+            public string AnswerString => _answerString;
         }
 
         public class GameFinished

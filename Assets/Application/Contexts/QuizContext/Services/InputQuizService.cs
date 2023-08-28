@@ -50,7 +50,7 @@ namespace Application.QuizContext.Services
         private void OnAnswerGivenSignal(LearnProjectSignals.AnswerGivenSignal signal)
         { 
             _answerInputMediator.enabled = false;
-            if (StringExtensionMethods.CompareNormalizedStrings(_currentElement.GameObject.name, signal.Answer))
+            if (StringExtensionMethods.CompareNormalizedStrings(_currentElement.GameObject.name, signal.AnswerString))
             {
                 _player.CorrectAnswersCount++;
                 _answerInputMediator.GoodAnswer();

@@ -1,4 +1,3 @@
-using Application.ProjectContext.Models;
 using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
 using UnityEngine;
@@ -42,7 +41,15 @@ namespace Application.Utils
 
         private void UpdateLanguage()
         {
-            _text.text = _translationsService.LanguagesDictionary[_translationsService.SelectedLanguage.ToString()][_translationKey];
+            if (!_translationsService.LanguagesDictionary[_translationsService.SelectedLanguage.ToString()].ContainsKey(_translationKey))
+            {
+                Debug.Log($"Missing translation for: {_translationKey}");
+                _text.text = $"NO TRANSLATION";
+            }
+            else
+            {
+                _text.text = _translationsService.LanguagesDictionary[_translationsService.SelectedLanguage.ToString()][_translationKey];
+            }
         }
     }
 }

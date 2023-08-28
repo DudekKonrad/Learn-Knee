@@ -1,8 +1,10 @@
 using Application.ProjectContext.Signals;
+using Application.Utils;
 using Application.Utils.SoundService;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using ElementType = Application.GameplayContext.ElementType;
 
 namespace Application.QuizContext.Mediators
 {
@@ -11,10 +13,14 @@ namespace Application.QuizContext.Mediators
     {
         [Inject] private readonly SignalBus _signalBus;
         [SerializeField] private Text _text;
-        public Button Button;
+        [SerializeField] private LocalizedText _localizedText;
         private Color _startingColor;
         private Animator _animator;
-        
+
+        public LocalizedText LocalizedText => _localizedText;
+        public Button Button;
+        public ElementType ButtonElementType;
+
         private void Start()
         {
             _animator = GetComponent<Animator>();
@@ -25,13 +31,9 @@ namespace Application.QuizContext.Mediators
         private void OnClick()
         {
             _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnChoose));
-            _signalBus.Fire(new LearnProjectSignals.AnswerGivenSignal(_text.text, this));
+            _signalBus.Fire(new LearnProjectSignals.AnswerGivenSignal(ButtonElementType, this));
         }
 
-        public void SetText(string text)
-        {
-            _text.text = $"{text}";
-        }
         public void GoodAnswer()
         {
             _animator.SetTrigger("GoodAnswer");

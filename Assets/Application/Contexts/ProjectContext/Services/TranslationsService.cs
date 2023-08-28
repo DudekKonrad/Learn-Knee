@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
+using UnityEditor;
+using UnityEngine;
 using Zenject;
 
 namespace Application.ProjectContext.Services
@@ -8,7 +10,8 @@ namespace Application.ProjectContext.Services
     public enum Language
     {
         Polish = 0,
-        English = 1
+        English = 1,
+        Latin = 2
     }
     
     public class TranslationsService
@@ -70,7 +73,10 @@ namespace Application.ProjectContext.Services
             {
                 for (var j = 0; j < _data[i].Length; j++)
                 {
-                    if (i == 0 && j > 0) LanguagesDictionary.Add(_data[i][j], new Dictionary<string, string>());
+                    if (i == 0 && j > 0)
+                    {
+                        LanguagesDictionary.Add(_data[i][j], new Dictionary<string, string>());
+                    }
                     else if (j > 0)
                     {
                         LanguagesDictionary[_data[0][j]].Add(_data[i][0], _data[i][j]);

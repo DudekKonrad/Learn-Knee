@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Application.GameplayContext;
 using Application.ProjectContext;
 using Application.ProjectContext.Configs;
@@ -29,6 +28,7 @@ namespace Application.QuizContext.Services
 
         private List<Transform> _list;
         private ISelectionResponse _currentElement;
+        private ModelElementView _currentElementView;
         private int _currentElementIndex = -1;
         private int _totalCount = 1;
 
@@ -44,7 +44,7 @@ namespace Application.QuizContext.Services
             {
                 button.Button.enabled = false;
             }
-            if (_currentElement.GameObject.name == signal.Answer)
+            if (_currentElementView.ElementType == signal.AnswerType)
             {
                 signal.AnswerButton.GoodAnswer();
                 _player.CorrectAnswersCount++;
@@ -85,6 +85,7 @@ namespace Application.QuizContext.Services
             }
 
             _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();
+            _currentElementView = _currentElement.GameObject.GetComponent<ModelElementView>();
             _currentElement.OnChosen();
             SetNeighbours(_selectedElementService.CurrentChosenModelElementView);
             _selectedElementService.CurrentChosenModelElementView.Expose();
@@ -101,7 +102,8 @@ namespace Application.QuizContext.Services
                 if (i == randomButtonIndex)
                 {
                     randomElements.Remove(_currentElement.GameObject.transform);
-                    _answerButtons[i].SetText(_currentElement.GameObject.name);
+                    _answerButtons[i].LocalizedText.SetTranslationKey(_currentElementView.TranslationKey);
+                    _answerButtons[i].ButtonElementType = _currentElementView.ElementType;
                     _answerButtons[i].SetTextDefaultColor();
                 }
                 else
@@ -109,7 +111,9 @@ namespace Application.QuizContext.Services
                     randomElements.Remove(_currentElement.GameObject.transform);
                     var element = randomElements.GetRandomElement();
                     randomElements.Remove(element);
-                    _answerButtons[i].SetText(element.name);
+                    var elementView = element.GetComponent<ModelElementView>();
+                    _answerButtons[i].LocalizedText.SetTranslationKey(elementView.TranslationKey);
+                    _answerButtons[i].ButtonElementType = elementView.ElementType;
                     _answerButtons[i].SetTextDefaultColor();
                 }
             }

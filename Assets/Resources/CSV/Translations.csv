@@ -1,60 +1,61 @@
-﻿Key;Polish;English;
-ACHIEVEMENTS;Osiągnięcia;Achievements;
-MODEL;Model;Model;
-QUIZ;Quiz;Quiz;
-RANKING;Ranking;Ranking;
-SETTINGS;Ustawienia;Settings;
-EXIT;Wyjście;Exit;
-MUSIC;Muzyka;Music;
-SOUND;Dźwięk;Sound;
-LANGUAGE;Język;Language;
-LEVELS;Poziomy;Levels;
-EMAIL;E-mail;E-mail;
-PASSWORD;Hasło;Password;
-NICKNAME;Nazwa;Nickname;
-REMEMBER;Zapamiętaj;Remember;
-LOGIN;Login;Login;
-REGISTERANDLOGIN;Zarejestruj i zaloguj;Register and login;
-RETURN;Powrót;Return;
-SEARCH;Szukaj…;Search…;
-SCORE;Wynik;Score;
-EASY;Łatwy;Easy;
-MEDIUM;Średni;Medium;
-HARD;Trudny;Hard;
-QUESTION;Pytanie;Question;
-TIME;Czas;Time;
-CORRECTANSWER;Poprawne odpowiedzi;Correct answers;
-INCORRECTANSWER;Niepoprawne odpowiedzi;Incorrect answers;
-TIMEISUP;Czas minał;Time is up;
-PLAYAGAIN;Zagraj jeszcze raz;Play again;
-REMAININGTIME;Pozostały czas;Remaining time;
-SELECT;Wskaż;Select;
-CONFIRM;Potwierdź;Confirm;
-REFRESH;Odśwież;Refresh;
-COMPLETED;Zdobyte:;Completed:;
-ANSWER50QUESTIONS;Odpowiedz na 50 pytań;Answer 50 questions;
-ANSWER100QUESTIONS;Odpowiedz na 100 pytań;Answer 100 questions;
-ANSWER200QUESTIONS;Odpowiedz na 200 pytań;Answer 200 questions;
-SOLVEEASYQUIZ50;Uzyskaj co najmniej 50% poprawnych odpowiedzi w łatwym quizie;Achieve a minimum of 50% correct answers in easy quiz;
-SOLVEEASYQUIZ75;Uzyskaj co najmniej 75% poprawnych odpowiedzi w łatwym quizie;Achieve a minimum of 75% correct answers in easy quiz;
-SOLVEEASYQUIZ100;Uzyskaj co najmniej 100% poprawnych odpowiedzi w łatwym quizie;Achieve a minimum of 100% correct answers in easy quiz;
-SOLVEQUIZUNDER120;Rozwiąż dowolny quiz w mniej niż 2 minuty;Solve any quiz under 2 minutes;
-SOLVEQUIZUNDER60;Rozwiąż dowolny quiz w mniej niż 1 minutę;Solve any quiz under 1 minute;
-SOLVEQUIZUNDER30;Rozwiąż dowolny quiz w mniej niż 30 sekund;Solve any quiz under 30 seconds;
-SOLVEQUIZUNDERLAST5;Rozwiąż dowolny quiz w ostanich 5 sekundach;Solve any quiz in last 5 seconds;
-TIBIA;Kość piszczelowa;Tibia;
-FIBULA;Kość strzałkowa;Fibula;
-FEMUR;Kość udowa;Femur;
-PATELLA;Rzepka kolanowa;Patella;
-MEDIAL CONDYLE;Kłykieć przyśrodkowy;Medial condyle;
-LATERAL MENISCUS;Łąkotka boczna;Lateral meniscus;
-MEDIAL MENISCUS;Łąkotka przyśrodkowa;Medial meniscus;
-TIBIAL JOINT;Staw piszczelowy;Tibial joint;
-PATELLA JOINT;Staw rzepkowy;Patella joint;
-SAGITTAL JOINT;Staw strzałkowy;Sagittal joint;
-TRANSVERSE LIGAMENT;Więzadło poprzeczne;Transverse ligament;
-POSTERIOR CRUCIATE LIGAMENT;Więzadło krzyżowe tylne;Posterior cruciate ligament;
-THE POSTERIOR MENISCUS-FEMORAL LIGAMENT;Więzadło łąkotkowo-udowe tylne;The posterior meniscus-femoral ligament;
-MEDIAL COLLATERAL LIGAMENTS;Więzadło poboczne piszczelowe;Medial collateral ligaments;
-LATERAL COLLATERAL LIGAMENTS;Więzadło poboczne strzałkowe;Lateral collateral ligaments;
-PATELLAR LIGAMENT;Więzadło rzepki;Patellar ligament;
+﻿Key;Polish;English;Latin;Latin
+ACHIEVEMENTS;Osiągnięcia;Achievements;TODO;TODO
+MODEL;Model;Model;TODO;TODO
+QUIZ;Quiz;Quiz;TODO;TODO
+RANKING;Ranking;Ranking;TODO;TODO
+SETTINGS;Ustawienia;Settings;TODO;TODO
+EXIT;Wyjście;Exit;TODO;TODO
+MUSIC;Muzyka;Music;TODO;TODO
+SOUND;Dźwięk;Sound;TODO;TODO
+LANGUAGE;Język;Language;TODO;TODO
+LEVELS;Poziomy;Levels;TODO;TODO
+EMAIL;E-mail;E-mail;TODO;TODO
+PASSWORD;Hasło;Password;TODO;TODO
+NICKNAME;Nazwa;Nickname;TODO;TODO
+REMEMBER;Zapamiętaj;Remember;TODO;TODO
+LOGIN;Login;Login;TODO;TODO
+REGISTERANDLOGIN;Zarejestruj i zaloguj;Register and login;TODO;TODO
+RETURN;Powrót;Return;TODO;TODO
+SEARCH;Szukaj…;Search…;TODO;TODO
+SCORE;Wynik;Score;TODO;TODO
+EASY;Łatwy;Easy;TODO;TODO
+MEDIUM;Średni;Medium;TODO;TODO
+HARD;Trudny;Hard;TODO;TODO
+QUESTION;Pytanie;Question;TODO;TODO
+TIME;Czas;Time;TODO;TODO
+CORRECTANSWER;Poprawne odpowiedzi;Correct answers;TODO;TODO
+INCORRECTANSWER;Niepoprawne odpowiedzi;Incorrect answers;TODO;TODO
+TIMEISUP;Czas minał;Time is up;TODO;TODO
+PLAYAGAIN;Zagraj jeszcze raz;Play again;TODO;TODO
+REMAININGTIME;Pozostały czas;Remaining time;TODO;TODO
+SELECT;Wskaż;Select;TODO;TODO
+CONFIRM;Potwierdź;Confirm;TODO;TODO
+REFRESH;Odśwież;Refresh;TODO;TODO
+COMPLETED;Zdobyte:;Completed:;TODO;TODO
+ANSWER50QUESTIONS;Odpowiedz na 50 pytań;Answer 50 questions;TODO;TODO
+ANSWER100QUESTIONS;Odpowiedz na 100 pytań;Answer 100 questions;TODO;TODO
+ANSWER200QUESTIONS;Odpowiedz na 200 pytań;Answer 200 questions;TODO;TODO
+SOLVEEASYQUIZ50;Uzyskaj co najmniej 50% poprawnych odpowiedzi w łatwym quizie;Achieve a minimum of 50% correct answers in easy quiz;TODO;TODO
+SOLVEEASYQUIZ75;Uzyskaj co najmniej 75% poprawnych odpowiedzi w łatwym quizie;Achieve a minimum of 75% correct answers in easy quiz;TODO;TODO
+SOLVEEASYQUIZ100;Uzyskaj co najmniej 100% poprawnych odpowiedzi w łatwym quizie;Achieve a minimum of 100% correct answers in easy quiz;TODO;TODO
+SOLVEQUIZUNDER120;Rozwiąż dowolny quiz w mniej niż 2 minuty;Solve any quiz under 2 minutes;TODO;TODO
+SOLVEQUIZUNDER60;Rozwiąż dowolny quiz w mniej niż 1 minutę;Solve any quiz under 1 minute;TODO;TODO
+SOLVEQUIZUNDER30;Rozwiąż dowolny quiz w mniej niż 30 sekund;Solve any quiz under 30 seconds;TODO;TODO
+SOLVEQUIZUNDERLAST5;Rozwiąż dowolny quiz w ostanich 5 sekundach;Solve any quiz in last 5 seconds;TODO;TODO
+TIBIA;Kość piszczelowa;Tibia;Tibia;Tibia
+FIBULA;Kość strzałkowa;Fibula;Fibula;Fibula
+FEMUR;Kość udowa;Femur;Os femoris;Os femoris
+PATELLA;Rzepka kolanowa;Patella;Patella;Patella
+MEDIALCONDYLE;Kłykieć przyśrodkowy;Medial condyle;Condylus medialis femoris;Condylus medialis femoris
+LATERALMENISCUS;Łąkotka boczna;Lateral meniscus;Meniscus lateralis;Meniscus lateralis
+MEDIALMENISCUS;Łąkotka przyśrodkowa;Medial meniscus;Meniscus medialis;Meniscus medialis
+TIBIALJOINT;Powierzchnia stawowa piszczela;Tibial joint;TODO;TODO
+PATELLAJOINT;Powierzchnia stawowa rzepki;Patella joint;TODO;TODO
+SAGITTALJOINT;Powierzchnia stawowa strzałki;Articular facet of head of fibula;Facies articularis capitis fibulae;Facies articularis capitis fibulae
+TRANSVERSELIGAMENT;Więzadło poprzeczne;Transverse ligament;Ligamentum transversum genus;Ligamentum transversum genus
+ANTERIORCRUCIATELIGAMNET;Więzadło krzyżowe przednie;Anterior cruciate ligament;Ligamentum cruciatum anterius;Ligamentum cruciatum anterius
+POSTERIORCRUCIATELIGAMENT;Więzadło krzyżowe tylne;Posterior cruciate ligament;Ligamentum cruciatum posterius;Ligamentum cruciatum posterius
+POSTERIORMENISCUS-FEMORALLIGAMENT;Więzadło łąkotkowo-udowe tylne;Posterior meniscofemoral ligament;Ligamentum meniscofemorale posterius;Ligamentum meniscofemorale posterius
+MEDIALCOLLATERALLIGAMENTS;Więzadło poboczne piszczelowe;Tibial collateral ligament;Ligamentum collaterale tibiale genus;Ligamentum collaterale tibiale genus
+LATERALCOLLATERALLIGAMENTS;Więzadło poboczne strzałkowe;Fibular collateral ligament;Ligamentum collaterale fibulare genus;Ligamentum collaterale fibulare genus
+PATELLARLIGAMENT;Więzadło rzepki;Patellar ligament;Ligamentum patellae;Ligamentum patellae

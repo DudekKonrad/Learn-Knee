@@ -1,3 +1,4 @@
+using Application.GameplayContext;
 using Application.ProjectContext.Signals;
 using Application.Utils.SoundService;
 using UnityEngine;
@@ -11,10 +12,12 @@ namespace Application.QuizContext.Mediators
     {
         [Inject] private readonly SignalBus _signalBus;
         [SerializeField] private Text _text;
-        public Button Button;
         private Color _startingColor;
         private Animator _animator;
-        
+
+        public ElementType ButtonElementType;
+        public Button Button;
+
         private void Start()
         {
             _animator = GetComponent<Animator>();
@@ -25,7 +28,7 @@ namespace Application.QuizContext.Mediators
         private void OnClick()
         {
             _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnChoose));
-            _signalBus.Fire(new LearnProjectSignals.AnswerGivenSignal(_text.text, this));
+            _signalBus.Fire(new LearnProjectSignals.AnswerGivenSignal(ButtonElementType, this));
         }
         
         public void GoodAnswer()
