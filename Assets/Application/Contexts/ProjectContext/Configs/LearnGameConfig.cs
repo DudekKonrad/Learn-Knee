@@ -31,11 +31,13 @@ namespace Application.ProjectContext.Configs
         [Header("Quiz Mode")] [SerializeField] QuizModeConfig _quizModeConfig;
         [SerializeField] private int _numberOfClosestElementsToShow;
         [SerializeField] private float _pauseTime;
+        [SerializeField] private float _exposeTime;
 
         public QuizModeConfig QuizModeConfig => _quizModeConfig;
         public int NumberOfClosestElementsToShow => _numberOfClosestElementsToShow;
         public float PauseTime => _pauseTime;
-
+        public float ExposeTime =>_exposeTime;
+        
         [Header("Localization")] [SerializeField] private TextAsset _descriptions;
         [SerializeField] private TextAsset _translations;
         [SerializeField] private List<Language> _supportedSupportedLanguages;

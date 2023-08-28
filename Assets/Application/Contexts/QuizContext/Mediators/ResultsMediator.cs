@@ -21,6 +21,7 @@ namespace Application.QuizContext.Mediators
         [SerializeField] private Text _incorrectAnswersText;
         [SerializeField] private Text _remainingTimeText;
         [SerializeField] private GameObject _confetti;
+        [SerializeField] private GameObject _timeIsUpPanel;
         
         private Sequence _sequence;
 
@@ -75,11 +76,19 @@ namespace Application.QuizContext.Mediators
                 case QuizResult.Win:
                     _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnWin));
                     break;
+                case QuizResult.TimeIsUp:
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
             transform.DOLocalMoveY(0, 0.2f).OnComplete(() =>
             {
+                if (signal.GameResult.QuizResult == QuizResult.TimeIsUp)
+                {
+                    _timeIsUpPanel.SetActive(true);
+                    _confetti.SetActive(false);
+                    return;
+                }
                 _confetti.SetActive(true);
                 _sequence.Append(DOTween.To(() => CorrectAnswersCount, _ => CorrectAnswersCount = _,_player.CorrectAnswersCount,
                     0.4f).SetLink(gameObject));

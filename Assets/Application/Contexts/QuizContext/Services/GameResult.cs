@@ -10,7 +10,8 @@
     public enum QuizResult
     {
         Lose = 0,
-        Win = 1
+        Win = 1,
+        TimeIsUp = 2
     }
     
     public class GameResult

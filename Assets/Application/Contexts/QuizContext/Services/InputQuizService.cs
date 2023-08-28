@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Application.GameplayContext;
+using Application.ProjectContext;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
@@ -20,35 +21,22 @@ namespace Application.QuizContext.Services
         [Inject] private readonly SignalBus _signalBus;
         [Inject] private readonly LearnGameConfig _gameConfig;
         [Inject] private readonly QuizPlayerModel _player;
+        [Inject] private readonly SelectedElementService _selectedElementService;
+
         
         [SerializeField] private SelectionManager _selectionManager;
-        [SerializeField] private InputField _answerInputField;
+        [SerializeField] private InputAnswerMediator _answerInputMediator;
         [SerializeField] private Text _questionsCounter;
 
         private List<Transform> _list;
         private ISelectionResponse _currentElement;
         private int _currentElementIndex = -1;
         private int _totalCount = 1;
-
+        
         [Inject]
         private void Construct()
         {
             _signalBus.Subscribe<LearnProjectSignals.AnswerGivenSignal>(OnAnswerGivenSignal);
-        }
-
-        private void OnAnswerGivenSignal(LearnProjectSignals.AnswerGivenSignal signal)
-        { 
-            _answerInputField.enabled = false;
-            if (StringExtensionMethods.CompareNormalizedStrings(_currentElement.GameObject.name, signal.Answer))
-            {
-                _player.CorrectAnswersCount++;
-                DOVirtual.DelayedCall(_gameConfig.PauseTime, NextQuestion);
-            }
-            else
-            {
-                _player.IncorrectAnswersCount++;
-                DOVirtual.DelayedCall(_gameConfig.PauseTime, NextQuestion);
-            }
         }
 
         private void Start()
@@ -57,6 +45,23 @@ namespace Application.QuizContext.Services
             _totalCount = _selectionManager.LearnModelElements.Count;
             ListExtensionMethods.Shuffle(_list);
             NextQuestion();
+        }
+
+        private void OnAnswerGivenSignal(LearnProjectSignals.AnswerGivenSignal signal)
+        { 
+            _answerInputMediator.enabled = false;
+            if (StringExtensionMethods.CompareNormalizedStrings(_currentElement.GameObject.name, signal.Answer))
+            {
+                _player.CorrectAnswersCount++;
+                _answerInputMediator.GoodAnswer();
+                DOVirtual.DelayedCall(_gameConfig.PauseTime, NextQuestion);
+            }
+            else
+            {
+                _player.IncorrectAnswersCount++;
+                _answerInputMediator.BadAnswer();
+                DOVirtual.DelayedCall(_gameConfig.PauseTime, NextQuestion);
+            }
         }
 
         private void FinishGame(QuizResult result)
@@ -69,6 +74,7 @@ namespace Application.QuizContext.Services
         
         private void NextQuestion()
         {
+            _answerInputMediator.SetDefault();
             _currentElementIndex++;
             if (_currentElementIndex == _selectionManager.LearnModelElements.Count)
             {
@@ -79,29 +85,38 @@ namespace Application.QuizContext.Services
             }
 
             _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();
-            SetClosestElements(_gameConfig.NumberOfClosestElementsToShow);
             _currentElement.OnChosen();
+            SetNeighbours(_selectedElementService.CurrentChosenModelElementView);
+            _selectedElementService.CurrentChosenModelElementView.Expose();
             _questionsCounter.text = $"{_currentElementIndex+1}/{_totalCount}";
-            _answerInputField.enabled = true;
+            _answerInputMediator.enabled = true;
+        }
+        
+        private void SetNeighbours(ModelElementView element)
+        {
+            if (element.AllNeighbour)
+            {
+                foreach (var e in _selectionManager.LearnModelElements)
+                {
+                    e.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                foreach (var e in _selectionManager.LearnModelElements)
+                {
+                    e.gameObject.SetActive(false);
+                    if (e.name == _selectedElementService.CurrentChosenModelElementView.Name)
+                    {
+                        e.gameObject.SetActive(true);
+                    }
+                }
+                foreach (var neighbour in element.Neighbours)
+                {
+                    neighbour.gameObject.SetActive(true);
+                }
+            }
         }
 
-        private void SetClosestElements(int count)
-        {
-            var closestObjects = _list
-                .OrderBy(obj => Vector3.Distance(obj.transform.position, _currentElement.GameObject.transform.position))
-                .Take(count)
-                .ToArray();
-        
-            foreach (var element in closestObjects)
-            {
-                element.gameObject.SetActive(true);
-            }
-        
-            var remainingObjects = _list.Except(closestObjects).ToArray();
-            foreach (var element in remainingObjects)
-            {
-                element.gameObject.SetActive(false);
-            }
-        }
     }
 }

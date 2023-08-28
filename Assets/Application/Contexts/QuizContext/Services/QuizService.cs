@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Application.GameplayContext;
+using Application.ProjectContext;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Mediators;
@@ -19,6 +20,8 @@ namespace Application.QuizContext.Services
         [Inject] private readonly SignalBus _signalBus;
         [Inject] private readonly LearnGameConfig _gameConfig;
         [Inject] private readonly QuizPlayerModel _player;
+        [Inject] private readonly SelectedElementService _selectedElementService;
+
         
         [SerializeField] private SelectionManager _selectionManager;
         [SerializeField] private List<AnswerButtonMediator> _answerButtons;
@@ -82,8 +85,9 @@ namespace Application.QuizContext.Services
             }
 
             _currentElement = _list[_currentElementIndex].GetComponent<ISelectionResponse>();
-            SetClosestElements(_gameConfig.NumberOfClosestElementsToShow);
             _currentElement.OnChosen();
+            SetNeighbours(_selectedElementService.CurrentChosenModelElementView);
+            _selectedElementService.CurrentChosenModelElementView.Expose();
             _questionsCounter.text = $"{_currentElementIndex+1}/{_totalCount}";
             foreach (var button in _answerButtons)
             {
@@ -111,22 +115,29 @@ namespace Application.QuizContext.Services
             }
         }
 
-        private void SetClosestElements(int count)
+        private void SetNeighbours(ModelElementView element)
         {
-            var closestObjects = _list
-                .OrderBy(obj => Vector3.Distance(obj.transform.position, _currentElement.GameObject.transform.position))
-                .Take(count)
-                .ToArray();
-        
-            foreach (var element in closestObjects)
+            if (element.AllNeighbour)
             {
-                element.gameObject.SetActive(true);
+                foreach (var e in _selectionManager.LearnModelElements)
+                {
+                    e.gameObject.SetActive(true);
+                }
             }
-        
-            var remainingObjects = _list.Except(closestObjects).ToArray();
-            foreach (var element in remainingObjects)
+            else
             {
-                element.gameObject.SetActive(false);
+                foreach (var e in _selectionManager.LearnModelElements)
+                {
+                    e.gameObject.SetActive(false);
+                    if (e.name == _selectedElementService.CurrentChosenModelElementView.Name)
+                    {
+                        e.gameObject.SetActive(true);
+                    }
+                }
+                foreach (var neighbour in element.Neighbours)
+                {
+                    neighbour.gameObject.SetActive(true);
+                }
             }
         }
     }

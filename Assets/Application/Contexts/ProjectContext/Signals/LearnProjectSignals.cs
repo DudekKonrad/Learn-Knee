@@ -79,7 +79,7 @@ namespace Application.ProjectContext.Signals
             {
                 _gameResult = gameResult;
             }
-
+            
             public GameResult GameResult => _gameResult;
         }
         

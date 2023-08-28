@@ -1,7 +1,9 @@
 using System;
 using Application.GameplayContext.Models;
 using Application.ProjectContext.Configs;
+using Application.ProjectContext.Signals;
 using Application.QuizContext.Models;
+using Application.QuizContext.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -10,6 +12,7 @@ namespace Application.QuizContext.Mediators
 {
     public class TimeProgressMediator : MonoBehaviour
     {
+        [Inject] private readonly SignalBus _signalBus;
         [Inject] private readonly LearnGameConfig _gameConfig;
         [Inject] private readonly QuizPlayerModel _player;
 
@@ -36,6 +39,12 @@ namespace Application.QuizContext.Mediators
                 var timeSpan = TimeSpan.FromSeconds(_actualTime);
                 var timeFormatted = timeSpan.ToString(@"mm\:ss");
                 _timeLeftText.text = timeFormatted;
+            }
+            else
+            {
+                _signalBus.Fire(new LearnProjectSignals.GameFinished(
+                    new GameResult(_player.CorrectAnswersCount, _player.IncorrectAnswersCount,
+                        _player.RemainingTime, QuizType.Easy, QuizResult.TimeIsUp)));
             }
         }
     }

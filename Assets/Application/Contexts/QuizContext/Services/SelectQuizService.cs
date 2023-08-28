@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using System.Linq;
 using Application.GameplayContext;
 using Application.ProjectContext;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
+using Application.QuizContext.Mediators;
 using Application.QuizContext.Models;
 using Application.Utils;
 using DG.Tweening;
@@ -24,6 +24,7 @@ namespace Application.QuizContext.Services
         [SerializeField] private Button _answerButton;
         [SerializeField] private Text _questionsCounter;
         [SerializeField] private Text _elementToSelectText;
+        [SerializeField] private ConfirmButtonMediator _confirmButtonMediator;
 
         private List<Transform> _list;
         private string _elementToSelectName;
@@ -71,6 +72,7 @@ namespace Application.QuizContext.Services
         
         private void NextQuestion()
         {
+            _confirmButtonMediator.SetTextDefaultColor();
             _elementToSelectIndex++;
             if (_elementToSelectIndex == _selectionManager.LearnModelElements.Count)
             {
@@ -82,27 +84,35 @@ namespace Application.QuizContext.Services
 
             _elementToSelectName = _list[_elementToSelectIndex].gameObject.name;
             _elementToSelectText.text = _elementToSelectName;
-            SetClosestElements(_gameConfig.NumberOfClosestElementsToShow);
+            SetNeighbours(_selectedElementService.CurrentChosenModelElementView);
+            _selectedElementService.CurrentChosenModelElementView.Expose();
             _questionsCounter.text = $"{_elementToSelectIndex+1}/{_totalCount}";
             _answerButton.enabled = true;
         }
 
-        private void SetClosestElements(int count)
+        private void SetNeighbours(ModelElementView element)
         {
-            var closestObjects = _list
-                .OrderBy(obj => Vector3.Distance(obj.transform.position, GameObject.Find(_elementToSelectName).gameObject.transform.position))
-                .Take(count)
-                .ToArray();
-        
-            foreach (var element in closestObjects)
+            if (element.AllNeighbour)
             {
-                element.gameObject.SetActive(true);
+                foreach (var e in _selectionManager.LearnModelElements)
+                {
+                    e.gameObject.SetActive(true);
+                }
             }
-        
-            var remainingObjects = _list.Except(closestObjects).ToArray();
-            foreach (var element in remainingObjects)
+            else
             {
-                element.gameObject.SetActive(false);
+                foreach (var e in _selectionManager.LearnModelElements)
+                {
+                    e.gameObject.SetActive(false);
+                    if (e.name == _elementToSelectName)
+                    {
+                        e.gameObject.SetActive(true);
+                    }
+                }
+                foreach (var neighbour in element.Neighbours)
+                {
+                    neighbour.gameObject.SetActive(true);
+                }
             }
         }
     }

@@ -23,10 +23,6 @@ namespace Application.GameplayContext
 
         public List<Transform> LearnModelElements => _learnModelGameObject.transform.Cast<Transform>().ToList();
 
-        private void Start()
-        {
-        }
-
         private void Update()
         {
             if (_selection != null)
