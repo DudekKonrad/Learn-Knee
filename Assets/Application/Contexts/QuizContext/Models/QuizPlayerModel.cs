@@ -7,7 +7,7 @@ namespace Application.QuizContext.Models
     {
         private float _remainingTime;
         private bool _isGameFinished;
-        private int _correctAnswers, _incorrectAnswers;
+        private int _correctAnswers, _incorrectAnswers, _totalScore;
 
         public int CorrectAnswersCount
         {
@@ -25,6 +25,11 @@ namespace Application.QuizContext.Models
                 _incorrectAnswers = value;
             }
         }
+        public int TotalScore
+        {
+            get => _totalScore = (_correctAnswers*10)-(_incorrectAnswers*2) + (int)_remainingTime;
+        }
+
 
         public float RemainingTime => _remainingTime;
         public bool IsGameFinished => _isGameFinished;

@@ -27,6 +27,13 @@ namespace Application.QuizContext.Mediators
             _input.onSubmit.AddListener(OnSubmit);
             _image = GetComponent<Image>();
             _imageStartingColor = _image.color;
+            
+            _signalBus.Subscribe<LearnProjectSignals.GameFinished>(OnGameFinished);
+        }
+
+        private void OnGameFinished(LearnProjectSignals.GameFinished obj)
+        {
+            _input.enabled = false;
         }
 
         private void OnSubmit(string answer)

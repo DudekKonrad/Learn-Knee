@@ -30,11 +30,22 @@ namespace Application.ProjectContext.Services
             _audioSourceSfx = Object.Instantiate(new GameObject()).AddComponent<AudioSource>();
             Object.DontDestroyOnLoad(_audioSourceSfx.gameObject);
             _signalBus.Subscribe<LearnProjectSignals.PlaySoundSignal>(OnPlayUISound);
-            _signalBus.Subscribe<LearnProjectSignals.StopSoundSignal>(OnStopUISound);
+            _signalBus.Subscribe<LearnProjectSignals.ChangeMusicVolume>(OnChangeMusicVolume);
+            _signalBus.Subscribe<LearnProjectSignals.ChangeSoundVolume>(OnChangeSoundVolume);
             foreach (var s in _uiSoundConfig.SoundAudioClipsArray)
             {
                 _audioClipsDictionary.Add(s._uiSounds, s.AudioClip);
             }
+        }
+
+        private void OnChangeSoundVolume(LearnProjectSignals.ChangeSoundVolume signal)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void OnChangeMusicVolume(LearnProjectSignals.ChangeMusicVolume signal)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void Play(AudioClip sfxAudioClip, bool isOneShot = true)
@@ -86,7 +97,5 @@ namespace Application.ProjectContext.Services
                 Debug.Log($"Audio clip not found for: {signal.UISoundsToPass}");
             }
         }
-
-        private void OnStopUISound(LearnProjectSignals.StopSoundSignal signal) => Debug.Log($"Will stop sound");
     }
 }

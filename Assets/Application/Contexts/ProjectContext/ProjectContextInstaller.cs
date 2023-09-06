@@ -43,9 +43,13 @@ namespace Application.ProjectContext
             Container.DeclareSignal<LearnProjectSignals.AnswerGivenSignal>();
             Container.DeclareSignal<LearnProjectSignals.GameFinished>();
             Container.DeclareSignal<LearnProjectSignals.PlaySoundSignal>();
-            Container.DeclareSignal<LearnProjectSignals.StopSoundSignal>();
             Container.DeclareSignal<LearnProjectSignals.LanguageChangedSignal>();
             Container.DeclareSignal<LearnProjectSignals.LoadSceneSignal>();
+            Container.DeclareSignal<LearnProjectSignals.ElementHideSignal>();
+            Container.DeclareSignal<LearnProjectSignals.ElementIsolateSignal>();
+            Container.DeclareSignal<LearnProjectSignals.ShowAllElementsSignal>();
+            Container.DeclareSignal<LearnProjectSignals.ChangeSoundVolume>();
+            Container.DeclareSignal<LearnProjectSignals.ChangeMusicVolume>();
         }
     }
 }

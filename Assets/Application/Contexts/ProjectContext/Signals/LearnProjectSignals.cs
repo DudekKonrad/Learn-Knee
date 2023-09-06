@@ -1,13 +1,9 @@
 ﻿using System;
 using Application.GameplayContext;
-using Application.ProjectContext.Achievements;
-using Application.ProjectContext.Models;
 using Application.ProjectContext.Services;
 using Application.QuizContext.Mediators;
 using Application.QuizContext.Services;
 using Application.Utils.SoundService;
-using JetBrains.Annotations;
-using UnityEngine.UI;
 
 namespace Application.ProjectContext.Signals
 {
@@ -33,6 +29,27 @@ namespace Application.ProjectContext.Signals
             public readonly ModelElementView Element;
         }
         
+        public class ElementHideSignal
+        {
+            public ElementHideSignal(ModelElementView element)
+            {
+                Element = element;
+            }
+
+            public readonly ModelElementView Element;
+        }
+        public class ElementIsolateSignal
+        {
+            public ElementIsolateSignal(ModelElementView element)
+            {
+                Element = element;
+            }
+
+            public readonly ModelElementView Element;
+        }
+        public class ShowAllElementsSignal
+        {
+        }
         public class UINavigationSignal
         {
             public UINavigationSignal(string trigger)
@@ -96,28 +113,6 @@ namespace Application.ProjectContext.Signals
             public readonly AudioClipModel.UISounds UISoundsToPass;
             public readonly bool IsOneShot;
         }
-        
-        public class StopSoundSignal
-        {
-            public StopSoundSignal(AudioClipModel.UISounds uiSoundsToPass)
-            {
-                UISoundsToPass = uiSoundsToPass;
-            }
-
-            public readonly AudioClipModel.UISounds UISoundsToPass;
-        }
-        public class AchievementUnlockedSignal
-        {
-            public readonly Enum AchievementType;
-            public readonly int AchievementTypeId;
-
-            public AchievementUnlockedSignal(Enum achievementType)
-            {
-                AchievementType = achievementType;
-                AchievementTypeId = Convert.ToInt32(achievementType);
-            }
-        }
-        
         public class LanguageChangedSignal
         {
             private readonly Language _language;
@@ -139,6 +134,27 @@ namespace Application.ProjectContext.Signals
             }
 
             public string SceneName => _sceneName;
+        }
+
+        public class ChangeSoundVolume
+        {
+            private float _volume;
+            public ChangeSoundVolume(float volume)
+            {
+                _volume = volume;
+            }
+
+            public float Volume => _volume;
+        }
+        public class ChangeMusicVolume
+        {
+            private float _volume;
+            public ChangeMusicVolume(float volume)
+            {
+                _volume = volume;
+            }
+
+            public float Volume => _volume;
         }
     }
 }

@@ -29,14 +29,14 @@ namespace Application.ProjectContext.Configs
         public float TextFadeDuration => _textFadeDuration;
         
         [Header("Quiz Mode")] [SerializeField] QuizModeConfig _quizModeConfig;
-        [SerializeField] private int _numberOfClosestElementsToShow;
         [SerializeField] private float _pauseTime;
         [SerializeField] private float _exposeTime;
+        [SerializeField] private float _calculatingResultDuration;
 
         public QuizModeConfig QuizModeConfig => _quizModeConfig;
-        public int NumberOfClosestElementsToShow => _numberOfClosestElementsToShow;
         public float PauseTime => _pauseTime;
         public float ExposeTime =>_exposeTime;
+        public float CalculatingResultDuration => _calculatingResultDuration;
         
         [Header("Localization")] [SerializeField] private TextAsset _descriptions;
         [SerializeField] private TextAsset _translations;

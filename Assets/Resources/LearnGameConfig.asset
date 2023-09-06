@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06c7485e09348dbae48dfed5a76169e, type: 3}
   m_Name: LearnGameConfig
   m_EditorClassIdentifier: 
-  _chooseColor: {r: 0.084855914, g: 1, b: 0, a: 0}
+  _chooseColor: {r: 0.084855914, g: 1, b: 0, a: 1}
   _chooseColorDuration: 0.7
   _rotationSpeed: 0.4
-  _moveSpeed: 0.02
+  _moveSpeed: 0.01
   _zoomSensitivity: 0.003
   _zoomDuration: 0.5
   _minZoom: 0
   _maxZoom: 1
   _textFadeDuration: 0.3
   _quizModeConfig:
-    _duration: 180
-  _numberOfClosestElementsToShow: 6
-  _pauseTime: 0.5
-  _exposeTime: 1
+    _duration: 150
+  _pauseTime: 0.4
+  _exposeTime: 0.8
+  _calculatingResultDuration: 0.5
   _descriptions: {fileID: 4900000, guid: 53f6ada28623f7944a071311d0973329, type: 3}
   _translations: {fileID: 4900000, guid: d5ee508ff1aac414ab63f7d2ef14d711, type: 3}
   _supportedSupportedLanguages: 0000000001000000

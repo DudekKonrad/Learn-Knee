@@ -36,6 +36,7 @@ namespace Application.GameplayContext
 
         [SerializeField] private ElementType _elementType;
         [SerializeField] private ModelElementView[] _neighbours;
+        [SerializeField] private ModelElementView[] _selectionQuizNeighbours;
         [SerializeField] private bool _allNeighbours;
         [SerializeField] private Vector3 _exposeRotation;
         [SerializeField] private string _translationKey;
@@ -48,8 +49,8 @@ namespace Application.GameplayContext
         public string Name => GameObject.name;
         public ElementType ElementType => _elementType;
         public ModelElementView[] Neighbours => _neighbours;
+        public ModelElementView[] SelectionQuizNeighbours => _selectionQuizNeighbours;
         public bool AllNeighbour => _allNeighbours;
-        public Vector3 ExposeRotation => _exposeRotation;
         public string TranslationKey => _translationKey;
 
         [Inject]

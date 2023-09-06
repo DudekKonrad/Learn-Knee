@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Application.MainMenuContext.Views;
 using Application.ProjectContext.Configs;
-using Application.QuizContext.Services;
 using Application.Utils;
 using DG.Tweening;
 using PlayFab;
@@ -82,10 +81,10 @@ namespace Application.ProjectContext.Services
             {
                 DisplayName = _nicknameInputField.text
             };
-            PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayPlayerNameUpdate, OnError);
+            PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnSubmitPLayerName, OnError);
         }
 
-        private void OnDisplayPlayerNameUpdate(UpdateUserTitleDisplayNameResult result)
+        private void OnSubmitPLayerName(UpdateUserTitleDisplayNameResult result)
         {
             Debug.Log($"Display name updated");
             GetLeaderboard();
@@ -129,10 +128,10 @@ namespace Application.ProjectContext.Services
                     }
                 }
             };
-            PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderBoardUpdate, OnError);
+            PlayFabClientAPI.UpdatePlayerStatistics(request, OnSendLeaderBoard, OnError);
         }
 
-        private void OnLeaderBoardUpdate(UpdatePlayerStatisticsResult result) => Debug.Log($"Successful leaderboard send");
+        private void OnSendLeaderBoard(UpdatePlayerStatisticsResult result) => Debug.Log($"Successful leaderboard send");
 
         public void GetLeaderboard()
         {
@@ -157,31 +156,7 @@ namespace Application.ProjectContext.Services
             }
             _loginWindow.transform.DOMoveY(1080, 2f).OnComplete(() => _loginWindow.SetActive(false));
         }
-
-        private void SaveResults(GameResult gameResult)
-        {
-            var request = new UpdateUserDataRequest()
-            {
-                Data = new Dictionary<string, string>{
-                {
-                    "Results",JsonUtility.ToJson(gameResult)
-                }}
-            };
-            PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);
-        }
-
-        private void OnDataSend(UpdateUserDataResult result) => Debug.Log($"Data send successfully");
-
-        private void GetScores() => PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnScoreDataRecieved, OnError);
-
-        private void OnScoreDataRecieved(GetUserDataResult result)
-        {
-            if (result.Data != null)
-            {
-                var playerResult = JsonUtility.FromJson<GameResult>(result.Data["Results"].Value);
-            }
-        }
-
+        
         public void Register()
         {
             var request = new RegisterPlayFabUserRequest
@@ -192,10 +167,6 @@ namespace Application.ProjectContext.Services
             };
             PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
         }
-
-        private void OnRegisterSuccess(RegisterPlayFabUserResult result)
-        {
-            Debug.Log($"Registered and logged in");
-        }
+        private void OnRegisterSuccess(RegisterPlayFabUserResult result) => Debug.Log($"Registered and logged in");
     }
 }

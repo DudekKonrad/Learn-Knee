@@ -23,6 +23,12 @@ namespace Application.QuizContext.Mediators
             _animator = GetComponent<Animator>();
             Button.onClick.AddListener(OnClick);
             _startingColor = _text.color;
+            _signalBus.Subscribe<LearnProjectSignals.GameFinished>(OnGameFinished);
+        }
+
+        private void OnGameFinished(LearnProjectSignals.GameFinished obj)
+        {
+            Button.enabled = false;
         }
 
         private void OnClick()

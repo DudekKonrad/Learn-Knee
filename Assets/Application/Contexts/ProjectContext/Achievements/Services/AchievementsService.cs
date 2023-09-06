@@ -84,12 +84,5 @@ namespace Application.ProjectContext.Achievements.Services
             _achievements[LearnAchievementType.Answer100Questions].SetProgress(_answersCounter);
             _achievements[LearnAchievementType.Answer200Questions].SetProgress(_answersCounter);
         }
-
-        public IAchievementService.AchievementProgress GetProgress(IAchievement achievement)
-        {
-            var achievementProgress = _achievements[achievement.Type];
-            return new IAchievementService.AchievementProgress(achievementProgress.IsCompleted, achievementProgress.Progress,
-                achievementProgress.ProgressNormalized, achievementProgress.Threshold, achievementProgress.IsProgressVisible);
-        }
     }
 }

@@ -84,9 +84,36 @@ namespace Application.QuizContext.Services
 
             _elementToSelectView = _list[_elementToSelectIndex].GetComponent<ModelElementView>();
             _elementToSelectText.SetTranslationKey(_elementToSelectView.TranslationKey);
-            _selectedElementService.CurrentChosenModelElementView.Expose();
+            SetNeighbours(_elementToSelectView);
             _questionsCounter.text = $"{_elementToSelectIndex+1}/{_totalCount}";
             _answerButton.enabled = true;
         }
+        
+        private void SetNeighbours(ModelElementView element)
+        {
+            if (element.AllNeighbour)
+            {
+                foreach (var e in _selectionManager.LearnModelElements)
+                {
+                    e.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                foreach (var e in _selectionManager.LearnModelElements)
+                {
+                    e.gameObject.SetActive(false);
+                    if (e.name == _elementToSelectView.Name)
+                    {
+                        e.gameObject.SetActive(true);
+                    }
+                }
+                foreach (var neighbour in element.SelectionQuizNeighbours)
+                {
+                    neighbour.gameObject.SetActive(true);
+                }
+            }
+        }
+
     }
 }

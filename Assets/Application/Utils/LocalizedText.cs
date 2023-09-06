@@ -1,3 +1,4 @@
+using System;
 using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
 using UnityEngine;
@@ -41,9 +42,18 @@ namespace Application.Utils
 
         private void UpdateLanguage()
         {
+            if (_translationsService.IsLatin)
+            {
+                if (_translationsService.LanguagesDictionary[Language.Latin.ToString()].ContainsKey(_translationKey)
+                    && _translationsService.LanguagesDictionary[Language.Latin.ToString()][_translationKey] != String.Empty)
+                {
+                    _text.text = _translationsService.LanguagesDictionary[Language.Latin.ToString()][_translationKey];
+                    return;
+                }
+            }
             if (!_translationsService.LanguagesDictionary[_translationsService.SelectedLanguage.ToString()].ContainsKey(_translationKey))
             {
-                Debug.Log($"Missing translation for: {_translationKey}");
+                Debug.Log($"{gameObject.name} -> Missing translation for: {_translationKey}");
                 _text.text = $"NO TRANSLATION";
             }
             else

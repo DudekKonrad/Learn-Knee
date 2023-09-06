@@ -1,6 +1,6 @@
 using System;
 using System.Globalization;
-using Application.GameplayContext.Models;
+using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Models;
 using Application.QuizContext.Services;
@@ -15,17 +15,20 @@ namespace Application.QuizContext.Mediators
     public class ResultsMediator : MonoBehaviour
     {
         [Inject] private readonly SignalBus _signalBus;
+        [Inject] private readonly LearnGameConfig _gameConfig;
         [Inject] private readonly QuizPlayerModel _player;
         
         [SerializeField] private Text _correctAnswersText;
         [SerializeField] private Text _incorrectAnswersText;
         [SerializeField] private Text _remainingTimeText;
+        [SerializeField] private Text _totalScoreText;
         [SerializeField] private GameObject _confetti;
         [SerializeField] private GameObject _timeIsUpPanel;
+        [SerializeField] private Image _starIcon;
         
         private Sequence _sequence;
 
-        private int _correctAnswersCount, _incorrectAnswersCount;
+        private int _correctAnswersCount, _incorrectAnswersCount, _totalScore;
         private float _remainingTime;
 
 
@@ -60,6 +63,16 @@ namespace Application.QuizContext.Mediators
             }
         }
         
+        private int TotalScore
+        {
+            get => _totalScore;
+            set
+            {
+                _totalScore = value;
+                _totalScoreText.text = _totalScore.ToString(CultureInfo.InvariantCulture);
+            }
+        }
+        
         [Inject]
         private void Construct()
         {
@@ -81,27 +94,27 @@ namespace Application.QuizContext.Mediators
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+            if (signal.GameResult.QuizResult == QuizResult.TimeIsUp)
+            {
+                _timeIsUpPanel.SetActive(true);
+                _confetti.SetActive(false);
+                transform.DOLocalMoveY(0, 0.2f);
+                return;
+            }
             transform.DOLocalMoveY(0, 0.2f).OnComplete(() =>
             {
-                if (signal.GameResult.QuizResult == QuizResult.TimeIsUp)
-                {
-                    _timeIsUpPanel.SetActive(true);
-                    _confetti.SetActive(false);
-                    return;
-                }
                 _confetti.SetActive(true);
+                _sequence = DOTween.Sequence();
                 _sequence.Append(DOTween.To(() => CorrectAnswersCount, _ => CorrectAnswersCount = _,_player.CorrectAnswersCount,
-                    0.4f).SetLink(gameObject));
+                    _gameConfig.CalculatingResultDuration));
                 _sequence.Append(DOTween.To(() => IncorrectAnswersCount, _ => IncorrectAnswersCount = _,_player.IncorrectAnswersCount,
-                    0.4f).SetLink(gameObject));
+                    _gameConfig.CalculatingResultDuration));
                 _sequence.Append(DOTween.To(() => RemainingTime, _ => RemainingTime = _,_player.RemainingTime,
-                    0.4f).SetLink(gameObject));
+                    _gameConfig.CalculatingResultDuration));
+                _sequence.Append(DOTween.To(() => TotalScore, _ => TotalScore = _,_player.TotalScore,
+                    _gameConfig.CalculatingResultDuration));
+                _sequence.Append(_starIcon.DOFillAmount(1f, _gameConfig.CalculatingResultDuration));
             });
-        }
-        
-        private void CalculateScore()
-        {
-        
         }
     }
 }

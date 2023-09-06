@@ -23,6 +23,7 @@ namespace Application.ProjectContext.Services
         private List<Language> _languages;
         private Language _selectedLanguage;
         private int _selectedLanguageIndex => _languages.IndexOf(_selectedLanguage);
+        public bool IsLatin;
         
         public Dictionary<string, Dictionary<string,string>> LanguagesDictionary { get; } = new Dictionary<string, Dictionary<string,string>>();
         public Language SelectedLanguage

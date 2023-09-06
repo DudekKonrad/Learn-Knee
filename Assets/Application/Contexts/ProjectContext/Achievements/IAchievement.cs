@@ -10,5 +10,6 @@
         bool IsProgressVisible { get; }
         float ProgressNormalized { get; }
         void SetProgress(int progress);
+        int GetProgress();
     }
 }

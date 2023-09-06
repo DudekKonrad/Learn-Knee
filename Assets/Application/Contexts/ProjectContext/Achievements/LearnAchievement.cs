@@ -48,5 +48,10 @@ namespace Application.ProjectContext.Achievements
             PlayerPrefs.SetInt(_type.ToString(), progress);
             _progress = progress;
         }
+
+        public int GetProgress()
+        {
+            return PlayerPrefs.GetInt(_type.ToString());
+        }
     }
 }

@@ -33,11 +33,10 @@ namespace Application.ProjectContext.Achievements.Mediators
             foreach (var achievement in _achievementsConfig.Achievements)
             {
                 var achievementPrefab = _diContainer.InstantiatePrefab(_achievementPrefab, _content.transform);
-                var progress = _achievementService.GetProgress(achievement);
                 var achievementView = achievementPrefab.GetComponent<AchievementView>();
                 achievementView.LocalizedText.SetTranslationKey(achievement.TranslationKey);
-                achievementView.SetProgress(progress.Progress, 
-                    progress.Threshold, progress.ProgressNormalized, progress.IsCompleted, progress.IsProgressVisible);
+                achievementView.SetProgress(achievement.GetProgress(), 
+                    achievement.Threshold, achievement.ProgressNormalized, achievement.IsCompleted, achievement.IsProgressVisible);
                 _achievementsPrefabs.Add(achievement, achievementPrefab);
             }
         }
@@ -48,10 +47,9 @@ namespace Application.ProjectContext.Achievements.Mediators
             {
                 foreach (var achievement in _achievementsPrefabs)
                 {
-                    var progress = _achievementService.GetProgress(achievement.Key);
                     var achievementView = achievement.Value.GetComponent<AchievementView>();
-                    achievementView.SetProgress(progress.Progress, progress.Threshold, 
-                        progress.ProgressNormalized,progress.IsCompleted, progress.IsProgressVisible);
+                    achievementView.SetProgress(achievement.Key.GetProgress(), 
+                        achievement.Key.Threshold, achievement.Key.ProgressNormalized, achievement.Key.IsCompleted, achievement.Key.IsProgressVisible);
                 }
             }
             _counter.text = $"{_achievementsConfig.Achievements.Count(_ => _.IsCompleted)}/{_achievementsConfig.Achievements.Length}";

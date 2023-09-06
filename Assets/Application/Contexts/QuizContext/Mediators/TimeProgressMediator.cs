@@ -40,7 +40,7 @@ namespace Application.QuizContext.Mediators
                 var timeFormatted = timeSpan.ToString(@"mm\:ss");
                 _timeLeftText.text = timeFormatted;
             }
-            else
+            else if (_actualTime <= 0)
             {
                 _signalBus.Fire(new LearnProjectSignals.GameFinished(
                     new GameResult(_player.CorrectAnswersCount, _player.IncorrectAnswersCount,
