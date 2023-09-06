@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Services;
 using JetBrains.Annotations;
+using UnityEngine;
 using Zenject;
 
 namespace Application.ProjectContext.Achievements.Services
@@ -79,10 +80,12 @@ namespace Application.ProjectContext.Achievements.Services
 
         private void OnAnswerGivenSignal(LearnProjectSignals.AnswerGivenSignal signal)
         {
-            _answersCounter++;
-            _achievements[LearnAchievementType.Answer50Questions].SetProgress(_answersCounter);
-            _achievements[LearnAchievementType.Answer100Questions].SetProgress(_answersCounter);
-            _achievements[LearnAchievementType.Answer200Questions].SetProgress(_answersCounter);
+            var answersCount = PlayerPrefs.GetInt("AnswersCounter");
+            answersCount++;
+            PlayerPrefs.SetInt("AnswersCounter", answersCount);
+            _achievements[LearnAchievementType.Answer50Questions].SetProgress(answersCount);
+            _achievements[LearnAchievementType.Answer100Questions].SetProgress(answersCount);
+            _achievements[LearnAchievementType.Answer200Questions].SetProgress(answersCount);
         }
     }
 }
