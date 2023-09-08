@@ -70,7 +70,7 @@ namespace Application.QuizContext.Services
             _player.SetGameFinished(true);
             _signalBus.Fire(new LearnProjectSignals.GameFinished(
                 new GameResult(_player.CorrectAnswersCount, _player.IncorrectAnswersCount,
-                    _player.RemainingTime, QuizType.Easy, result)));
+                    _player.RemainingTime, QuizType.Easy, result, _player.TotalScore)));
         }
         private void NextQuestion()
         {

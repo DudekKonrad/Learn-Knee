@@ -44,7 +44,7 @@ namespace Application.QuizContext.Mediators
             {
                 _signalBus.Fire(new LearnProjectSignals.GameFinished(
                     new GameResult(_player.CorrectAnswersCount, _player.IncorrectAnswersCount,
-                        _player.RemainingTime, QuizType.Easy, QuizResult.TimeIsUp)));
+                        _player.RemainingTime, QuizType.Easy, QuizResult.TimeIsUp, _player.TotalScore)));
             }
         }
     }

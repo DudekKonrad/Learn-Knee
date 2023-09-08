@@ -24,6 +24,8 @@ namespace Application.QuizContext.Mediators
         [SerializeField] private Text _totalScoreText;
         [SerializeField] private GameObject _confetti;
         [SerializeField] private GameObject _timeIsUpPanel;
+        [SerializeField] private GameObject _failedPanel;
+        [SerializeField] private Text _percentText;
         [SerializeField] private Image _starIcon;
         
         private Sequence _sequence;
@@ -85,7 +87,15 @@ namespace Application.QuizContext.Mediators
             {
                 case QuizResult.Lose:
                     _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnLose));
-                    break;
+                    _failedPanel.SetActive(true);
+                    _confetti.SetActive(false);
+                    transform.DOLocalMoveY(0, 0.2f);
+                    var percent = (signal.GameResult.CorrectAnswersCount/17f)*100;
+                    Debug.Log($"Correct: {signal.GameResult.CorrectAnswersCount}");
+                    Debug.Log($"Percent: {percent}");
+                    Debug.Log($"Percent int : {(int)percent}");
+                    _percentText.text = $"{(int)percent}%";
+                    return;
                 case QuizResult.Win:
                     _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnWin));
                     break;

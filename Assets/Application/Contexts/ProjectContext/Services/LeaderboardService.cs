@@ -16,7 +16,7 @@ namespace Application.ProjectContext.Services
 
         private void OnGameFinished(LearnProjectSignals.GameFinished signal)
         {
-            HighScore = signal.GameResult.CorrectAnswersCount;
+            HighScore = signal.GameResult.TotalScore;
         }
     }
 }

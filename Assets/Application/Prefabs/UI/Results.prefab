@@ -1492,6 +1492,8 @@ MonoBehaviour:
   _totalScoreText: {fileID: 5271129458642345778}
   _confetti: {fileID: 0}
   _timeIsUpPanel: {fileID: 1150561631873303396}
+  _failedPanel: {fileID: 1767185976893940520}
+  _percentText: {fileID: 1173942840596914103}
   _starIcon: {fileID: 2601517827556082813}
 --- !u!1 &8289955637315669750
 GameObject:
