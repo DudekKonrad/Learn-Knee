@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
-using UnityEditor;
-using UnityEngine;
 using Zenject;
 
 namespace Application.ProjectContext.Services

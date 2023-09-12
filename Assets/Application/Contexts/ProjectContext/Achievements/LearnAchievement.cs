@@ -38,7 +38,7 @@ namespace Application.ProjectContext.Achievements
         public string TranslationKey => _translationKey;
         public bool IsCompleted => Progress >= Threshold;
         public int Threshold => _threshold;
-        public int Progress => PlayerPrefs.GetInt(_type.ToString());
+        public int Progress => Mathf.Min(PlayerPrefs.GetInt(_type.ToString()), _threshold);
         public bool IsProgressVisible => _isProgressVisible;
         public float ProgressNormalized => Mathf.Clamp01((float)Progress/Threshold);
 

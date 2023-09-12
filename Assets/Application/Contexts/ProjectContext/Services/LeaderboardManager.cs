@@ -20,11 +20,11 @@ namespace Application.ProjectContext.Services
         [SerializeField] private Transform _playersRecordContainer;
         [SerializeField] private InputField _emailInputField;
         [SerializeField] private InputField _passwordInputField;
-        [SerializeField] private InputField _nicknameInputField;
         [SerializeField] private GameObject _loginWindow;
         [SerializeField] private Toggle _rememberToggle;
 
         [SerializeField] private Text _errorMessage;
+        [SerializeField] private Text _waitText;
 
         private void Start()
         {
@@ -48,6 +48,7 @@ namespace Application.ProjectContext.Services
 
         public void LoginButton()
         {
+            _waitText.DOFade(1f, _gameConfig.TextFadeDuration);
             var request = new LoginWithEmailAddressRequest()
             {
                 Email = _emailInputField.text,
@@ -62,6 +63,7 @@ namespace Application.ProjectContext.Services
 
         private void OnLoginSuccess(LoginResult result)
         {
+            _waitText.DOFade(0f, _gameConfig.TextFadeDuration);
             PlayerPrefs.SetString("Email", $"{_emailInputField.text}");
             PlayerPrefs.SetString("Password", $"{_passwordInputField.text}");
             PlayerPrefs.SetInt("RememberLogin", _rememberToggle.isOn ? 1 : 0);
@@ -79,7 +81,7 @@ namespace Application.ProjectContext.Services
         {
             var request = new UpdateUserTitleDisplayNameRequest
             {
-                DisplayName = _nicknameInputField.text
+                DisplayName = StringExtensionMethods.GetStringTillChar(_emailInputField.text, "@")
             };
             PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnSubmitPLayerName, OnError);
         }
@@ -95,24 +97,37 @@ namespace Application.ProjectContext.Services
         {
             Debug.Log($"{error.GenerateErrorReport()}");
             Debug.Log($"Error: {error.Error}");
+            _waitText.DOFade(0f, _gameConfig.TextFadeDuration);
             switch (error.Error)
             {
                case PlayFabErrorCode.ConnectionError:
-                   Debug.Log($"Connection error");
+                   SetErrorMessage("NOINTERNETCONNECTION");
                    break;
                case PlayFabErrorCode.InvalidEmailOrPassword:
-                   _errorMessage.gameObject.GetComponent<LocalizedText>().SetTranslationKey("INVALIDEMAILORPASSWORD");
-                   _errorMessage.DOColor(
-                       new Color(_errorMessage.color.r, _errorMessage.color.g, _errorMessage.color.b,1),
-                       _gameConfig.TextFadeDuration);
+                   SetErrorMessage("INVALIDEMAILORPASSWORD");
                    break;
                case PlayFabErrorCode.EmailAddressNotAvailable:
-                   _errorMessage.gameObject.GetComponent<LocalizedText>().SetTranslationKey("EMAILADDRESSNOTAVAILABLE");
-                   _errorMessage.DOColor(
-                       new Color(_errorMessage.color.r, _errorMessage.color.g, _errorMessage.color.b,1),
-                       _gameConfig.TextFadeDuration);
+                   SetErrorMessage("EMAILADDRESSNOTAVAILABLE");
+                   break;
+               case PlayFabErrorCode.InvalidParams:
+                   SetErrorMessage("INCORRECTMAIL");
                    break;
             }
+        }
+
+        private void SetErrorMessage(string translationKey)
+        {
+            _errorMessage.gameObject.GetComponent<LocalizedText>().SetTranslationKey(translationKey);
+            _errorMessage.DOColor(
+                new Color(_errorMessage.color.r, _errorMessage.color.g, _errorMessage.color.b,1),
+                _gameConfig.TextFadeDuration);
+        }
+
+        private void DisableErrorMessage()
+        {
+            _errorMessage.DOColor(
+                new Color(_errorMessage.color.r, _errorMessage.color.g, _errorMessage.color.b,1),
+                _gameConfig.TextFadeDuration); 
         }
 
         private void SendLeaderboard(int score)
@@ -165,8 +180,13 @@ namespace Application.ProjectContext.Services
                 Password = _passwordInputField.text,
                 RequireBothUsernameAndEmail = false
             };
+            _waitText.DOFade(1f, _gameConfig.TextFadeDuration);
             PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
         }
-        private void OnRegisterSuccess(RegisterPlayFabUserResult result) => Debug.Log($"Registered and logged in");
+        private void OnRegisterSuccess(RegisterPlayFabUserResult result)
+        {
+            _waitText.DOFade(0f, _gameConfig.TextFadeDuration);
+            Debug.Log($"Registered and logged in");
+        }
     }
 }

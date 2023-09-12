@@ -61,13 +61,17 @@ namespace Application.ProjectContext.Achievements.Services
         }
         private void UpdateAnswersAchievementProgress(LearnAchievementType achievementType, GameResult gameResult, float threshold)
         {
-            var progress = (float)gameResult.CorrectAnswersCount / gameResult.IncorrectAnswersCount;
-            _achievements[achievementType].SetProgress(progress >= threshold ? 1 : 0);
+            var progress = (float)gameResult.CorrectAnswersCount / (gameResult.CorrectAnswersCount+gameResult.IncorrectAnswersCount);
+            Debug.Log($"Update achievement percent progress");
+            Debug.Log($"Progress: {progress}");
+            Debug.Log($"Threshold: {threshold}");
+            var progressInPercent = progress * 100;
+            _achievements[achievementType].SetProgress((int)progressInPercent);
         }
         private void UpdateTimeAchievementProgress(LearnAchievementType achievementType, GameResult gameResult, float threshold)
         {
             var progress = gameResult.RemainingTime;
-            _achievements[achievementType].SetProgress(progress >= threshold ? 1 : 0);
+            _achievements[achievementType].SetProgress((int)progress);
         }
 
         private void CheckTimeAchievements(GameResult gameResult)

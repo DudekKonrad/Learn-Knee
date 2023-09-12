@@ -1,6 +1,7 @@
 ﻿using System;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Models;
+using Application.ProjectContext.Services;
 using Application.ProjectContext.Signals;
 using DG.Tweening;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace Application.GameplayContext.Mediator
         [Inject] private readonly SignalBus _signalBus;
         [Inject] private readonly DescriptionsModel _descriptions;
         [Inject] private readonly LearnGameConfig _gameConfig;
+        [Inject] private readonly TranslationsService _translationsService;
 
         private Text _text;
         private Color _startingColor;
@@ -34,7 +36,15 @@ namespace Application.GameplayContext.Mediator
 
         private void OnElementChosen(LearnProjectSignals.ElementChosenSignal signal)
         {
-            SetText(_descriptions.Descriptions[signal.Element.name]);
+            if (_translationsService.SelectedLanguage == Language.Polish)
+            {
+                SetText(_descriptions.Descriptions[signal.Element.name]);
+            }
+
+            if (_translationsService.SelectedLanguage == Language.English)
+            {
+                SetText(_descriptions.DescriptionsENG[signal.Element.name]);
+            }
         }
 
         private void SetText(string text)

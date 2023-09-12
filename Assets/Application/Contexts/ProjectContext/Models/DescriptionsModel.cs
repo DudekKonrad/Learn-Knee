@@ -10,8 +10,10 @@ namespace Application.ProjectContext.Models
         [Inject] private LearnGameConfig _gameConfig;
         
         private Dictionary<string, string> _descriptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _descriptionsENG = new Dictionary<string, string>();
         
         public Dictionary<string, string> Descriptions => _descriptions;
+        public Dictionary<string, string> DescriptionsENG => _descriptionsENG;
 
         [Inject]
         private void Construct()
@@ -22,6 +24,7 @@ namespace Application.ProjectContext.Models
         private void LoadDescriptions()
         {
             var dataLines = _gameConfig.Descriptions.text.Split('\n');
+            var dataLinesENG = _gameConfig.DescriptionsENG.text.Split('\n');
 
             for (var j = 1; j < dataLines.Length; j++)
             {
@@ -30,6 +33,16 @@ namespace Application.ProjectContext.Models
                 for (var i = 0; i < data.Length - 1; i++)
                 {
                     _descriptions.Add(data[i], data[i + 1]);
+                }
+            }
+            
+            for (var j = 1; j < dataLinesENG.Length; j++)
+            {
+                var line = dataLinesENG[j];
+                var data = line.Split(';');
+                for (var i = 0; i < data.Length - 1; i++)
+                {
+                    _descriptionsENG.Add(data[i], data[i + 1]);
                 }
             }
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Application.Utils
@@ -43,6 +44,13 @@ namespace Application.Utils
             }
 
             return normalizedText.ToString();
+        }
+
+        public static string GetStringTillChar(string inputText, string delimiter)
+        {
+            var delimiterIndex = inputText.IndexOf(delimiter, StringComparison.Ordinal);
+            var extractedText = inputText[..delimiterIndex];
+            return extractedText;
         }
     }
 }

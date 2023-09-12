@@ -18,8 +18,6 @@ MonoBehaviour:
   _moveSpeed: 0.01
   _zoomSensitivity: 0.003
   _zoomDuration: 0.5
-  _minZoom: 0
-  _maxZoom: 1
   _textFadeDuration: 0.3
   _quizModeConfig:
     _duration: 150
@@ -27,5 +25,6 @@ MonoBehaviour:
   _exposeTime: 0.8
   _calculatingResultDuration: 0.5
   _descriptions: {fileID: 4900000, guid: 53f6ada28623f7944a071311d0973329, type: 3}
+  _descriptionsENG: {fileID: 4900000, guid: 0449a6b491557af408d6607669373c35, type: 3}
   _translations: {fileID: 4900000, guid: d5ee508ff1aac414ab63f7d2ef14d711, type: 3}
   _supportedSupportedLanguages: 0000000001000000

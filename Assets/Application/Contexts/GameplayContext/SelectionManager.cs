@@ -21,6 +21,7 @@ namespace Application.GameplayContext
         public GameObject LearnModelGameObject => _learnModelGameObject;
 
         public List<Transform> LearnModelElements => _learnModelGameObject.transform.Cast<Transform>().ToList();
+        public ISelectionResponse SelectionResponse => _selectionResponse;
 
         private void Update()
         {

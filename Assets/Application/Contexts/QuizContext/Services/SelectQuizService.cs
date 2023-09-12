@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Application.GameplayContext;
 using Application.ProjectContext;
 using Application.ProjectContext.Configs;
@@ -69,9 +70,18 @@ namespace Application.QuizContext.Services
                 new GameResult(_player.CorrectAnswersCount, _player.IncorrectAnswersCount,
                     _player.RemainingTime, QuizType.Easy, result, _player.TotalScore)));
         }
+
+        private void SetAllElementsDefaultColors()
+        {
+            foreach (var element in _selectionManager.LearnModelElements)
+            {
+                element.GetComponent<ISelectionResponse>().SetDefaultColor();
+            }
+        }
         
         private void NextQuestion()
         {
+            SetAllElementsDefaultColors();
             _confirmButtonMediator.SetTextDefaultColor();
             _elementToSelectIndex++;
             if (_elementToSelectIndex == _selectionManager.LearnModelElements.Count)

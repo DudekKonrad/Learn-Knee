@@ -1801,7 +1801,7 @@ MonoBehaviour:
   - {fileID: 3322974334504803133}
   - {fileID: 5894594432223962403}
   _allNeighbours: 0
-  _exposeRotation: {x: 0, y: 180, z: 0}
+  _exposeRotation: {x: 20, y: 180, z: 0}
   _translationKey: TIBIALJOINT
 --- !u!1 &8059994933191994594
 GameObject:
@@ -2073,7 +2073,7 @@ MonoBehaviour:
   - {fileID: 5894594432223962403}
   - {fileID: 7204702327341423455}
   _selectionQuizNeighbours: []
-  _allNeighbours: 0
+  _allNeighbours: 1
   _exposeRotation: {x: 0, y: 180, z: 0}
   _translationKey: MEDIALCONDYLE
 --- !u!1 &8459960536308167698

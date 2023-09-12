@@ -12,5 +12,6 @@ namespace Application.Utils
         public void Disappear();
         public void Appear();
         public GameObject GameObject { get; }
+        public void SetDefaultColor();
     }
 }

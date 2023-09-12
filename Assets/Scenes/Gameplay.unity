@@ -514,7 +514,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Powierzchnia stawowa strza\u0142ki\r\n"
+  m_Text: 
 --- !u!222 &138218420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -700,9 +700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Facies articularis capitis fibulae
-
-'
+  m_Text: 
 --- !u!222 &218095203
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2850,9 +2848,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Articular facet of head of fibula
-
-'
+  m_Text: 
 --- !u!222 &1310088350
 CanvasRenderer:
   m_ObjectHideFlags: 0

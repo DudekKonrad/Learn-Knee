@@ -122,5 +122,13 @@ namespace Application.GameplayContext
                 IsViewed = false;
             }
         }
+
+        public void SetDefaultColor()
+        {
+            _renderer.material.DOColor(_staringColor, _gameConfig.ChooseColorDuration);
+            _signalBus.Fire(new LearnProjectSignals.ElementUnChosenSignal(this));
+            _signalBus.Fire(new LearnProjectSignals.PlaySoundSignal(AudioClipModel.UISounds.OnElementChosen));
+            IsViewed = false;
+        }
     }
 }
