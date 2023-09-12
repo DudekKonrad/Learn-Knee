@@ -20,7 +20,7 @@ MonoBehaviour:
   _zoomDuration: 0.5
   _textFadeDuration: 0.3
   _quizModeConfig:
-    _duration: 150
+    _duration: 200
   _pauseTime: 0.4
   _exposeTime: 0.8
   _calculatingResultDuration: 0.5

@@ -24,6 +24,7 @@ namespace Application.ProjectContext.Services
         [SerializeField] private Toggle _rememberToggle;
 
         [SerializeField] private Text _errorMessage;
+        [SerializeField] private Text _informationMessage;
         [SerializeField] private Text _waitText;
 
         private void Start()
@@ -121,6 +122,20 @@ namespace Application.ProjectContext.Services
             _errorMessage.DOColor(
                 new Color(_errorMessage.color.r, _errorMessage.color.g, _errorMessage.color.b,1),
                 _gameConfig.TextFadeDuration);
+            DOVirtual.DelayedCall(3f, () => _errorMessage.DOColor(
+                new Color(_errorMessage.color.r, _errorMessage.color.g, _errorMessage.color.b, 0),
+                _gameConfig.TextFadeDuration));
+        }
+        
+        private void SetInformationMessage(string translationKey)
+        {
+            _informationMessage.gameObject.GetComponent<LocalizedText>().SetTranslationKey(translationKey);
+            _informationMessage.DOColor(
+                new Color(_informationMessage.color.r, _informationMessage.color.g, _informationMessage.color.b,1),
+                _gameConfig.TextFadeDuration);
+            DOVirtual.DelayedCall(3f, () => _informationMessage.DOColor(
+                new Color(_informationMessage.color.r, _informationMessage.color.g, _informationMessage.color.b,0),
+                _gameConfig.TextFadeDuration));
         }
 
         private void DisableErrorMessage()
@@ -171,7 +186,11 @@ namespace Application.ProjectContext.Services
             }
             _loginWindow.transform.DOMoveY(1080, 2f).OnComplete(() => _loginWindow.SetActive(false));
         }
-        
+
+        public void PlayOffline()
+        {
+            _loginWindow.transform.DOMoveY(1080, 2f).OnComplete(() => _loginWindow.SetActive(false));
+        }
         public void Register()
         {
             var request = new RegisterPlayFabUserRequest
@@ -185,6 +204,7 @@ namespace Application.ProjectContext.Services
         }
         private void OnRegisterSuccess(RegisterPlayFabUserResult result)
         {
+            SetInformationMessage("REGISTERSUCESSFUL");
             _waitText.DOFade(0f, _gameConfig.TextFadeDuration);
             Debug.Log($"Registered and logged in");
         }

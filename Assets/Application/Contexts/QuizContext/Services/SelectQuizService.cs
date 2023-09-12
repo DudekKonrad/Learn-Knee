@@ -60,7 +60,7 @@ namespace Application.QuizContext.Services
             _list = new List<Transform>(_selectionManager.LearnModelElements);
             _totalCount = _selectionManager.LearnModelElements.Count;
             ListExtensionMethods.Shuffle(_list);
-            NextQuestion();
+            DOVirtual.DelayedCall(0.2f, NextQuestion);
         }
 
         private void FinishGame(QuizResult result)
