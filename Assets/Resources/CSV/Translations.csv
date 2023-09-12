@@ -72,3 +72,6 @@ EASYQUIZQUESTION;Jak nazywa się zaznaczony element?;What is the name of the sel
 PRESSENTERTOCONFIRM ;Naciśnij ENTER, aby potwierdzić;Press ENTER to confirm;;
 EMAILADDRESSNOTAVAILABLE;Adres e-mail jest zajęty;The email address is used;;
 REGISTERSUCESSFUL;Zarejestrowano pomyślnie!;Register sucessful!;;
+LOGINSUCESSFUL;Zalogowano pomyślnie!;Login Sucessful!;;
+PASSWORDTOOSHORT;Hasło musi się składać co najmniej z 6 znaków;The password must consist of at least 6 characters;;
+ACCOUNTNOTFOUND;Takie konto nie istnieje;Account does not exist;;

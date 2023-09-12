@@ -68,6 +68,7 @@ namespace Application.ProjectContext.Services
             PlayerPrefs.SetString("Email", $"{_emailInputField.text}");
             PlayerPrefs.SetString("Password", $"{_passwordInputField.text}");
             PlayerPrefs.SetInt("RememberLogin", _rememberToggle.isOn ? 1 : 0);
+            SetInformationMessage("LOGINSUCESSFUL");
             if (result.InfoResultPayload.PlayerProfile.DisplayName == null)
             {
                 SubmitPlayerName();
@@ -99,6 +100,11 @@ namespace Application.ProjectContext.Services
             Debug.Log($"{error.GenerateErrorReport()}");
             Debug.Log($"Error: {error.Error}");
             _waitText.DOFade(0f, _gameConfig.TextFadeDuration);
+            if (_passwordInputField.text.Length < 6)
+            {
+                SetErrorMessage("PASSWORDTOOSHORT");
+                return;
+            }
             switch (error.Error)
             {
                case PlayFabErrorCode.ConnectionError:
@@ -112,6 +118,9 @@ namespace Application.ProjectContext.Services
                    break;
                case PlayFabErrorCode.InvalidParams:
                    SetErrorMessage("INCORRECTMAIL");
+                   break;
+               case PlayFabErrorCode.AccountNotFound:
+                   SetErrorMessage("ACCOUNTNOTFOUND");
                    break;
             }
         }
@@ -207,6 +216,7 @@ namespace Application.ProjectContext.Services
             SetInformationMessage("REGISTERSUCESSFUL");
             _waitText.DOFade(0f, _gameConfig.TextFadeDuration);
             Debug.Log($"Registered and logged in");
+            LoginButton();
         }
     }
 }
