@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Application.ProjectContext.Achievements.Services;
 using Application.ProjectContext.Achievements.Views;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +10,6 @@ namespace Application.ProjectContext.Achievements.Mediators
     public class AchievementsMediator : MonoBehaviour
     {
         [Inject] private readonly DiContainer _diContainer;
-        [Inject] private readonly IAchievementService _achievementService;
         [Inject] private readonly IAchievementsConfig _achievementsConfig;
         
         [SerializeField] private GameObject _content;

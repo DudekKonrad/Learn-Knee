@@ -91,9 +91,6 @@ namespace Application.QuizContext.Mediators
                     _confetti.SetActive(false);
                     transform.DOLocalMoveY(0, 0.2f);
                     var percent = (signal.GameResult.CorrectAnswersCount/17f)*100;
-                    Debug.Log($"Correct: {signal.GameResult.CorrectAnswersCount}");
-                    Debug.Log($"Percent: {percent}");
-                    Debug.Log($"Percent int : {(int)percent}");
                     _percentText.text = $"{(int)percent}%";
                     return;
                 case QuizResult.Win:

@@ -1,4 +1,3 @@
-using System;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
 using DG.Tweening;
@@ -17,10 +16,7 @@ namespace Application.QuizContext.Mediators
         [SerializeField] private InputField _input;
         private Image _image;
         private Color _imageStartingColor;
-
-        public InputField AnswerInput => _input;
-        public Image Image => _image;
-
+        
         private void Start()
         {
             _input = GetComponent<InputField>();

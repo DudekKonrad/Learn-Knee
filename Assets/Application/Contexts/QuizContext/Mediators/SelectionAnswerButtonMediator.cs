@@ -1,4 +1,3 @@
-using Application.GameplayContext;
 using Application.ProjectContext.Signals;
 using Application.Utils.SoundService;
 using UnityEngine;

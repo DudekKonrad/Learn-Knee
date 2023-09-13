@@ -1141,7 +1141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19952488687962379, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 800
+      value: 850
       objectReference: {fileID: 0}
     - target: {fileID: 19952488687962379, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1162,6 +1162,10 @@ PrefabInstance:
     - target: {fileID: 19952489262306653, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
       propertyPath: m_Text
       value: Trudny
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234811628229696110, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2013,8 +2017,9 @@ GameObject:
   - component: {fileID: 346918325}
   - component: {fileID: 346918327}
   - component: {fileID: 346918326}
+  - component: {fileID: 346918328}
   m_Layer: 5
-  m_Name: Easy Description
+  m_Name: MiddleDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2073,8 +2078,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Poziom \u015Bredni - wy\u015Bwietlana jest nazwa elementu, kt\xF3ry u\u017Cytkownik
-    musi zaznaczy\u0107 na modelu 3D. Po zaznaczeniu u\u017Cytkownik potwierdza swoj\u0105
-    odpowied\u017A przyciskiem \"Potwierd\u017A\""
+    musi zaznaczy\u0107 na modelu 3D. U\u017Cytkownik potwierdza swoj\u0105 odpowied\u017A
+    przyciskiem \"Potwierd\u017A\"."
 --- !u!222 &346918327
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2083,6 +2088,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346918324}
   m_CullTransparentMesh: 1
+--- !u!114 &346918328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346918324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2cbdbe81066ae408f795df5c24748e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _translationKey: MIDDLEDESCRIPTION
+  _text: {fileID: 0}
 --- !u!1 &366627770
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,7 +3422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 100
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
@@ -4522,6 +4541,7 @@ GameObject:
   - component: {fileID: 1119349546}
   - component: {fileID: 1119349545}
   - component: {fileID: 1119349544}
+  - component: {fileID: 1119349547}
   m_Layer: 5
   m_Name: GameTitle
   m_TagString: Untagged
@@ -4605,6 +4625,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119349542}
   m_CullTransparentMesh: 1
+--- !u!114 &1119349547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119349542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2cbdbe81066ae408f795df5c24748e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _translationKey: GAMETITLEKNEE
+  _text: {fileID: 0}
 --- !u!1 &1130384407 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 19952488687962378, guid: d57f4d721c9d86c4e9665633a6485ff6, type: 3}
@@ -4931,7 +4965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19952488687962379, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 800
+      value: 850
       objectReference: {fileID: 0}
     - target: {fileID: 19952488687962379, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4947,6 +4981,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19952488687962379, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234811628229696110, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5115,10 +5153,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0f9b8ba9a66f9413581e6d7b635832ec, type: 3}
-    m_FontSize: 60
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 6
+    m_MinSize: 5
     m_MaxSize: 74
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -5128,9 +5166,10 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Witaj! Przed Tob\u0105 gra powa\u017Cna o budowie stawu kolanowego. Gra
     oferuje interakcj\u0119 z modelem 3D stawu kolanowego, quizy wiedzy, osi\u0105gni\u0119cia
-    i ranking u\u017Cytkownik\xF3w. Baw si\u0119 i ucz jednocze\u015Bnie!\n\nPo naci\u015Bni\u0119ciu
-    przycisku \"Start\" zostaniejsz przeniesiony do Panelu logowania, w kt\xF3rym
-    mo\u017Cesz stworzy\u0107 swoje konto aby rywalizowa\u0107 z innymi."
+    i ranking u\u017Cytkownik\xF3w. \n\nBaw si\u0119 i ucz jednocze\u015Bnie!\n\nPo
+    naci\u015Bni\u0119ciu przycisku \"Start\" zostaniejsz przeniesiony do panelu
+    logowania, w kt\xF3rym mo\u017Cesz stworzy\u0107 swoje konto aby rywalizowa\u0107
+    z innymi."
 --- !u!222 &1328727467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7615,6 +7654,7 @@ GameObject:
   - component: {fileID: 1898781763}
   - component: {fileID: 1898781765}
   - component: {fileID: 1898781764}
+  - component: {fileID: 1898781766}
   m_Layer: 5
   m_Name: HardDescription
   m_TagString: Untagged
@@ -7675,8 +7715,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Poziom trudny - jeden z element\xF3w stawu kolanowego zostanie zaznaczony,
-    a u\u017Cytkownik ma za zadnie wpisa\u0107 jego nazw\u0119 w polu tekstowym a
-    nast\u0119pnie zatwierdzi\u0107 przyciskiem \"Enter\"."
+    u\u017Cytkownik ma za zadnie wpisa\u0107 jego nazw\u0119 w polu tekstowym a nast\u0119pnie
+    zatwierdzi\u0107 przyciskiem \"Enter\"."
 --- !u!222 &1898781765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7685,6 +7725,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898781762}
   m_CullTransparentMesh: 1
+--- !u!114 &1898781766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898781762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2cbdbe81066ae408f795df5c24748e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _translationKey: HARDDESCRIPTION
+  _text: {fileID: 0}
 --- !u!1 &1918696586
 GameObject:
   m_ObjectHideFlags: 0
@@ -7696,6 +7750,7 @@ GameObject:
   - component: {fileID: 1918696587}
   - component: {fileID: 1918696589}
   - component: {fileID: 1918696588}
+  - component: {fileID: 1918696590}
   m_Layer: 5
   m_Name: Easy Description
   m_TagString: Untagged
@@ -7757,7 +7812,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Poziom \u0142atwy - quiz jednokrotnego wyboru. Jeden z element\xF3w stawu
     kolanowego zostanie zaznaczony, u\u017Cytkownik ma za zadanie klikn\u0105\u0107
-    na jeden z 4 przycisk\xF3w z prawid\u0142ow\u0105 odpowiedzi\u0105"
+    na jeden z 4 przycisk\xF3w z prawid\u0142ow\u0105 odpowiedzi\u0105."
 --- !u!222 &1918696589
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7766,6 +7821,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918696586}
   m_CullTransparentMesh: 1
+--- !u!114 &1918696590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918696586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2cbdbe81066ae408f795df5c24748e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _translationKey: EASYDESCRIPTION
+  _text: {fileID: 0}
 --- !u!1001 &1933010988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7844,7 +7913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19952488687962379, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 800
+      value: 850
       objectReference: {fileID: 0}
     - target: {fileID: 19952488687962379, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7865,6 +7934,10 @@ PrefabInstance:
     - target: {fileID: 19952489262306653, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
       propertyPath: m_Text
       value: Sredni
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234811628229696110, guid: db36a48101b9f564a9e84ef40825189e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13562,6 +13635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1447909995226059947}
+  - component: {fileID: 1447909995226059948}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -13590,6 +13664,19 @@ RectTransform:
   m_AnchoredPosition: {x: 800, y: -200}
   m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1447909995226059948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447909995226059946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ace0935b2b64d2f8d137f7662fb753a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 1447909996499861188}
 --- !u!114 &1447909995279750922
 MonoBehaviour:
   m_ObjectHideFlags: 0

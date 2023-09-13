@@ -1,5 +1,4 @@
 using System;
-using Application.GameplayContext.Models;
 using Application.ProjectContext.Configs;
 using Application.ProjectContext.Signals;
 using Application.QuizContext.Models;
@@ -20,7 +19,6 @@ namespace Application.QuizContext.Mediators
         [SerializeField] private Text _timeLeftText;
         public float _startingTime, _actualTime;
         private float _remainingTimePercent => _actualTime / _startingTime;
-        private float _elapsedTimeInSeconds;
     
         private void Start()
         {
@@ -33,7 +31,6 @@ namespace Application.QuizContext.Mediators
             if (_actualTime > 0 && !_player.IsGameFinished)
             {
                 _actualTime -= Time.deltaTime;
-                _elapsedTimeInSeconds += Time.deltaTime;
                 _player.SetRemainingTime(_actualTime);
                 _image.fillAmount = _remainingTimePercent;
                 var timeSpan = TimeSpan.FromSeconds(_actualTime);

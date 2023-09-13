@@ -40,7 +40,7 @@ namespace Application.ProjectContext.Services
 
         private void OnChangeSoundVolume(LearnProjectSignals.ChangeSoundVolume signal)
         {
-            throw new System.NotImplementedException();
+            _audioSourceSfx.volume = signal.Volume;
         }
 
         private void OnChangeMusicVolume(LearnProjectSignals.ChangeMusicVolume signal)

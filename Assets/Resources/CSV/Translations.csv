@@ -75,3 +75,7 @@ REGISTERSUCESSFUL;Zarejestrowano pomyślnie!;Register sucessful!;;
 LOGINSUCESSFUL;Zalogowano pomyślnie!;Login Sucessful!;;
 PASSWORDTOOSHORT;Hasło musi się składać co najmniej z 6 znaków;The password must consist of at least 6 characters;;
 ACCOUNTNOTFOUND;Takie konto nie istnieje;Account does not exist;;
+EASYDESCRIPTION;Poziom łatwy - quiz jednokrotnego wyboru. Jeden z elementów stawu kolanowego zostanie zaznaczony, użytkownik ma za zadanie kliknąć na jeden z 4 przycisków z prawidłową odpowiedzią;Easy level - single-choice quiz. One of the elements of the knee joint will be selected, the user must click on one of the 4 buttons with the correct answer;;
+MIDDLEDESCRIPTION;"Poziom średni - wyświetlana jest nazwa elementu, który użytkownik musi zaznaczyć na modelu 3D. Po zaznaczeniu użytkownik potwierdza swoją odpowiedź przyciskiem ""Potwierdź""";"Medium level - displays the name of the element that the user must select on the 3D model. After selecting, the user confirms his answer with the ""Confirm"" button";;
+HARDDESCRIPTION;"Poziom trudny - jeden z elementów stawu kolanowego zostanie zaznaczony, a użytkownik ma za zadnie wpisać jego nazwę w polu tekstowym a następnie zatwierdzić przyciskiem ""Enter"".";"Hard level - one of the elements of the knee joint will be selected and the user must enter its name in the text field and then confirm with the ""Enter"" button.";;
+GAMETITLEKNEE;Budowa Stawu Kolanowego;Construction of the Knee Joint;;
